@@ -4,7 +4,7 @@ return [
     'home' => 'Startseite',
     'products' => 'Produkte',
     'blog' => 'Blog',
-    'faqs' => 'Häufig gestellte Fragen',
+    'faqs' => 'HgF',
     'about_us' => 'Über uns',
     'contact' => 'Kontakt',
     'product_search' => 'Produktsuche',

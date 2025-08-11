@@ -3,7 +3,9 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use App\Http\Middleware\CheckUserRole; // OBAVEZNO DODATI OVAJ USE ISKAZ
+use App\Http\Middleware\CheckUserRole;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -14,7 +16,21 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'role' => CheckUserRole::class, // Dodajte ovu liniju
+            'role' => CheckUserRole::class,
+            
+            'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
+            'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
+            'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
+            'localeCookieRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
+            'localeViewPath' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
+        ]);
+        
+        $middleware->web(append: [
+            'localizationRedirect',
+            'localeSessionRedirect',
+            'localeCookieRedirect',
+            'localize',
+            'localeViewPath',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

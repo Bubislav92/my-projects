@@ -1,3 +1,10 @@
+@php
+    // Dobijamo sve podržane jezike definisane u config/localization.php
+    $supportedLocales = Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales();
+    // Dobijamo trenutni jezik
+    $currentLocale = Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale();
+@endphp
+
 <header class="bg-white shadow-md py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
         {{-- Logo --}}
@@ -9,12 +16,12 @@
 
         {{-- Navigacija --}}
         <nav class="hidden md:flex space-x-8">
-            <a href="{{ route('welcome') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">Home</a>
-            <a href="{{ route('products.index') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">Products</a>
-            <a href="{{ route('blog') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">Blog</a>
-            <a href="{{ route('faqs') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">FAQs</a>
-            <a href="{{ route('about') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">About Us</a>
-            <a href="{{ route('contact') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">Contact</a>
+            <a href="{{ route('welcome') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.home') }}</a>
+            <a href="{{ route('products.index') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.products') }}</a>
+            <a href="{{ route('blog') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.blog') }}</a>
+            <a href="{{ route('faqs') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.faqs') }}</a>
+            <a href="{{ route('about') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.contact') }}</a>
+            <a href="{{ route('contact') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.about_us') }}</a>
         </nav>
 
         {{-- Ikone (Search, Wishlist, Cart) i Auth Linkovi --}}
@@ -49,13 +56,33 @@
             {{-- Auth Linkovi (Login/Register) --}}
             <div class="hidden md:flex space-x-4">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="font-medium text-dark-gray hover:text-primary-green transition duration-300 text-lg">Dashboard</a>
+                    <a href="{{ url('/dashboard') }}" class="font-medium text-dark-gray hover:text-primary-green transition duration-300 text-lg">{{ __('navigation.dashboard') }}</a>
                 @else
-                    <a href="{{ route('login') }}" class="font-medium text-dark-gray hover:text-primary-green transition duration-300 text-lg">Log in</a>
+                    <a href="{{ route('login') }}" class="font-medium text-dark-gray hover:text-primary-green transition duration-300 text-lg">{{ __('navigation.login') }}</a>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="font-medium text-dark-gray hover:text-primary-green transition duration-300 text-lg">Register</a>
+                        <a href="{{ route('register') }}" class="font-medium text-dark-gray hover:text-primary-green transition duration-300 text-lg">{{ __('navigation.register') }}</a>
                     @endif
                 @endauth
+            </div>
+
+            {{-- Selekcija jezika (Dropdown) --}}
+            <div class="relative group">
+                <button class="flex items-center text-dark-gray hover:text-primary-green transition duration-300 focus:outline-none">
+                    {{ strtoupper($currentLocale) }}
+                    <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="py-1">
+                        @foreach($supportedLocales as $localeCode => $properties)
+                            <a href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 {{ $currentLocale == $localeCode ? 'bg-gray-200 font-bold' : '' }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
 
             {{-- Hamburger meni za mobilne (vidljiv samo na manjim ekranima) --}}
