@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Vesna's Web Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmPXeMyE/P+x7x0HwGgqa66bU8m2gS0QzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="antialiased bg-light-gray font-sans">
+    <x-header /> {{-- Uključujemo header --}}
+
+    <main class="container mx-auto px-4 py-8 md:py-12 flex justify-center items-center min-h-[calc(100vh-160px)]"> {{-- min-h da centrira formu --}}
+        <div class="w-full max-w-md bg-white p-6 md:p-8 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold text-dark-gray mb-6 text-center">Log in to your account</h2>
+
+            @if (session('status'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="mb-4 p-4 text-sm text-red-700 bg-red-100 rounded-lg">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('login') }}" class="space-y-5">
+                @csrf
+
+                <div>
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                    <input id="email"
+                           class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
+                           type="email"
+                           name="email"
+                           value="{{ old('email') }}"
+                           required
+                           autofocus
+                           autocomplete="username" />
+                </div>
+
+                <div>
+                    <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
+                    <input id="password"
+                           class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
+                           type="password"
+                           name="password"
+                           required
+                           autocomplete="current-password" />
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <label for="remember_me" class="inline-flex items-center">
+                        <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-primary-green shadow-sm focus:ring-primary-green" name="remember">
+                        <span class="ms-2 text-sm text-gray-700">Remember me</span>
+                    </label>
+
+                    @if (Route::has('password.request'))
+                        <a class="text-sm text-primary-green hover:underline font-semibold transition duration-200" href="{{ route('password.request') }}">
+                            Forgot your password?
+                        </a>
+                    @endif
+                </div>
+
+                <button type="submit" class="w-full bg-primary-green text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
+                    Log in
+                </button>
+            </form>
+
+            <div class="text-center mt-6 text-gray-700">
+                Don't have an account?
+                <a href="{{ route('register') }}" class="text-primary-green hover:underline font-semibold transition duration-200">
+                    Register here.
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <x-footer /> {{-- Uključujemo footer --}}
+</body>
+</html>
