@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Filament\Models\Contracts\FilamentUser;
-use Filament\Panel;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -16,7 +15,7 @@ class User extends Authenticatable implements FilamentUser
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'name',
@@ -27,7 +26,7 @@ class User extends Authenticatable implements FilamentUser
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $hidden = [
         'password',
@@ -45,26 +44,5 @@ class User extends Authenticatable implements FilamentUser
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    /**
-     * Define whether the user can access a specific Filament panel.
-     *
-     * @param string $panel
-     * @return bool
-     */
-    public function canAccessPanel(Panel $panel): bool
-    {
-        // Ova metoda se poziva svaki put kada se pokuša pristupiti Filament panelu.
-        // Morate vratiti 'true' da biste omogućili pristup.
-
-        // Za početnu fazu razvoja i otklanjanje grešaka, jednostavno vratite true.
-        // Ovo će omogućiti BILO KOM prijavljenom korisniku da pristupi admin panelu.
-        return true; 
-        
-        // Kasnije, kada budete želeli da implementirate granularniju kontrolu,
-        // možete dodati logiku ovde, na primer:
-        // return $this->is_admin; // Ako imate kolonu 'is_admin' u tabeli 'users'
-        // return in_array($this->email, ['admin@example.com']); // Za pristup samo određenim emailovima
     }
 }

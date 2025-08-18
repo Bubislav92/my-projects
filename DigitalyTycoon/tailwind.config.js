@@ -10,11 +10,14 @@ export default {
         './resources/**/*.vue',
     ],
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+      extend: {
+        colors: {
+          'primary-dark': '#0F172A', // Тамно плава
+          'secondary-dark': '#1E293B', // Тамно сива
+          'accent': '#22D3EE', // Тиркизна
+          'text-light': '#F8FAFC', // Светло сива
         },
+      },
     },
     plugins: [],
 };
