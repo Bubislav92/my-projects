@@ -79,6 +79,112 @@
             </div>
         </div>
 
+        ---
+
+        {{-- Sekcija za Recenzije --}}
+        <div class="mt-12 bg-white p-6 md:p-8 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold text-dark-gray mb-6">{{ __('product_review_translate.reviews') }}</h2>
+
+            {{-- Prikaz prosečne ocene i broja recenzija --}}
+            @if ($product->reviews->count() > 0)
+                @php
+                    $averageRating = $product->reviews->avg('rating');
+                    $fullStars = floor($averageRating);
+                    $hasHalfStar = ($averageRating - $fullStars) >= 0.5;
+                    $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0);
+                @endphp
+                <div class="flex items-center mb-6">
+                    <span class="text-2xl font-semibold mr-2">{{ number_format($averageRating, 1) }}</span>
+                    <div class="flex items-center">
+                        @for ($i = 0; $i < $fullStars; $i++)
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.961a1 1 0 00.95.691h4.167c.969 0 1.371 1.24.588 1.81l-3.368 2.446a1 1 0 00-.364 1.118l1.286 3.961c.3.921-.755 1.688-1.54 1.118l-3.368-2.446a1 1 0 00-1.176 0l-3.368 2.446c-.784.57-1.84-.197-1.54-1.118l1.286-3.961a1 1 0 00-.364-1.118L2.094 9.49c-.783-.57-.38-1.81.588-1.81h4.167a1 1 0 00.95-.691l1.286-3.961z" /></svg>
+                        @endfor
+                        @if ($hasHalfStar)
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15.27L16.29 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.35 4.73L3.71 19z" clip-rule="evenodd" fill-rule="evenodd" /></svg>
+                        @endif
+                        @for ($i = 0; $i < $emptyStars; $i++)
+                            <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.961a1 1 0 00.95.691h4.167c.969 0 1.371 1.24.588 1.81l-3.368 2.446a1 1 0 00-.364 1.118l1.286 3.961c.3.921-.755 1.688-1.54 1.118l-3.368-2.446a1 1 0 00-1.176 0l-3.368 2.446c-.784.57-1.84-.197-1.54-1.118l1.286-3.961a1 1 0 00-.364-1.118L2.094 9.49c-.783-.57-.38-1.81.588-1.81h4.167a1 1 0 00.95-.691l1.286-3.961z" /></svg>
+                        @endfor
+                    </div>
+                    <span class="ml-2 text-gray-600">{{ $product->reviews->count() }} {{ __('product_review_translate.review') }}</span>
+                </div>
+            @else
+                <p class="text-gray-600">{{ __('product_review_translate.no_reviews_yet') }}</p>
+            @endif
+
+            {{-- Forma za pisanje nove recenzije --}}
+            <div class="mt-8">
+                @auth
+                    {{-- Provera da li je korisnik kupio proizvod pre nego što prikažemo formu --}}
+                    @php
+                        // Logika za proveru kupovine
+                        // Uverite se da ste ispravno podesili relacije u User i Order modelima
+                        $hasPurchased = auth()->user()->orders()
+                            ->whereHas('orderItems', function ($query) use ($product) {
+                                $query->where('product_id', $product->id);
+                            })
+                            ->exists();
+                    @endphp
+
+                    @if ($hasPurchased)
+                        <h3 class="text-2xl font-semibold text-dark-gray mb-4">{{ __('product_review_translate.leave_your_review') }}</h3>
+                        <form action="{{ route('products.reviews.store', $product->slug) }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            
+                            {{-- Ocena --}}
+                            <div class="mb-4">
+                                <label for="rating" class="block text-gray-700 font-medium mb-2">{{ __('product_review_translate.your_rating') }}</label>
+                                <select id="rating" name="rating" required
+                                        class="block w-full border-gray-300 rounded-md shadow-sm focus:border-primary-green focus:ring focus:ring-primary-green focus:ring-opacity-50">
+                                    <option value="5">{{ __('product_review_translate.5_stars') }}</option>
+                                    <option value="4">{{ __('product_review_translate.4_stars') }}</option>
+                                    <option value="3">{{ __('product_review_translate.3_stars') }}</option>
+                                    <option value="2">{{ __('product_review_translate.2_stars') }}</option>
+                                    <option value="1">{{ __('product_review_translate.1_star') }}</option>
+                                </select>
+                            </div>
+
+                            {{-- Tekst recenzije --}}
+                            <div class="mb-4">
+                                <label for="review_text" class="block text-gray-700 font-medium mb-2">{{ __('product_review_translate.your_rating') }}</label>
+                                <textarea id="review_text" name="review_text" rows="4" required
+                                          class="block w-full border-gray-300 rounded-md shadow-sm focus:border-primary-green focus:ring focus:ring-primary-green focus:ring-opacity-50"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-primary-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300">
+                                {{ __('product_review_translate.submit_review') }}
+                            </button>
+                        </form>
+                    @else
+                        <p class="text-gray-600">{{ __('product_review_translate.only_customers_can_review') }}</p>
+                    @endif
+                @else
+                    <p class="text-gray-600">{{ __('product_review_translate.must_be_logged_in_to_review') }}</p>
+                @endauth
+            </div>
+
+            {{-- Lista recenzija --}}
+            <div class="space-y-6 mt-8">
+                @foreach ($product->reviews->sortByDesc('created_at') as $review)
+                    <div class="bg-light-gray p-4 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <p class="font-bold text-dark-gray mr-2">{{ $review->user->name }}</p>
+                            <div class="flex items-center">
+                                @for ($i = 0; $i < $review->rating; $i++)
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.961a1 1 0 00.95.691h4.167c.969 0 1.371 1.24.588 1.81l-3.368 2.446a1 1 0 00-.364 1.118l1.286 3.961c.3.921-.755 1.688-1.54 1.118l-3.368-2.446a1 1 0 00-1.176 0l-3.368 2.446c-.784.57-1.84-.197-1.54-1.118l1.286-3.961a1 1 0 00-.364-1.118L2.094 9.49c-.783-.57-.38-1.81.588-1.81h4.167a1 1 0 00.95-.691l1.286-3.961z" /></svg>
+                                @endfor
+                            </div>
+                        </div>
+                        <p class="text-gray-700">{{ $review->review_text }}</p>
+                        <p class="text-xs text-gray-500 mt-1">Datum: {{ $review->created_at->format('d.m.Y') }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        ---
+
         {{-- Srodni proizvodi --}}
         <section class="mt-12">
             <h2 class="text-3xl font-bold text-dark-gray mb-6 text-center">Related Products</h2>

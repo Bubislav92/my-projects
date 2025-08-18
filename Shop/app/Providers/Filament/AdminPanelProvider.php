@@ -32,7 +32,13 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::hex('#22C55E'), // Повезујемо Filament-ову 'primary' боју са вашом 'primary-green'
+                'gray' => Color::hex('#333333'), // Повезујемо 'gray' са 'dark-gray'
+                // Можете додати и друге боје ако желите:
+                // 'danger' => Color::Red,
+                // 'success' => Color::Green,
+                // 'warning' => Color::Yellow,
+                // 'info' => Color::Blue,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

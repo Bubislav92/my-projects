@@ -22,13 +22,13 @@
                 <div class="bg-red-100 rounded-full p-4 mb-4">
                     <i class="fa-solid fa-times-circle text-red-500 text-6xl"></i> {{-- Иконица за грешку/отказ --}}
                 </div>
-                <h2 class="text-3xl font-bold text-dark-gray mb-3">Payment Failed/Cancelled!</h2> {{-- Плаћање неуспешно/отказано! --}}
-                <p class="text-gray-700 text-lg">Unfortunately, your payment could not be processed or was cancelled. Please try again or contact support.</p> {{-- Нажалост, ваше плаћање није могло бити обрађено или је отказано. Молимо покушајте поново или контактирајте подршку. --}}
+                <h2 class="text-3xl font-bold text-dark-gray mb-3">{{ __('checkout_translate.payment_failed_cancelled') }}</h2> {{-- Плаћање неуспешно/отказано! --}}
+                <p class="text-gray-700 text-lg">{{ __('checkout_translate.payment_error_try_again') }}</p> {{-- Нажалост, ваше плаћање није могло бити обрађено или је отказано. Молимо покушајте поново или контактирајте подршку. --}}
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="{{ route('dashboard') }}" class="inline-block bg-light-gray text-dark-gray font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-dark-gray focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
-                    Go to Dashboard {{-- Иди на контролну таблу --}}
+                    {{ __('checkout_translate.go_to_dashboard') }} {{-- Иди на контролну таблу --}}
                     <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
                 {{-- Можеш додати и дугме за покушај поново или контакт подршку --}}

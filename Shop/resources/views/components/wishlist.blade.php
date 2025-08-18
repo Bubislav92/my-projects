@@ -34,7 +34,7 @@
                         @if (request()->routeIs('dashboard.wishlist'))
                             <span class="absolute left-0 top-0 bottom-0 w-1 bg-primary-green rounded-tl-lg rounded-bl-lg"></span>
                         @endif
-                        <i class="fa-solid fa-heart mr-3 {{ request()->routeIs('dashboard.wishlist') ? 'text-primary-green' : '' }}"></i> My Wishlist
+                        <i class="fa-solid fa-heart mr-3 {{ request()->routeIs('dashboard.wishlist') ? 'text-primary-green' : '' }}"></i> {{ __('my_wishlist.my_wishlist') }}
                     </a>
                     <a href="{{ route('dashboard.profile') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 {{ request()->routeIs('dashboard.profile') ? 'bg-light-gray text-primary-green' : '' }}">
                         <i class="fa-solid fa-user mr-3"></i> My Profile
@@ -52,7 +52,7 @@
             {{-- Glavni sadržaj sekcije "My Wishlist" --}}
             <div class="md:col-span-3">
                 <div class="bg-white p-6 md:p-8 rounded-xl shadow-md">
-                    <h2 class="text-3xl font-semibold text-dark-gray mb-6">My Wishlist</h2>
+                    <h2 class="text-3xl font-semibold text-dark-gray mb-6">{{ __('my_wishlist.my_wishlist') }}</h2>
 
                     {{-- Prikaz poruka o uspehu ili greškama --}}
                     @if(session('success'))
@@ -75,9 +75,9 @@
                     @if ($wishlistItems->isEmpty())
                         <div class="text-center py-10">
                             <i class="fa-solid fa-heart text-gray-400 text-6xl mb-4"></i>
-                            <p class="text-xl text-gray-600 mb-4">Your wishlist is empty.</p>
+                            <p class="text-xl text-gray-600 mb-4">{{ __('my_wishlist.wishlist_is_empty') }}</p>
                             <a href="{{ route('products.index') }}" class="inline-block bg-primary-green text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300">
-                                Discover Products
+                                {{ __('my_wishlist.discover_products') }}
                             </a>
                         </div>
                     @else
@@ -125,7 +125,7 @@
                                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                                 <input type="hidden" name="quantity" value="1"> {{-- Default količina 1 --}}
                                                 <button type="submit" class="w-full bg-primary-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300 ease-in-out transform hover:scale-105 text-sm">
-                                                    <i class="fa-solid fa-cart-plus mr-1"></i> Add to Cart
+                                                    <i class="fa-solid fa-cart-plus mr-1"></i> {{ __('my_wishlist.add_to_cart') }}
                                                 </button>
                                             </form>
                                             
@@ -134,7 +134,7 @@
                                                 @csrf
                                                 @method('DELETE') {{-- Laravel metoda za DELETE zahtev --}}
                                                 <button type="submit" class="w-full bg-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105 text-sm">
-                                                    <i class="fa-solid fa-trash-can mr-1"></i> Remove
+                                                    <i class="fa-solid fa-trash-can mr-1"></i> {{ __('my_wishlist.remove') }}
                                                 </button>
                                             </form>
                                         </div>

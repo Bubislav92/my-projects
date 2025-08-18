@@ -17,7 +17,7 @@
     <x-header />
 
     <main class="container mx-auto px-4 py-8 md:py-12">
-        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">My Dashboard</h1>
+        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('dashboard_translate.my_dashboard') }}</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             {{-- Бочни навигациони мени за Dashboard --}}
@@ -27,32 +27,32 @@
                         @if (request()->routeIs('dashboard'))
                             <span class="absolute left-0 top-0 bottom-0 w-1 bg-primary-green rounded-tl-lg rounded-bl-lg"></span>
                         @endif
-                        <i class="fa-solid fa-gauge-high mr-3 {{ request()->routeIs('dashboard') ? 'text-primary-green' : '' }}"></i> Dashboard Overview
+                        <i class="fa-solid fa-gauge-high mr-3 {{ request()->routeIs('dashboard') ? 'text-primary-green' : '' }}"></i> {{ __('dashboard_translate.dashboard_overview') }}
                     </a>
                     <a href="{{ route('dashboard.orders') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 relative {{ request()->routeIs('dashboard.orders') ? 'bg-light-gray text-primary-green' : '' }}">
                         @if (request()->routeIs('dashboard.orders'))
                             <span class="absolute left-0 top-0 bottom-0 w-1 bg-primary-green rounded-tl-lg rounded-bl-lg"></span>
                         @endif
-                        <i class="fa-solid fa-box-seam mr-3 {{ request()->routeIs('dashboard.orders') ? 'text-primary-green' : '' }}"></i> My Orders
+                        <i class="fa-solid fa-box-seam mr-3 {{ request()->routeIs('dashboard.orders') ? 'text-primary-green' : '' }}"></i> {{ __('dashboard_translate.my_orders') }}
                     </a>
                     <a href="{{ route('dashboard.wishlist') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 relative {{ request()->routeIs('dashboard.wishlist') ? 'bg-light-gray text-primary-green' : '' }}">
                         @if (request()->routeIs('dashboard.wishlist'))
                             <span class="absolute left-0 top-0 bottom-0 w-1 bg-primary-green rounded-tl-lg rounded-bl-lg"></span>
                         @endif
-                        <i class="fa-solid fa-heart mr-3 {{ request()->routeIs('dashboard.wishlist') ? 'text-primary-green' : '' }}"></i> My Wishlist
+                        <i class="fa-solid fa-heart mr-3 {{ request()->routeIs('dashboard.wishlist') ? 'text-primary-green' : '' }}"></i> {{ __('dashboard_translate.my_wishlist') }}
                     </a>
                     <a href="{{ route('dashboard.profile') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 relative {{ request()->routeIs('dashboard.profile') ? 'bg-light-gray text-primary-green' : '' }}">
                         @if (request()->routeIs('dashboard.profile'))
                             <span class="absolute left-0 top-0 bottom-0 w-1 bg-primary-green rounded-tl-lg rounded-bl-lg"></span>
                         @endif
-                        <i class="fa-solid fa-user mr-3 {{ request()->routeIs('dashboard.profile') ? 'text-primary-green' : '' }}"></i> My Profile
+                        <i class="fa-solid fa-user mr-3 {{ request()->routeIs('dashboard.profile') ? 'text-primary-green' : '' }}"></i> {{ __('dashboard_translate.my_profile') }}
                     </a>
 
                     {{-- Дугме za odjavu --}}
                     <form method="POST" action="{{ route('logout') }}" class="w-full">
                         @csrf
                         <button type="submit" class="flex items-center w-full text-left p-3 rounded-lg text-lg font-semibold text-red-600 hover:bg-red-50 transition duration-300">
-                            <i class="fa-solid fa-right-from-bracket mr-3"></i> Log Out
+                            <i class="fa-solid fa-right-from-bracket mr-3"></i> {{ __('dashboard_translate.log_out') }}
                         </button>
                     </form>
                 </nav>
@@ -64,25 +64,25 @@
                     {{-- Садржај за "Dashboard Overview" --}}
                     <div class="bg-white p-6 rounded-xl shadow-md">
                         <h2 class="text-3xl font-semibold text-dark-gray mb-4 flex items-center">
-                            <i class="fa-solid fa-circle-user text-primary-green mr-3"></i> Welcome back, {{ $user->name }}!
+                            <i class="fa-solid fa-circle-user text-primary-green mr-3"></i> {{ __('dashboard_translate.welcome_back') }} {{ $user->name }}!
                         </h2>
                         <p class="text-gray-700 text-lg mb-4">
-                            Here's a quick overview of your account activities.
+                            {{ __('dashboard_translate.overview_text') }}
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-center">
                             <div class="bg-gradient-to-br from-primary-green-light to-primary-green p-4 rounded-lg shadow-md text-white flex flex-col items-center justify-center">
                                 <i class="fa-solid fa-box-open text-4xl mb-2"></i>
-                                <p class="text-sm font-light">Total Orders</p>
+                                <p class="text-sm font-light">{{ __('dashboard_translate.total_orders') }}</p>
                                 <p class="text-3xl font-bold">{{ $totalOrders }}</p>
                             </div>
                             <div class="bg-gradient-to-br from-purple-400 to-purple-600 p-4 rounded-lg shadow-md text-white flex flex-col items-center justify-center">
                                 <i class="fa-solid fa-heart text-4xl mb-2"></i>
-                                <p class="text-sm font-light">Wishlist Items</p>
+                                <p class="text-sm font-light">{{ __('dashboard_translate.wishlist_items') }}</p>
                                 <p class="text-3xl font-bold">{{ $wishlistCount }}</p>
                             </div>
                             <div class="bg-gradient-to-br from-blue-400 to-blue-600 p-4 rounded-lg shadow-md text-white flex flex-col items-center justify-center">
                                 <i class="fa-solid fa-circle-check text-4xl mb-2"></i>
-                                <p class="text-sm font-light">Account Status</p>
+                                <p class="text-sm font-light">{{ __('dashboard_translate.account_status') }}</p>
                                 <p class="text-xl font-bold">{{ ucfirst($user->status ?? 'unverified') }}</p>
                             </div>
                         </div>
@@ -93,24 +93,24 @@
                         <div class="flex items-center">
                             <div class="py-1"><i class="fa-solid fa-circle-info text-2xl mr-3"></i></div>
                             <div>
-                                <p class="font-bold">Refund Policy Information</p>
-                                <p class="text-sm">Familiarize yourself with our <a href="{{ route('refund-policy') }}" class="font-semibold underline hover:text-blue-800">Refund Policy</a> to understand return procedures and conditions.</p>
-                            </div>
+                                <p class="font-bold">{{ __('dashboard_translate.refund_policy') }}</p>
+                                <p class="text-sm">{{ __('dashboard_translate.refund_policy_info') }} <a href="{{ route('refund-policy') }}" class="font-semibold underline hover:text-blue-800">{{ __('dashboard_translate.refund_policy_link') }}</a> {{ __('dashboard_translate.to_understand_procedures') }}</p>
+                            </div>  
                         </div>
                     </div>
 
                     {{-- Део "Последња наруџбина" --}}
                     <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h2 class="text-2xl font-semibold text-dark-gray mb-4">Last Order</h2>
+                        <h2 class="text-2xl font-semibold text-dark-gray mb-4">{{ __('dashboard_translate.last_order') }}</h2>
                         @if ($lastOrder)
                             <div class="border border-gray-200 rounded-lg p-4 bg-light-gray">
                                 <div class="flex flex-wrap justify-between items-center mb-2 gap-y-2">
-                                    <span class="text-gray-700 font-medium">Order ID: <span class="text-dark-gray">#{{ $lastOrder->id }}</span></span>
-                                    <span class="text-gray-700 font-medium">Date: <span class="text-dark-gray">{{ $lastOrder->created_at->format('Y-m-d') }}</span></span>
-                                    <span class="text-gray-700 font-medium">Total: <span class="text-primary-green font-bold">{{ number_format($lastOrder->total, 2) }} USD</span></span>
+                                    <span class="text-gray-700 font-medium">{{ __('dashboard_translate.order_id') }} <span class="text-dark-gray">#{{ $lastOrder->id }}</span></span>
+                                    <span class="text-gray-700 font-medium">{{ __('dashboard_translate.date') }} <span class="text-dark-gray">{{ $lastOrder->created_at->format('Y-m-d') }}</span></span>
+                                    <span class="text-gray-700 font-medium">{{ __('dashboard_translate.total') }} <span class="text-primary-green font-bold">{{ number_format($lastOrder->total, 2) }} USD</span></span>
                                 </div>
                                 <div class="flex flex-wrap justify-between items-center mb-4 gap-y-2">
-                                    <span class="text-gray-700 font-medium">Order Status:
+                                    <span class="text-gray-700 font-medium">{{ __('dashboard_translate.order_status') }}
                                         @php
                                             $orderStatusClass = '';
                                             switch ($lastOrder->status) {
@@ -125,7 +125,7 @@
                                             {{ ucfirst($lastOrder->status) }}
                                         </span>
                                     </span>
-                                    <span class="text-gray-700 font-medium">Refund Status:
+                                    <span class="text-gray-700 font-medium">{{ __('dashboard_translate.refund_status') }}
                                         @php
                                             $refundStatusClass = '';
                                             switch ($lastOrder->refund_status) {
@@ -144,16 +144,16 @@
                                 </div>
                                 <div class="text-center">
                                     <a href="{{ route('dashboard.orders') }}" class="inline-block bg-primary-green text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
-                                        View Order Details
+                                        {{ __('dashboard_translate.view_order_details') }}
                                     </a>
                                 </div>
                             </div>
                         @else
                             <div class="text-center py-6 text-gray-600">
                                 <i class="fa-solid fa-box-open text-5xl mb-4 text-gray-400"></i>
-                                <p class="text-lg mb-4">You haven't placed any orders yet.</p>
+                                <p class="text-lg mb-4">{{ __('dashboard_translate.no_orders_yet') }}</p>
                                 <a href="{{ route('products.index') }}" class="inline-block bg-primary-green text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300">
-                                    Start Shopping
+                                    {{ __('dashboard_translate.start_shopping') }}
                                 </a>
                             </div>
                         @endif
@@ -161,19 +161,19 @@
 
                     {{-- Брзе акције / Дугмад за навигацију --}}
                     <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h2 class="text-2xl font-semibold text-dark-gray mb-4">Quick Actions</h2>
+                        <h2 class="text-2xl font-semibold text-dark-gray mb-4">{{ __('dashboard_translate.quick_actions') }}</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             <a href="{{ route('dashboard.orders') }}" class="flex flex-col items-center justify-center p-6 bg-light-gray rounded-lg shadow-inner hover:bg-gray-200 transition duration-300 transform hover:scale-105 text-dark-gray font-semibold">
                                 <i class="fa-solid fa-list-check text-4xl mb-3 text-primary-green"></i>
-                                My Orders
+                                {{ __('dashboard_translate.my_orders') }}
                             </a>
                             <a href="{{ route('dashboard.wishlist') }}" class="flex flex-col items-center justify-center p-6 bg-light-gray rounded-lg shadow-inner hover:bg-gray-200 transition duration-300 transform hover:scale-105 text-dark-gray font-semibold">
                                 <i class="fa-solid fa-heart text-4xl mb-3 text-red-500"></i>
-                                My Wishlist
+                                {{ __('dashboard_translate.my_wishlist') }}
                             </a>
                             <a href="{{ route('dashboard.profile') }}" class="flex flex-col items-center justify-center p-6 bg-light-gray rounded-lg shadow-inner hover:bg-gray-200 transition duration-300 transform hover:scale-105 text-dark-gray font-semibold">
                                 <i class="fa-solid fa-user-gear text-4xl mb-3 text-blue-500"></i>
-                                Edit Profile
+                                {{ __('dashboard_translate.edit_profile') }}
                             </a>
                         </div>
                     </div>
@@ -182,13 +182,13 @@
                 {{-- Садржај за "My Orders" --}}
                 @if (request()->routeIs('dashboard.orders'))
                     <div class="bg-white p-6 rounded-xl shadow-md">
-                        <h2 class="text-3xl font-semibold text-dark-gray mb-6">My Orders</h2>
+                        <h2 class="text-3xl font-semibold text-dark-gray mb-6">{{ __('dashboard_translate.my_orders') }}</h2>
                         @if ($orders->isEmpty())
                             <div class="text-center py-10">
                                 <i class="fa-solid fa-box-open text-gray-400 text-6xl mb-4"></i>
-                                <p class="text-xl text-gray-600 mb-4">You haven't placed any orders yet.</p>
+                                <p class="text-xl text-gray-600 mb-4">{{ __('dashboard_translate.no_order_yet') }}</p>
                                 <a href="{{ route('products.index') }}" class="inline-block bg-primary-green text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300">
-                                    Start Shopping
+                                    {{ __('dashboard_translate.start_shipping') }}
                                 </a>
                             </div>
                         @else
@@ -196,12 +196,12 @@
                                 <table class="min-w-full bg-white rounded-lg overflow-hidden">
                                     <thead class="bg-light-gray border-b border-gray-200">
                                         <tr>
-                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Order ID</th>
-                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
-                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Total</th>
-                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Order Status</th>
-                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Refund Status</th>
-                                            <th class="px-6 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">{{ __('dashboard_translate.order_id') }}</th>
+                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">{{ __('dashboard_translate.date') }}</th>
+                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">{{ __('dashboard_translate.total') }}</th>
+                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">{{ __('dashboard_translate.order_status') }}</th>
+                                            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">{{ __('dashboard_translate.refund_status') }}</th>
+                                            <th class="px-6 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">{{ __('dashboard_translate.actions') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200">
@@ -209,7 +209,7 @@
                                             <tr class="hover:bg-gray-50 transition duration-150">
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-dark-gray">#{{ $order->id }}</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{{ $order->created_at->format('Y-m-d') }}</td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-green font-semibold">{{ number_format($order->total, 2) }} RSD</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-green font-semibold">{{ number_format($order->total, 2) }} USD</td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm">
                                                     @php
                                                         $orderStatusClass = '';
@@ -242,9 +242,9 @@
                                                     </span>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-center">
-                                                    <a href="#" class="text-primary-green hover:text-primary-green-dark mr-4">View Details</a>
+                                                    <a href="#" class="text-primary-green hover:text-primary-green-dark mr-4">{{ __('dashboard_translate.view_details') }}</a>
                                                     @if ($order->status == 'delivered' && !$order->refund_status)
-                                                        <button class="text-blue-500 hover:text-blue-700 ml-2">Request Refund</button>
+                                                        <button class="text-blue-500 hover:text-blue-700 ml-2">{{ __('dashboard_translate.request_refund') }}</button>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -259,7 +259,7 @@
                 {{-- Садржај за "My Wishlist" --}}
                 @if (request()->routeIs('dashboard.wishlist'))
                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-md">
-                        <h2 class="text-3xl font-semibold text-dark-gray mb-6">My Wishlist</h2>
+                        <h2 class="text-3xl font-semibold text-dark-gray mb-6">{{ __('my_wishlist.my_wishlist') }}</h2>
                         @if ($wishlistItems->isEmpty())
                             <div class="text-center py-10">
                                 <i class="fa-solid fa-heart text-gray-400 text-6xl mb-4"></i>

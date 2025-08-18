@@ -14,37 +14,37 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\SelectFilter; // Додато за филтере
+use Filament\Tables\Filters\SelectFilter;
 
 class OrderResource extends Resource
 {
     protected static ?string $model = Order::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag'; // Икона за навигацију у Filament панелу
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
-    protected static ?string $navigationGroup = 'Shop Management'; // Груписање у навигацији
+    protected static ?string $navigationGroup = 'Shop Management';
     
-    protected static ?int $navigationSort = 1; // Редослед приказа у навигацији
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                // Поља за преглед/уређивање поједине поруџбине
-                Forms\Components\Select::make('user_id') // Повезивање са корисником
-                    ->relationship('user', 'name') // 'user' је име релације, 'name' је поље за приказ
+                Forms\Components\Select::make('user_id')
+                    ->relationship('user', 'name')
                     ->searchable()
                     ->preload()
                     ->required()
                     ->label('Customer Name'),
                 Forms\Components\TextInput::make('total_amount')
                     ->numeric()
-                    ->prefix('$') // Приказ валуте
-                    ->readOnly() // Износ се израчунава, не мења ручно
+                    ->prefix('$')
+                    ->readOnly()
                     ->label('Total Amount'),
                 Forms\Components\Select::make('status')
                     ->options([
                         'pending' => 'Pending',
+                        'processing' => 'Processing',
                         'processed' => 'Processed',
                         'shipped' => 'Shipped',
                         'delivered' => 'Delivered',
@@ -55,7 +55,7 @@ class OrderResource extends Resource
                 Forms\Components\Select::make('payment_status')
                     ->options([
                         'pending' => 'Pending',
-                        'completed' => 'Commpleted',
+                        'completed' => 'Completed',
                         'failed' => 'Failed',
                         'refunded' => 'Refunded',
                     ])
@@ -86,67 +86,113 @@ class OrderResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->recordUrl(fn (Order $record): string => route('filament.admin.resources.orders.edit', $record))
             ->columns([
-                TextColumn::make('id')->label('ID поруџбине')->searchable()->sortable(),
-                TextColumn::make('user.name')->label('Име купца')->searchable()->sortable(), // Приказ имена корисника
-                TextColumn::make('total_amount')->money('USD')->label('Укупан износ')->sortable(),
+                TextColumn::make('id')
+                    ->label('ID')
+                    ->searchable()
+                    ->sortable()
+                    ->extraAttributes([
+                        'class' => 'font-bold text-gray-800 dark:text-gray-200'
+                    ]),
+                TextColumn::make('user.name')
+                    ->label('Customer Name')
+                    ->searchable()
+                    ->sortable()
+                    ->extraAttributes([
+                        'class' => 'text-gray-700 dark:text-gray-400'
+                    ]),
+                TextColumn::make('total_amount')
+                    ->label('Total Amount')
+                    ->money('USD')
+                    ->sortable()
+                    ->extraAttributes([
+                        'class' => 'text-gray-700 dark:text-gray-400'
+                    ]),
                 TextColumn::make('status')
-                    ->badge() // Приказује се као "баџ" (етикета)
-                    ->color(fn (string $state): string => match ($state) {
-                        'pending' => 'gray',
-                        'processed' => 'info',
-                        'shipped' => 'warning',
-                        'delivered' => 'success',
-                        'cancelled' => 'danger',
-                    })
-                    ->label('Статус поруџбине')->sortable(),
-                TextColumn::make('payment_status')
+                    ->label('Status')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn (?string $state): string => match ($state) {
+                        'pending' => 'warning',     // žuta
+                        'processing' => 'info',     // plava
+                        'processed' => 'info',      // takođe plava
+                        'shipped' => 'warning',     // narandžasta/žuta
+                        'delivered' => 'success',   // zelena
+                        'cancelled' => 'danger',    // crvena
+                        default => 'gray',
+                    })
+                    ->sortable(),
+                TextColumn::make('payment_status')
+                    ->label('Payment Status')
+                    ->badge()
+                    ->color(fn (?string $state): string => match ($state) {
                         'pending' => 'gray',
                         'completed' => 'success',
                         'failed' => 'danger',
                         'refunded' => 'info',
+                        default => 'gray',
                     })
-                    ->label('Статус плаћања')->sortable(),
-                TextColumn::make('payment_method')->label('Начин плаћања')->sortable(),
-                TextColumn::make('transaction_id')->label('ID трансакције')->searchable(),
-                TextColumn::make('created_at')->dateTime()->label('Датум поруџбине')->sortable(),
+                    ->sortable(),
+                TextColumn::make('payment_method')
+                    ->label('Payment Method')
+                    ->badge()
+                    ->color(fn (?string $state): string => match ($state) {
+                        'stripe' => 'success',
+                        'paypal' => 'info',
+                        'cash_on_delivery' => 'warning',
+                        default => 'gray',
+                    })
+                    ->sortable(),
+                TextColumn::make('transaction_id')
+                    ->label('Transaction ID')
+                    ->searchable()
+                    ->extraAttributes([
+                        'class' => 'text-gray-700 dark:text-gray-400'
+                    ]),
+                TextColumn::make('created_at')
+                    ->label('Order Date')
+                    ->dateTime()
+                    ->sortable()
+                    ->extraAttributes([
+                        'class' => 'text-gray-700 dark:text-gray-400'
+                    ]),
             ])
             ->filters([
                 SelectFilter::make('status')
                     ->options([
-                        'pending' => 'На чекању',
-                        'processed' => 'Обрађено',
-                        'shipped' => 'Послато',
-                        'delivered' => 'Испоручено',
-                        'cancelled' => 'Отказaно',
+                        'pending' => 'Pending',
+                        'processing' => 'Processing',
+                        'processed' => 'Processed',
+                        'shipped' => 'Shipped',
+                        'delivered' => 'Delivered',
+                        'cancelled' => 'Canceled',
                     ])
-                    ->label('Филтрирај по статусу'),
+                    ->label('Filter by Status'),
                 SelectFilter::make('payment_status')
                     ->options([
-                        'pending' => 'На чекању',
-                        'completed' => 'Завршено',
-                        'failed' => 'Неуспело',
-                        'refunded' => 'Повраћај средстава',
+                        'pending' => 'Pending',
+                        'completed' => 'Completed',
+                        'failed' => 'Failed',
+                        'refunded' => 'Refunded',
                     ])
-                    ->label('Филтрирај по статусу плаћања'),
+                    ->label('Filter by Payment Status'),
                 SelectFilter::make('payment_method')
                     ->options([
                         'paypal' => 'PayPal',
                         'stripe' => 'Stripe',
-                        'cash_on_delivery' => 'Плаћање поузећем', // Ако имате и ову опцију
+                        'cash_on_delivery' => 'Cash on Delivery',
                     ])
-                    ->label('Филтрирај по начину плаћања'),
+                    ->label('Filter by Payment Method'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(), // Дугме за уређивање појединачне поруџбине
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(), // Опција за масовно брисање
+                    Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->striped();
     }
 
     public static function getRelations(): array

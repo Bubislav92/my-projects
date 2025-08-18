@@ -18,13 +18,13 @@
     <x-header />
 
     <main class="container mx-auto px-4 py-8 md:py-12">
-        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">About Us</h1> {{-- О нама --}}
+        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('about_us.about_us') }}</h1> {{-- О нама --}}
 
         <div class="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
             {{-- Уводни део --}}
             <section class="mb-10 text-center">
                 <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                    Welcome to Vesna's Web Store, where passion for quality and dedication to customers converge into a unique shopping experience. Our story begins with the desire to bring you carefully selected products that will enrich your daily life.
+                    {{ __('about_us.welcome_message') }}
                 </p>
                 {{-- Додата слика "our-team.jpg" --}}
                 <img src="{{ asset('images/about/our-team.jpg') }}" alt="Our Team at Vesna's Web Store" class="w-full h-80 object-cover rounded-lg shadow-md mb-6 mx-auto">
@@ -32,15 +32,13 @@
 
             {{-- Наша прича / Мисија --}}
             <section class="mb-10">
-                <h2 class="text-3xl font-semibold text-dark-gray mb-6 text-center">Our Story & Mission</h2> {{-- Наша прича и Мисија --}}
+                <h2 class="text-3xl font-semibold text-dark-gray mb-6 text-center">{{ __('about_us.story_mission_heading') }}</h2> {{-- Наша прича и Мисија --}}
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            Vesna's Web Store was founded on the idea that online shopping should be more than just a transaction. We wanted to create a platform where every product has a story and where quality is unquestionable. We started with a small dream in <span class="font-semibold text-primary-green">2023</span>, and today we are proud of the community of customers who trust us.
+                            {{ __('about_us.story_mission_text') }}
                         </p>
-                        <p class="text-gray-700 leading-relaxed">
-                            Our mission is simple: to provide you with outstanding products and impeccable service that exceeds expectations. We believe every customer deserves the best, which is why we invest time and effort in selecting an assortment that will delight you.
-                        </p>
+                        
                     </div>
                     <div>
                         {{-- Додата слика "about-store.jpg" --}}
@@ -51,34 +49,34 @@
 
             {{-- Шта нас издваја? (Вредности) --}}
             <section class="mb-10">
-                <h2 class="text-3xl font-semibold text-dark-gray mb-6 text-center">What Sets Us Apart?</h2> {{-- Шта нас издваја? --}}
+                <h2 class="text-3xl font-semibold text-dark-gray mb-6 text-center">{{ __('about_us.what_sets_apart') }}</h2> {{-- Шта нас издваја? --}}
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <div class="bg-light-gray p-6 rounded-lg shadow-sm">
                         <i class="fa-solid fa-star text-primary-green text-3xl mb-3"></i>
-                        <h3 class="text-xl font-semibold text-dark-gray mb-2">Unmatched Quality</h3> {{-- Неприкосновен Квалитет --}}
-                        <p class="text-gray-700 text-sm">Every product in our offer is carefully selected and tested to guarantee superior quality.</p>
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2">{{ __('about_us.unmatched_quality') }}</h3> {{-- Неприкосновен Квалитет --}}
+                        <p class="text-gray-700 text-sm">{{ __('about_us.unmatched_quality_text') }}</p>
                     </div>
                     <div class="bg-light-gray p-6 rounded-lg shadow-sm">
                         <i class="fa-solid fa-headset text-primary-green text-3xl mb-3"></i>
-                        <h3 class="text-xl font-semibold text-dark-gray mb-2">Dedicated Support</h3> {{-- Посвећена Подршка --}}
-                        <p class="text-gray-700 text-sm">Our team is always here to provide you with fast and efficient support, from your first purchase to after-sales care.</p>
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2">{{ __('about_us.dedicated_support') }}</h3> {{-- Посвећена Подршка --}}
+                        <p class="text-gray-700 text-sm">{{ __('about_us.dedicated_support_text') }}</p>
                     </div>
                     <div class="bg-light-gray p-6 rounded-lg shadow-sm">
                         <i class="fa-solid fa-recycle text-primary-green text-3xl mb-3"></i>
-                        <h3 class="text-xl font-semibold text-dark-gray mb-2">Sustainable Choices</h3> {{-- Одрживи Избори --}}
-                        <p class="text-gray-700 text-sm">We strive to offer products that are ethically produced and environmentally friendly.</p>
+                        <h3 class="text-xl font-semibold text-dark-gray mb-2">{{ __('about_us.sustainable_choices') }}</h3> {{-- Одрживи Избори --}}
+                        <p class="text-gray-700 text-sm">{{ __('about_us.sustainable_choices_text') }}</p>
                     </div>
                 </div>
             </section>
 
             {{-- Позив на Акцију --}}
             <section class="text-center">
-                <h2 class="text-3xl font-semibold text-dark-gray mb-6">Join Our Community</h2> {{-- Придружите се нашој заједници --}}
+                <h2 class="text-3xl font-semibold text-dark-gray mb-6">{{ __('about_us.join_community') }}</h2> {{-- Придружите се нашој заједници --}}
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Thank you for being a part of our story. We invite you to explore our wide selection and find something perfect for yourself!
+                    {{ __('about_us.join_community_text') }}
                 </p>
                 <a href="{{ route('products.index') }}" class="bg-primary-green text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-primary-green-dark transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 text-lg">
-                    Discover Our Products
+                    {{ __('about_us.discover_products') }}
                 </a>
             </section>
         </div>

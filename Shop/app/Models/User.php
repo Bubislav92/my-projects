@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne; // Potrebno za tipovanje rela
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use App\Models\ProductReview;
 
 
 class User extends Authenticatable implements FilamentUser
@@ -89,6 +90,11 @@ class User extends Authenticatable implements FilamentUser
     public function wishlistItems(): HasMany
     {
         return $this->hasMany(WishList::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(ProductReview::class);
     }
 
     /*

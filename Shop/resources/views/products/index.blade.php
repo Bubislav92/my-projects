@@ -19,19 +19,19 @@
     <x-header />
 
     <main class="container mx-auto px-4 py-8 md:py-12">
-        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">All Products</h1>
+        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('products.all_products') }}</h1>
 
         <div class="flex flex-col md:flex-row gap-8">
             {{-- Филтери - Лева бочна трака --}}
             <aside class="md:w-1/4 bg-white p-6 rounded-xl shadow-md">
-                <h2 class="text-xl font-semibold text-dark-gray mb-4">Filters</h2>
+                <h2 class="text-xl font-semibold text-dark-gray mb-4">{{ __('filter.filters') }}</h2>
 
                 {{-- Glavna forma za sve filtere --}}
                 <form method="GET" action="{{ route('products.index') }}">
 
                 {{-- Филтер по категоријама --}}
                 <div class="mb-6">
-                    <h3 class="text-lg font-medium text-dark-gray mb-3">Categories</h3>
+                    <h3 class="text-lg font-medium text-dark-gray mb-3">{{ __('filter.categories') }}</h3>
                     <div class="relative">
                         <div id="custom-category-select" class="relative">
                             {{-- Dugme/Prikaz trenutno odabrane opcije --}}
@@ -77,7 +77,7 @@
                                             transition duration-150 ease-in-out
                                             {{ !request()->filled('category_slug') ? 'bg-primary-green text-white font-semibold' : '' }}"
                                     data-value="" data-route="{{ route('products.index', request()->except('category_slug', 'page')) }}">
-                                    All Categories
+                                    {{ __('filter.all_categories') }}
                                 </div>
 
                                 {{-- Dinamički učitane kategorije --}}
@@ -97,6 +97,8 @@
                 </div>
 
                 <script>
+                    const allCategoriesText = "{{ __('filter.all_categories') }}";
+
                 document.addEventListener('DOMContentLoaded', function() {
                     const customSelect = document.getElementById('custom-category-select');
                     const selectButton = customSelect.querySelector('button');
@@ -133,7 +135,7 @@
                     // Prikazivanje trenutno odabrane opcije na dugmetu
                     const initialSelectedValue = selectButton.dataset.currentSelection;
                     if (initialSelectedValue === '') {
-                        currentSelectionSpan.textContent = 'All Categories';
+                        currentSelectionSpan.textContent = allCategoriesText;
                     } else {
                         const initialSelectedOption = optionsContainer.querySelector(`div[data-value="${initialSelectedValue}"]`);
                         if (initialSelectedOption) {
@@ -145,7 +147,7 @@
 
                 {{-- Филтер: Бренд/Произвођач --}}
                 <div class="mb-6">
-                    <h3 class="text-lg font-medium text-dark-gray mb-3">Brand</h3>
+                    <h3 class="text-lg font-medium text-dark-gray mb-3">{{ __('filter.all_brands') }}</h3>
                     <div class="relative">
                         <div id="custom-brand-select" class="relative">
                             {{-- Dugme/Prikaz trenutno odabrane opcije --}}
@@ -163,7 +165,7 @@
                                 <span id="brand-label" class="truncate">
                                     {{-- Prikaz izabranog brenda ili "All Brands" --}}
                                     @php
-                                        $selectedBrandName = 'All Brands';
+                                        $selectedBrandName = __('filter.all_brands');
                                         if (request()->filled('brand')) {
                                             $selectedBrandName = request('brand');
                                         }
@@ -186,7 +188,7 @@
                                             transition duration-150 ease-in-out
                                             {{ !request()->filled('brand') ? 'bg-primary-green text-white font-semibold' : '' }}"
                                     data-value="" data-route="{{ route('products.index', request()->except('brand', 'page')) }}">
-                                    All Brands
+                                    {{ __('filter.all_brands') }}
                                 </div>
 
                                 {{-- Dinamički učitani brendovi --}}
@@ -206,6 +208,8 @@
                 </div>
 
                 <script>
+                    const allBrandsText = "{{ __('filter.all_brands') }}";
+
                 document.addEventListener('DOMContentLoaded', function() {
                     // JavaScript za Brand filter
                     const customBrandSelect = document.getElementById('custom-brand-select');
@@ -243,7 +247,7 @@
                     // Prikazivanje trenutno odabrane opcije na dugmetu
                     const initialSelectedBrandValue = brandSelectButton.dataset.currentSelection;
                     if (initialSelectedBrandValue === '') {
-                        brandCurrentSelectionSpan.textContent = 'All Brands';
+                        brandCurrentSelectionSpan.textContent = allBrandsText;
                     } else {
                         const initialSelectedBrandOption = brandOptionsContainer.querySelector(`div[data-value="${initialSelectedBrandValue}"]`);
                         if (initialSelectedBrandOption) {
@@ -255,7 +259,7 @@
 
                     {{-- Филтер: Боја --}}
                     <div class="mb-6">
-                        <h3 class="text-lg font-medium text-dark-gray mb-3">Color</h3>
+                        <h3 class="text-lg font-medium text-dark-gray mb-3">{{ __('filter.color') }}</h3>
                         {{-- Izmenjena klasa sa "grid-cols-3" na "grid-cols-2" --}}
                         <div class="grid grid-cols-2 gap-2">
                             @php
@@ -287,7 +291,7 @@
 
                     {{-- Филтер: Оцена (Rating) --}}
                     <div class="mb-6">
-                        <h3 class="text-lg font-medium text-dark-gray mb-3">Average Customer Review</h3>
+                        <h3 class="text-lg font-medium text-dark-gray mb-3">{{ __('filter.customer_review') }}</h3>
                         {{-- Forma za filter ocenjivanja --}}
                         <form method="GET" action="{{ route('products.index') }}" id="ratingFilterForm">
                             {{-- Prosleđujemo sve ostale trenutne filtere da se ne izgube --}}
@@ -311,7 +315,7 @@
                                         class="form-radio h-4 w-4 text-primary-green border-gray-300 focus:ring-primary-green"
                                         onchange="this.form.submit()"
                                         {{ !request()->filled('rating') ? 'checked' : '' }}>
-                                    <span class="ml-2 text-sm font-medium">Any Rating</span>
+                                    <span class="ml-2 text-sm font-medium">{{ __('filter.any_rating') }}</span>
                                 </label>
 
                                 @php $ratings = [5, 4, 3, 2, 1]; @endphp {{-- Оцене од 5 до 1 --}}
@@ -339,7 +343,7 @@
 
                     {{-- Филтер по распону цене --}}
                     <div class="mb-6">
-                        <h3 class="text-lg font-medium text-dark-gray mb-3">Price Range</h3>
+                        <h3 class="text-lg font-medium text-dark-gray mb-3">{{ __('filter.price_range') }}</h3>
                         {{-- Promenjen input type na "number" umesto "range" za precizniji unos, ili koristite JavaScript za range slider --}}
                         {{-- Ako želite slider, potrebno je malo JS-a ili samo za prikaz vrednosti. Za sada idemo na osnovni input. --}}
                         <div class="flex gap-2 mb-2">
@@ -355,32 +359,32 @@
 
                     {{-- Филтер: Доступност --}}
                     <div class="mb-6">
-                        <h3 class="text-lg font-medium text-dark-gray mb-3">Availability</h3>
+                        <h3 class="text-lg font-medium text-dark-gray mb-3">{{ __('filter.availability') }}</h3>
                         <div class="flex flex-col space-y-2">
                             <label class="inline-flex items-center">
                                 <input type="checkbox" id="in_stock" name="availability[]" value="in_stock"
                                        class="form-checkbox text-primary-green rounded focus:ring-primary-green"
                                        {{ in_array('in_stock', (array)request('availability', [])) ? 'checked' : '' }}>
-                                <span class="ml-2 text-gray-700">In Stock</span>
+                                <span class="ml-2 text-gray-700">{{ __('filter.in_stock') }}</span>
                             </label>
                             <label class="inline-flex items-center">
                                 <input type="checkbox" id="on_sale" name="availability[]" value="on_sale"
                                        class="form-checkbox text-primary-green rounded focus:ring-primary-green"
                                        {{ in_array('on_sale', (array)request('availability', [])) ? 'checked' : '' }}>
-                                <span class="ml-2 text-gray-700">On Sale</span>
+                                <span class="ml-2 text-gray-700">{{ __('filter.on_sale') }}</span>
                             </label>
                         </div>
                     </div>
 
                     {{-- Дугме за примену филтера --}}
                     <button type="submit" class="w-full bg-primary-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50">
-                        Apply Filters
+                        {{ __('filter.apply_filters') }}
                     </button>
 
                     {{-- Дугме за ресетовање филтера (приказује се ако постоји барем један активни филтер) --}}
                     @if(count(request()->except(['page', '_token'])) > 0)
                         <a href="{{ route('products.index') }}" class="w-full block text-center mt-3 bg-gray-200 text-dark-gray font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-300 transition duration-300 ease-in-out">
-                            Clear Filters
+                            {{ __('filter.clear_filters') }}
                         </a>
                     @endif
                 </form>
@@ -404,12 +408,12 @@
                             @endforeach
 
                             <select name="sort_by" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded-md shadow-sm leading-tight focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-200 text-dark-gray" onchange="this.form.submit()">
-                                <option value="created_at" {{ request('sort_by', 'created_at') == 'created_at' && request('sort_order', 'desc') == 'desc' ? 'selected' : '' }}>Sort by: Newest</option>
-                                <option value="price_asc" {{ request('sort_by') == 'price' && request('sort_order') == 'asc' ? 'selected' : '' }}>Sort by: Price, low to high</option>
-                                <option value="price_desc" {{ request('sort_by') == 'price' && request('sort_order') == 'desc' ? 'selected' : '' }}>Sort by: Price, high to low</option>
-                                <option value="name_asc" {{ request('sort_by') == 'name' && request('sort_order') == 'asc' ? 'selected' : '' }}>Sort by: Name (A-Z)</option>
-                                <option value="name_desc" {{ request('sort_by') == 'name' && request('sort_order') == 'desc' ? 'selected' : '' }}>Sort by: Name (Z-A)</option>
-                                <option value="average_rating_desc" {{ request('sort_by') == 'average_rating' && request('sort_order') == 'desc' ? 'selected' : '' }}>Sort by: Top Rated</option>
+                                <option value="created_at" {{ request('sort_by', 'created_at') == 'created_at' && request('sort_order', 'desc') == 'desc' ? 'selected' : '' }}>{{ __('filter.sort_by_newest') }}</option>
+                                <option value="price_asc" {{ request('sort_by') == 'price' && request('sort_order') == 'asc' ? 'selected' : '' }}>{{ __('filter.sort_by_price_asc') }}</option>
+                                <option value="price_desc" {{ request('sort_by') == 'price' && request('sort_order') == 'desc' ? 'selected' : '' }}>{{ __('filter.sort_by_price_desc') }}</option>
+                                <option value="name_asc" {{ request('sort_by') == 'name' && request('sort_order') == 'asc' ? 'selected' : '' }}>{{ __('filter.sort_by_name_asc') }}</option>
+                                <option value="name_desc" {{ request('sort_by') == 'name' && request('sort_order') == 'desc' ? 'selected' : '' }}>{{ __('filter.sort_by_name_desc') }}</option>
+                                <option value="average_rating_desc" {{ request('sort_by') == 'average_rating' && request('sort_order') == 'desc' ? 'selected' : '' }}>{{ __('filter.sort_by_top_rated') }}</option>
                             </select>
                             {{-- Skrivena polja za sort_by i sort_order će se automatski postaviti JS-om iz value atributa selekta --}}
                             <input type="hidden" name="sort_order" value="{{ request('sort_order', 'desc') }}">
@@ -428,9 +432,9 @@
                 @if($products->isEmpty())
                     <div class="text-center py-10 bg-white rounded-xl shadow-md">
                         <i class="fa-solid fa-box-open text-gray-400 text-6xl mb-4"></i>
-                        <p class="text-xl text-gray-600 mb-4">No products found matching your criteria. Please adjust your filters!</p>
+                        <p class="text-xl text-gray-600 mb-4">{{ __('products.no_products_found') }}</p>
                         <a href="{{ route('products.index') }}" class="inline-block bg-primary-green text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300 mt-4">
-                            Clear Filters
+                            {{ __('filter.clear_filters') }}
                         </a>
                     </div>
                 @else
@@ -469,24 +473,23 @@
                                         </p>
                                     </div>
                                     <div class="flex items-center gap-2 mt-4">
-                                    <form action="{{ route('cart.store') }}" method="POST" class="w-full"> {{-- Promena rute i širina forme --}}
-                                        @csrf
-                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <input type="hidden" name="quantity" value="1"> {{-- Trenutno fiksna količina --}}
-                                
-                                        <button type="submit" class="flex-grow bg-primary-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300 ease-in-out transform hover:scale-105 text-sm">
-                                            <i class="fa-solid fa-cart-plus mr-1"></i> Add to Cart
-                                        </button>
-                                    </form>
-                                    <form action="{{ route('wishlist.store') }}" method="POST"> {{-- Nema potrebe za class="w-full" ako ne treba da zauzme punu širinu --}}
-                                        @csrf
-                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        {{-- Ako ti je potrebna količina za listu želja, dodaj: <input type="hidden" name="quantity" value="1"> --}}
-                            
-                                        <button type="submit" class="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 ease-in-out transform hover:scale-105 text-sm whitespace-nowrap">
-                                            <i class="fa-solid fa-heart mr-1"></i> Add to Wishlist
-                                        </button>
-                                    </form>
+                                        <form action="{{ route('cart.store') }}" method="POST" class="w-1/2">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                            <input type="hidden" name="quantity" value="1">
+                                        
+                                            <button type="submit" class="w-full bg-primary-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300 ease-in-out transform hover:scale-105 text-sm">
+                                                <i class="fa-solid fa-cart-plus mr-1"></i> {{ __('product_card.add_to_cart') }}
+                                            </button>
+                                        </form>
+                                        <form action="{{ route('wishlist.store') }}" method="POST" class="w-1/2">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    
+                                            <button type="submit" class="w-full bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 ease-in-out transform hover:scale-105 text-sm">
+                                                <i class="fa-solid fa-heart mr-1"></i> {{ __('product_card.add_to_wishlist') }}
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -510,7 +513,7 @@
     {{-- Modal za potvrdu dodavanja u korpu (skriven po defaultu) --}}
     <div id="addToCartModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 hidden">
         <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full relative">
-            <h3 class="text-xl font-semibold text-dark-gray mb-4">Product has added to the Cart!</h3>
+            <h3 class="text-xl font-semibold text-dark-gray mb-4">{{ __('cart_modal.product_added') }}</h3>
 
             <div id="modalProductDetails" class="flex items-center mb-4">
                 {{-- Detalji proizvoda će biti popunjeni JS-om --}}
@@ -519,11 +522,11 @@
             <div class="flex flex-col sm:flex-row justify-end gap-3">
                 <a href="{{ route('components.cart') }}" class="bg-primary-green text-white px-5 py-2 rounded-md font-medium text-center
                                                       hover:bg-primary-green-dark transition duration-200">
-                    Go to Cart
+                    {{ __('cart_modal.go_to_cart') }}
                 </a>
                 <button id="continueShoppingBtn" class="bg-gray-200 text-dark-gray px-5 py-2 rounded-md font-medium
                                               hover:bg-gray-300 transition duration-200">
-                    Continue Shopping
+                    {{ __('cart_modal.continue_shopping') }}
                 </button>
             </div>
 
@@ -538,7 +541,7 @@
 
     <div id="addToWishlistModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 hidden">
         <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full relative">
-            <h3 class="text-xl font-semibold text-dark-gray mb-4">Product added to Wishlist!</h3>
+            <h3 class="text-xl font-semibold text-dark-gray mb-4">{{ __('wishlist_modal.product_added') }}</h3>
     
             <div id="wishlistModalProductDetails" class="flex items-center mb-4">
                 {{-- Detalji proizvoda će biti popunjeni JS-om --}}
@@ -547,11 +550,11 @@
             <div class="flex flex-col sm:flex-row justify-end gap-3">
                 <a href="{{ route('components.wishlist') }}" class="bg-primary-green text-white px-5 py-2 rounded-md font-medium text-center
                                                           hover:bg-primary-green-dark transition duration-200">
-                    Go to Wishlist
+                    {{ __('wishlist_modal.go_to_wishlist') }}
                 </a>
                 <button id="continueShoppingWishlistBtn" class="bg-gray-200 text-dark-gray px-5 py-2 rounded-md font-medium
                                                   hover:bg-gray-300 transition duration-200">
-                    Continue Shopping
+                    {{ __('wishlist_modal.continue_shopping') }}
                 </button>
             </div>
     

@@ -19,14 +19,14 @@
 
     <main class="container mx-auto px-4 py-8 md:py-12">
         {{-- Главни наслов странице --}}
-        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">Contact Us</h1>
+        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('contact_us.contact_us') }}</h1>
 
         <div class="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             {{-- Контакт информације --}}
             <div>
-                <h2 class="text-2xl font-semibold text-dark-gray mb-4">Get in Touch</h2> {{-- Stupite u Kontakt --}}
+                <h2 class="text-2xl font-semibold text-dark-gray mb-4">{{ __('contact_us.get_in_touch') }}</h2> {{-- Stupite u Kontakt --}}
                 <p class="text-gray-700 leading-relaxed mb-6">
-                    Have a question, comment, or suggestion? We'd love to hear from you! Fill out the form or reach us directly using the information below.
+                    {{ __('contact_us.get_in_touch_text') }}
                 </p>
 
                 <div class="space-y-4">
@@ -50,7 +50,7 @@
 
                 {{-- Opciono: Mapa --}}
                 <div class="mt-8">
-                    <h3 class="text-xl font-semibold text-dark-gray mb-3">Our Location</h3> {{-- Naša Lokacija --}}
+                    <h3 class="text-xl font-semibold text-dark-gray mb-3">{{ __('contact_us.our_location') }}</h3> {{-- Naša Lokacija --}}
                     <div class="bg-gray-200 h-64 rounded-lg overflow-hidden flex items-center justify-center text-gray-500">
                         {{-- Placeholder za mapu, kasnije možete ugraditi Google Maps ili slično --}}
                         <p>Map Placeholder</p>
@@ -60,32 +60,32 @@
 
             {{-- Контакт форма --}}
             <div>
-                <h2 class="text-2xl font-semibold text-dark-gray mb-4">Send Us a Message</h2> {{-- Pošaljite nam Poruku --}}
+                <h2 class="text-2xl font-semibold text-dark-gray mb-4">{{ __('contact_us.send_us_a_message') }}</h2> {{-- Pošaljite nam Poruku --}}
                 <form action="#" method="POST" class="space-y-4">
                     {{-- @csrf --}} {{-- Laravel CSRF token za sigurnost (dodati kada se implementira slanje forme) --}}
 
                     <div>
-                        <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Your Name</label> {{-- Vaše Ime --}}
+                        <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('contact_us.your_name') }}</label> {{-- Vaše Ime --}}
                         <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="John Doe">
                     </div>
 
                     <div>
-                        <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Your Email</label> {{-- Vaš Email --}}
+                        <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('contact_us.your_email') }}</label> {{-- Vaš Email --}}
                         <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="john.doe@example.com">
                     </div>
 
                     <div>
-                        <label for="subject" class="block text-gray-700 text-sm font-semibold mb-2">Subject (Optional)</label> {{-- Tema (Opciono) --}}
-                        <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="Regarding an order...">
+                        <label for="subject" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('contact_us.subject_optional') }}</label> {{-- Tema (Opciono) --}}
+                        <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="{{ __('contact_us.regarding_order') }}">
                     </div>
 
                     <div>
-                        <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Your Message</label> {{-- Vaša Poruka --}}
-                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="Type your message here..."></textarea>
+                        <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('contact_us.your_message') }}</label> {{-- Vaša Poruka --}}
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="{{ __('contact_us.type_your_message') }}"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-primary-green text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
-                        Send Message
+                        {{ __('contact_us.send_message') }}
                     </button>
                 </form>
             </div>

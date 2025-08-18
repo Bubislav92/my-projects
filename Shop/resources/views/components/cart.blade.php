@@ -19,7 +19,7 @@
 
     <main class="container mx-auto px-4 py-8 md:py-12">
         {{-- Главни наслов странице --}}
-        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">Your Shopping Cart</h1>
+        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('shopping_cart.your_shopping_cart') }}</h1>
 
         <div class="bg-white p-6 md:p-8 rounded-xl shadow-md">
             {{-- Poruke o uspehu/grešci (flash poruke iz kontrolera) --}}
@@ -41,9 +41,9 @@
                 {{-- Poruka ako je korpa prazna --}}
                 <div class="text-center py-10">
                     <i class="fa-solid fa-shopping-cart text-gray-400 text-6xl mb-4"></i>
-                    <p class="text-xl text-gray-600 mb-4">Your cart is empty.</p>
+                    <p class="text-xl text-gray-600 mb-4">{{ __('shopping_cart.cart_is_empty') }}</p>
                     <a href="{{ route('products.index') }}" class="inline-block bg-primary-green text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300">
-                        Continue Shopping
+                        {{ __('shopping_cart.continue_shopping') }}
                     </a>
                 </div>
             @else
@@ -52,12 +52,12 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-light-gray">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subtotal</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('shopping_cart.product') }}</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('shopping_cart.price') }}</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('shopping_cart.quantity') }}</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('shopping_cart.subtotal') }}</th>
                                 <th scope="col" class="relative px-6 py-3">
-                                    <span class="sr-only">Remove</span>
+                                    <span class="sr-only">{{ __('shopping_cart.remove') }}</span>
                                 </th>
                             </tr>
                         </thead>
@@ -75,7 +75,7 @@
                                             <div class="ml-4">
                                                 <div class="text-sm font-medium text-dark-gray">{{ $item->product->name }}</div>
                                                 {{-- Prikaz kategorije proizvoda iz relacije (ako je imate) --}}
-                                                <div class="text-xs text-gray-500">Category: {{ $item->product->category->name ?? 'N/A' }}</div>
+                                                <div class="text-xs text-gray-500">{{ __('shopping_cart.category') }}  {{ $item->product->category->name ?? 'N/A' }}</div>
                                             </div>
                                         </div>
                                     </td>
@@ -107,7 +107,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="text-red-600 hover:text-red-900 transition duration-200"
                                                     onclick="return confirm('Are you sure to remove this Product from the Cart?');">
-                                                <span>Remove a Product</span> {{-- Tekstualna oznaka umesto ikone --}}
+                                                <span>{{ __('shopping_cart.remove_product') }}</span> {{-- Tekstualna oznaka umesto ikone --}}
                                             </button>
                                         </form>
                                     </td>
@@ -122,35 +122,35 @@
                     {{-- Dugme za nastavak kupovine i čišćenje korpe --}}
                     <div class="flex flex-col sm:flex-row gap-4 mb-4 md:mb-0">
                         <a href="{{ route('products.index') }}" class="inline-block bg-gray-200 text-dark-gray font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-gray-300 transition duration-300">
-                            Continue Shopping
+                            {{ __('shopping_cart.continue_shopping') }}
                         </a>
                         {{-- Dugme za čišćenje cele korpe --}}
                         <form action="{{ route('cart.clear') }}" method="POST">
                             @csrf
                             <button type="submit" class="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition duration-300"
                                     onclick="return confirm('Are you sure you want to clear your entire cart?');">
-                                Clear Cart
+                                    {{ __('shopping_cart.clear_cart') }}
                             </button>
                         </form>
                     </div>
 
                     {{-- Rezime --}}
                     <div class="w-full md:w-1/3 bg-light-gray p-6 rounded-lg shadow-inner">
-                        <h2 class="text-xl font-semibold text-dark-gray mb-4">Cart Summary</h2>
+                        <h2 class="text-xl font-semibold text-dark-gray mb-4">{{ __('shopping_cart.cart_summary') }}</h2>
                         <div class="flex justify-between mb-2">
-                            <span class="text-gray-700">Subtotal:</span>
+                            <span class="text-gray-700">{{ __('shopping_cart.subtotal') }}:</span>
                             <span class="font-medium text-dark-gray">{{ number_format($subtotal, 2) }} USD</span>
                         </div>
                         <div class="flex justify-between mb-2">
-                            <span class="text-gray-700">Shipping:</span>
+                            <span class="text-gray-700">{{ __('shopping_cart.shipping') }}:</span>
                             <span class="font-medium text-dark-gray">{{ number_format($shipping, 2) }} USD</span>
                         </div>
                         <div class="border-t border-gray-300 pt-2 mt-2 flex justify-between">
-                            <span class="text-lg font-bold text-dark-gray">Total:</span>
+                            <span class="text-lg font-bold text-dark-gray">{{ __('shopping_cart.total') }}:</span>
                             <span class="text-lg font-bold text-primary-green">{{ number_format($total, 2) }} USD</span>
                         </div>
                         <a href="{{ route('checkout.index') }}" class="w-full text-center bg-primary-green text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105 mt-6 inline-block">
-                            Proceed to Checkout
+                            {{ __('shopping_cart.proceed_to_checkout') }}
                         </a>
                     </div>
                 </div>

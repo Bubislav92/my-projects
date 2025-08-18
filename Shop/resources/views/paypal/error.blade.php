@@ -22,18 +22,18 @@
 
     <main class="container-center">
         <div class="bg-white p-8 rounded-xl shadow-md max-w-lg w-full">
-            <h1 class="text-4xl font-bold text-red-600 mb-4">Payment Error!</h1>
+            <h1 class="text-4xl font-bold text-red-600 mb-4">{{ __('paypal_translate.payment_error') }}</h1>
             <p class="text-lg text-gray-700 mb-6">{{ $message ?? 'An unexpected error occurred during your payment.' }}</p>
             
             @if(isset($order_id))
-                <p class="text-md text-gray-600 mb-6">Order ID: <strong class="text-dark-gray">#{{ $order_id }}</strong></p>
+                <p class="text-md text-gray-600 mb-6">{{ __('paypal_translate.order_id') }} <strong class="text-dark-gray">#{{ $order_id }}</strong></p>
             @endif
 
             <a href="{{ route('checkout.index') }}" class="inline-block bg-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 transition duration-300 ease-in-out">
-                Return to Checkout
+                {{ __('paypal_translate.return_to_checkout') }}
             </a>
             <a href="{{ route('welcome') }}" class="inline-block mt-4 text-blue-600 hover:underline">
-                Return to Home Page
+                {{ __('paypal_translate.return_to_home') }}
             </a>
         </div>
     </main>

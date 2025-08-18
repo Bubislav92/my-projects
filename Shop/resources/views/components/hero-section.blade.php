@@ -2,20 +2,20 @@
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10">
         <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-gray leading-tight mb-4 animate-fade-in-down">
-                Otkrijte Savršenstvo Kupovine
+                {{ __('hero.hero_heading') }}
             </h1>
             <p class="text-lg md:text-xl text-gray-700 mb-8 animate-fade-in-up">
-                Vaše omiljene stvari, samo klik daleko. Istražite našu široku ponudu proizvoda visokog kvaliteta.
+                {{ __('hero.hero_text') }}
             </p>
             <a href="#" class="inline-block bg-primary-green text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-primary-green-dark transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in">
-                Istražite ponudu
+                {{ __('hero.explore_button') }}
             </a>
         </div>
 
         <div class="md:w-1/2 flex justify-center md:justify-end">
             {{-- Direktno korišćenje slike sa iStockphoto linka --}}
             <img src="{{ asset('images/banner/banner1.jpg') }}"
-                 alt="Online shopping and e-commerce technology concept. Buyer with computer laptop to order product and choose delivery service. E-commerce business and supply chain management."
+                 alt="{{ __('hero.hero_alt_text') }}"
                  class="w-full max-w-lg rounded-xl shadow-2xl transform hover:scale-105 transition duration-500 ease-in-out animate-fade-in-right">
         </div>
     </div>

@@ -17,32 +17,32 @@
     <x-header />
 
     <main class="container mx-auto px-4 py-8 md:py-12">
-        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">My Dashboard</h1>
+        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('my_profile.my_dashboard') }}</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             {{-- Бочни навигациони мени за Dashboard (Исти као на главној dashboard страници) --}}
             <aside class="md:col-span-1 bg-white p-6 rounded-xl shadow-md h-fit">
                 <nav class="space-y-4">
                     <a href="{{ route('dashboard') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 {{ request()->routeIs('dashboard') ? 'bg-light-gray text-primary-green' : '' }}">
-                        <i class="fa-solid fa-gauge-high mr-3"></i> Dashboard Overview
+                        <i class="fa-solid fa-gauge-high mr-3"></i> {{ __('my_profile.dashboard_overview') }}
                     </a>
                     <a href="{{ route('dashboard.orders') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 {{ request()->routeIs('dashboard.orders') ? 'bg-light-gray text-primary-green' : '' }}">
-                        <i class="fa-solid fa-box-seam mr-3"></i> My Orders
+                        <i class="fa-solid fa-box-seam mr-3"></i> {{ __('my_profile.my_orders') }}
                     </a>
                     <a href="{{ route('components.wishlist') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 {{ request()->routeIs('components.wishlist') ? 'bg-light-gray text-primary-green' : '' }}">
-                        <i class="fa-solid fa-heart mr-3"></i> My Wishlist
+                        <i class="fa-solid fa-heart mr-3"></i> {{ __('my_profile.my_wishlist') }}
                     </a>
                     <a href="{{ route('dashboard.profile') }}" class="flex items-center p-3 rounded-lg text-lg font-semibold text-dark-gray hover:bg-light-gray hover:text-primary-green transition duration-300 relative {{ request()->routeIs('dashboard.profile') ? 'bg-light-gray text-primary-green' : '' }}">
                         @if (request()->routeIs('dashboard.profile'))
                             <span class="absolute left-0 top-0 bottom-0 w-1 bg-primary-green rounded-tl-lg rounded-bl-lg"></span>
                         @endif
-                        <i class="fa-solid fa-user mr-3 {{ request()->routeIs('dashboard.profile') ? 'text-primary-green' : '' }}"></i> My Profile
+                        <i class="fa-solid fa-user mr-3 {{ request()->routeIs('dashboard.profile') ? 'text-primary-green' : '' }}"></i> {{ __('my_profile.my_profile') }}
                     </a>
 
                     <form method="POST" action="{{ route('logout') }}" class="w-full">
                         @csrf
                         <button type="submit" class="flex items-center w-full text-left p-3 rounded-lg text-lg font-semibold text-red-600 hover:bg-red-50 transition duration-300">
-                            <i class="fa-solid fa-right-from-bracket mr-3"></i> Log Out
+                            <i class="fa-solid fa-right-from-bracket mr-3"></i> {{ __('my_profile.log_out') }}
                         </button>
                     </form>
                 </nav>
@@ -53,20 +53,20 @@
                 {{-- Успешна порука за ажурирање --}}
                 @if (session('status') === 'profile-updated')
                     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                        <span class="block sm:inline">Ваш профил је успешно ажуриран.</span>
+                        <span class="block sm:inline">{{ __('my_profile.profile_updated_successfully') }}</span>
                     </div>
                 @endif
                 
                 {{-- Одељак за ажурирање личних података --}}
                 <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h2 class="text-3xl font-semibold text-dark-gray mb-6">Personal Information</h2> {{-- Лични подаци --}}
+                    <h2 class="text-3xl font-semibold text-dark-gray mb-6">{{ __('my_profile.personal_information') }}</h2> {{-- Лични подаци --}}
 
                     <form method="POST" action="{{ route('profile.update') }}" class="space-y-5">
                         @csrf
                         @method('patch')
 
                         <div>
-                            <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Name</label> {{-- Име --}}
+                            <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.name') }}</label> {{-- Име --}}
                             <input id="name"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="text"
@@ -80,7 +80,7 @@
                         </div>
 
                         <div>
-                            <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label> {{-- Е-маил --}}
+                            <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.email') }}</label> {{-- Е-маил --}}
                             <input id="email"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="email"
@@ -93,7 +93,7 @@
                         </div>
 
                         <div>
-                            <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">Phone Number</label> {{-- Телефон --}}
+                            <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.phone_number') }}</label> {{-- Телефон --}}
                             <input id="phone"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="text"
@@ -105,7 +105,7 @@
                         </div>
 
                         <div>
-                            <label for="date_of_birth" class="block text-gray-700 text-sm font-semibold mb-2">Date of Birth</label> {{-- Датум рођења --}}
+                            <label for="date_of_birth" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.date_of_birth') }}</label> {{-- Датум рођења --}}
                             <input id="date_of_birth"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="date"
@@ -118,7 +118,7 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label for="address_line_1" class="block text-gray-700 text-sm font-semibold mb-2">Address Line 1</label>
+                                <label for="address_line_1" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.address_line_1') }}</label>
                                 <input id="address_line_1"
                                        class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                        type="text"
@@ -129,7 +129,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label for="address_line_2" class="block text-gray-700 text-sm font-semibold mb-2">Address Line 2 (Optional)</label>
+                                <label for="address_line_2" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.address_line_2_optional') }}</label>
                                 <input id="address_line_2"
                                        class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                        type="text"
@@ -143,7 +143,7 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                             <div>
-                                <label for="city" class="block text-gray-700 text-sm font-semibold mb-2">City</label>
+                                <label for="city" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.city') }}</label>
                                 <input id="city"
                                        class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                        type="text"
@@ -154,7 +154,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label for="state" class="block text-gray-700 text-sm font-semibold mb-2">State</label>
+                                <label for="state" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.state') }}</label>
                                 <input id="state"
                                        class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                        type="text"
@@ -165,7 +165,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label for="zip_code" class="block text-gray-700 text-sm font-semibold mb-2">ZIP Code</label>
+                                <label for="zip_code" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.zip_code') }}</label>
                                 <input id="zip_code"
                                        class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                        type="text"
@@ -178,7 +178,7 @@
                         </div>
                         
                         <div>
-                            <label for="country" class="block text-gray-700 text-sm font-semibold mb-2">Country</label>
+                            <label for="country" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.country') }}</label>
                             <input id="country"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="text"
@@ -191,7 +191,7 @@
 
                         <div class="flex items-center gap-4">
                             <button type="submit" class="bg-primary-green text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
-                                Update Profile
+                                {{ __('my_profile.update_profile') }}
                             </button>
                         </div>
                     </form>
@@ -199,14 +199,14 @@
 
                 {{-- Одељак за ажурирање лозинке --}}
                 <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h2 class="text-3xl font-semibold text-dark-gray mb-6">Update Password</h2> {{-- Ажурирај лозинку --}}
+                    <h2 class="text-3xl font-semibold text-dark-gray mb-6">{{ __('my_profile.update_password') }}</h2> {{-- Ажурирај лозинку --}}
 
                     <form method="POST" action="{{ route('password.update') }}" class="space-y-5">
                         @csrf
                         @method('put')
 
                         <div>
-                            <label for="current_password" class="block text-gray-700 text-sm font-semibold mb-2">Current Password</label> {{-- Тренутна лозинка --}}
+                            <label for="current_password" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.current_password') }}</label> {{-- Тренутна лозинка --}}
                             <input id="current_password"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="password"
@@ -219,7 +219,7 @@
                         </div>
 
                         <div>
-                            <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">New Password</label> {{-- Нова лозинка --}}
+                            <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.new_password') }}</label> {{-- Нова лозинка --}}
                             <input id="password"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="password"
@@ -232,7 +232,7 @@
                         </div>
 
                         <div>
-                            <label for="password_confirmation" class="block text-gray-700 text-sm font-semibold mb-2">Confirm New Password</label> {{-- Потврди нову лозинку --}}
+                            <label for="password_confirmation" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('my_profile.confirm_new_password') }}</label> {{-- Потврди нову лозинку --}}
                             <input id="password_confirmation"
                                    class="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200"
                                    type="password"
@@ -245,20 +245,20 @@
                         </div>
 
                         <button type="submit" class="bg-primary-green text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
-                            Change Password
+                            {{ __('my_profile.change_password') }}
                         </button>
                     </form>
                 </div>
 
                 {{-- Одељак за брисање налога (опционо) --}}
                 <div class="bg-white p-6 rounded-xl shadow-md border border-red-200">
-                    <h2 class="text-3xl font-semibold text-red-600 mb-6">Delete Account</h2> {{-- Обриши налог --}}
+                    <h2 class="text-3xl font-semibold text-red-600 mb-6">{{ __('my_profile.delete_account') }}</h2> {{-- Обриши налог --}}
                     <p class="text-gray-700 mb-4">
-                        Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
+                        {{ __('my_profile.delete_account_warning') }}
                     </p>
                     {{-- Овде ћеш касније додати потврду пре брисања налога --}}
                     <button class="bg-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
-                        Delete Account
+                        {{ __('my_profile.delete_account_button') }}
                     </button>
                 </div>
             </div>

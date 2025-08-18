@@ -19,6 +19,7 @@ use App\Http\Controllers\PayPalController; // Dodajte ovaj use iskaz
 use App\Http\Controllers\StripeController; // Dodajte ovaj use iskaz
 use App\Http\Controllers\DashboardController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\ProductReviewController;
 
 
 /*
@@ -41,10 +42,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+    Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
     // <-------------------- Start Routes of Products-------------------->
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+    Route::post('/products/{product}/reviews', [ProductReviewController::class, 'store'])->name('products.reviews.store');
     Route::get('/search', [ProductController::class, 'search'])->name('products.search');
     // <-------------------- End Routes of Products -------------------->
 
@@ -99,6 +102,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         return view('refund_policy'); // Moraš kreirati ovaj blade fajl
     })->name('refund-policy');
 
+    require __DIR__.'/auth.php';
+
 });
 
 /*
@@ -137,4 +142,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+

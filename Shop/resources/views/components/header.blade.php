@@ -20,8 +20,8 @@
             <a href="{{ route('products.index') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.products') }}</a>
             <a href="{{ route('blog') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.blog') }}</a>
             <a href="{{ route('faqs') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.faqs') }}</a>
-            <a href="{{ route('about') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.contact') }}</a>
-            <a href="{{ route('contact') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.about_us') }}</a>
+            <a href="{{ route('about') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.about_us') }}</a>
+            <a href="{{ route('contact') }}" class="text-dark-gray hover:text-primary-green transition duration-300 font-medium text-lg">{{ __('navigation.contact') }}</a>
         </nav>
 
         {{-- Ikone (Search, Wishlist, Cart) i Auth Linkovi --}}
@@ -107,10 +107,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <h3 class="text-2xl font-semibold text-dark-gray mb-4 text-center">Претрага производа</h3>
+            <h3 class="text-2xl font-semibold text-dark-gray mb-4 text-center">{{ __('search_modal.product_search') }}</h3>
             
             <div class="mb-4 relative">
-                <input type="text" id="searchInput" placeholder="Унесите назив производа..." class="w-full border border-gray-300 rounded-md py-3 px-4 pr-10 text-lg focus:ring-primary-green focus:border-primary-green transition duration-200">
+                <input type="text" id="searchInput" placeholder="{{ __('search_modal.search_placeholder') }}" class="w-full border border-gray-300 rounded-md py-3 px-4 pr-10 text-lg focus:ring-primary-green focus:border-primary-green transition duration-200">
                 <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -119,7 +119,7 @@
             </div>
 
             <div id="searchResults" class="max-h-80 overflow-y-auto border border-gray-200 rounded-md p-2 mt-4">
-                <p id="noResults" class="text-center text-gray-500 py-4 hidden">Нема резултата.</p>
+                <p id="noResults" class="text-center text-gray-500 py-4 hidden">{{ __('search_modal.no_results') }}</p>
             </div>
         </div>
     </div>

@@ -26,19 +26,19 @@
             <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between z-10 relative">
                 <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0 animate-fade-in-down">
                     <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                        Discover Amazing Products at Vesna's Web Store
+                        {{ __('hero.hero_heading') }}
                     </h1>
                     <p class="text-lg md:text-xl opacity-90 mb-8">
-                        Your one-stop shop for high-quality items, delivered with care.
+                        {{ __('hero.hero_text') }}
                     </p>
                     <a href="{{ route('products.index') }}" class="inline-block bg-white text-primary-green font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
-                        Shop Now
+                        {{ __('hero.explore_button') }}
                     </a>
                 </div>
                 <div class="md:w-1/2 flex justify-center md:justify-end">
                     {{-- Direktno korišćenje slike --}}
                     <img src="{{ asset('images/banner/banner1.jpg') }}"
-                         alt="Online shopping and e-commerce technology concept. Buyer with computer laptop to order product and choose delivery service. E-commerce business and supply chain management."
+                         alt="{{ __('hero.hero_alt_text') }}"
                          class="w-full max-w-lg rounded-xl shadow-2xl transform hover:scale-105 transition duration-500 ease-in-out animate-fade-in-right">
                 </div>
             </div>
@@ -53,13 +53,13 @@
         {{-- Sekcija: Istaknute Kategorije --}}
         <section class="py-12 md:py-16 bg-light-gray">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-dark-gray mb-8 text-center">Explore Our Categories</h2>
+                <h2 class="text-3xl font-bold text-dark-gray mb-8 text-center">{{ __('featured_category.explore_categories') }}</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {{-- Proveravamo da li ima kategorija za prikaz --}}
                     @if($categories->isEmpty())
                         <div class="col-span-full text-center py-10">
                             <i class="fa-solid fa-folder-open text-gray-400 text-6xl mb-4"></i>
-                            <p class="text-xl text-gray-600 mb-4">No categories to display at the moment.</p>
+                            <p class="text-xl text-gray-600 mb-4">{{ __('featured_category.no_categories') }}</p>
                         </div>
                     @else
                         {{-- Iteriramo kroz svaku kategoriju dobijenu iz baze --}}
@@ -89,12 +89,11 @@
                                         alt="No image available for {{ $category->name }}"
                                         class="w-full h-48 object-cover rounded-t-xl">
                                 @endif
-
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-dark-gray mb-2">{{ $category->name }}</h3>
                                     <p class="text-gray-700 text-sm">
-                                        {{-- Prikaz opisa ako postoji, inače generički tekst --}}
-                                        {{ $category->description ?? 'Explore products from the ' . $category->name . ' category.' }}
+                                        {{-- Prikaz opisa ako postoji, inače prikazuje generički prevođeni tekst --}}
+                                        {{ $category->description ?? __('featured_category.explore_products_from', ['category' => $category->name]) }}
                                     </p>
                                 </div>
                             </a>
@@ -109,26 +108,26 @@
         {{-- Sekcija: Zašto kupovati kod nas --}}
 <section class="bg-primary-green-light py-12 md:py-16">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-dark-gray mb-8">Why Choose Vesna's Web Store?</h2>
+        <h2 class="text-3xl font-bold text-dark-gray mb-8">{{ __('why.why_choose') }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
                 {{-- Kamion (siv) - Sada sa w- i h- klasama za veličinu --}}
                 <x-heroicon-o-truck class="text-gray-500 w-10 h-10 mb-4" /> 
-                <h3 class="text-xl font-semibold text-dark-gray mb-2">Fast Shipping</h3>
-                <p class="text-gray-700 text-sm">Get your orders quickly and reliably to your doorstep.</p>
+                <h3 class="text-xl font-semibold text-dark-gray mb-2">{{ __('why.fast_shipping') }}</h3>
+                <p class="text-gray-700 text-sm">{{ __('why.fast_shipping_text') }}</p>
             </div>
             <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
                 {{-- Garancija kvalitete (zelena) - Sada sa w- i h- klasama za veličinu --}}
                 <x-heroicon-o-check-badge class="text-green-500 w-10 h-10 mb-4" /> 
-                <h3 class="text-xl font-semibold text-dark-gray mb-2">Quality Guaranteed</h3>
-                <p class="text-gray-700 text-sm">We stand behind the quality of every product we sell.</p>
+                <h3 class="text-xl font-semibold text-dark-gray mb-2">{{ __('why.quality_guaranteed') }}</h3>
+                <p class="text-gray-700 text-sm">{{ __('why.quality_guaranteed_text') }}</p>
             </div>
             <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
                 {{-- Pojas za spašavanje (bela sa crvenom - koristićemo crvenu boju direktno na ikoni,
                      jer bela unutrašnjost često dolazi od samog SVG-a, ako je outline) --}}
                 <x-heroicon-o-lifebuoy class="text-red-500 w-10 h-10 mb-4" /> 
-                <h3 class="text-xl font-semibold text-dark-gray mb-2">24/7 Support</h3>
-                <p class="text-gray-700 text-sm">Our friendly support team is always here to help you.</p>
+                <h3 class="text-xl font-semibold text-dark-gray mb-2">{{ __('why.support') }}</h3>
+                <p class="text-gray-700 text-sm">{{ __('why.support_text') }}</p>
             </div>
         </div>
     </div>
@@ -137,7 +136,7 @@
         {{-- Sekcija: Najprodavaniji/Preporučeni proizvodi --}}
         <section class="py-12 md:py-16 bg-light-gray">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-dark-gray mb-8 text-center">Our Top Picks</h2>
+                <h2 class="text-3xl font-bold text-dark-gray mb-8 text-center">{{ __('featured_product.top_picks') }}</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {{-- Dinamički popuni ovu sekciju sa preporučenim proizvodima iz baze --}}
                     @forelse($featuredProducts as $product)
@@ -174,22 +173,21 @@
                                     @endif
                                 </p>
                                 <div class="flex items-center gap-2 mt-4">
-                                    <form action="{{ route('cart.store') }}" method="POST" class="w-full"> {{-- Promena rute i širina forme --}}
+                                    <form action="{{ route('cart.store') }}" method="POST" class="w-1/2">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <input type="hidden" name="quantity" value="1"> {{-- Trenutno fiksna količina --}}
-                                
-                                        <button type="submit" class="flex-grow bg-primary-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300 ease-in-out transform hover:scale-105 text-sm">
-                                            <i class="fa-solid fa-cart-plus mr-1"></i> Add to Cart
+                                        <input type="hidden" name="quantity" value="1">
+                                    
+                                        <button type="submit" class="w-full bg-primary-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-green-dark transition duration-300 ease-in-out transform hover:scale-105 text-sm">
+                                            <i class="fa-solid fa-cart-plus mr-1"></i> {{ __('product_card.add_to_cart') }}
                                         </button>
                                     </form>
-                                    <form action="{{ route('wishlist.store') }}" method="POST"> {{-- Nema potrebe za class="w-full" ako ne treba da zauzme punu širinu --}}
+                                    <form action="{{ route('wishlist.store') }}" method="POST" class="w-1/2">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        {{-- Ako ti je potrebna količina za listu želja, dodaj: <input type="hidden" name="quantity" value="1"> --}}
-                            
-                                        <button type="submit" class="bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 ease-in-out transform hover:scale-105 text-sm whitespace-nowrap">
-                                            <i class="fa-solid fa-heart mr-1"></i> Add to Wishlist
+                                
+                                        <button type="submit" class="w-full bg-yellow-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 ease-in-out transform hover:scale-105 text-sm">
+                                            <i class="fa-solid fa-heart mr-1"></i> {{ __('product_card.add_to_wishlist') }}
                                         </button>
                                     </form>
                                 </div>
@@ -197,7 +195,7 @@
                         </a>
                     @empty
                         {{-- Poruka ako nema preporučenih proizvoda --}}
-                        <p class="col-span-full text-center text-gray-600">No featured products available at the moment.</p>
+                        <p class="col-span-full text-center text-gray-600">{{ __('featured_product.no_featured_products') }}</p>
                     @endforelse
                 </div>
             </div>
@@ -206,12 +204,12 @@
         {{-- Sekcija: Poziv na Akciju (Call to Action) --}}
         <section class="bg-primary-green text-white py-16 md:py-20 text-center">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Find Your Next Favorite Item?</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">{{ __('cta.cta_heading') }}</h2>
                 <p class="text-lg md:text-xl opacity-90 mb-8">
-                    Browse our extensive catalog and discover incredible products today!
+                    {{ __('cta.cta_text') }}
                 </p>
                 <a href="{{ route('products.index') }}" class="inline-block bg-white text-primary-green font-semibold py-3 px-10 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
-                    Start Exploring Now
+                    {{ __('cta.cta_button') }}
                 </a>
             </div>
         </section>

@@ -119,59 +119,59 @@
     <x-header />
 
     <main class="container mx-auto px-4 py-8 md:py-12">
-        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">Checkout</h1>
+        <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('checkout_translate.checkout_page') }}</h1>
 
         <div class="bg-white p-6 md:p-8 rounded-xl shadow-md grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2">
-                <h2 class="text-2xl font-semibold text-dark-gray mb-6">Shipping Information</h2>
+                <h2 class="text-2xl font-semibold text-dark-gray mb-6">{{ __('checkout_translate.shipping_information') }}</h2>
                 <form id="checkoutForm" action="{{ route('checkout.process_order') }}" method="POST" class="space-y-6">
                     @csrf
 
                     {{-- Lični podaci --}}
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label for="first_name" class="block text-gray-700 text-sm font-semibold mb-2">First Name</label>
+                            <label for="first_name" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.first_name') }}</label>
                             <input type="text" id="first_name" name="first_name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="John" value="{{ old('first_name', $userData['first_name'] ?? '') }}" required>
                         </div>
                         <div>
-                            <label for="last_name" class="block text-gray-700 text-sm font-semibold mb-2">Last Name</label>
+                            <label for="last_name" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.last_name') }}</label>
                             <input type="text" id="last_name" name="last_name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="Doe" value="{{ old('last_name', $userData['last_name'] ?? '') }}" required>
                         </div>
                     </div>
 
                     <div>
-                        <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address</label>
+                        <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.email_address') }}</label>
                         <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="john.doe@example.com" value="{{ old('email', $userData['email'] ?? '') }}" required>
                     </div>
 
                     <div>
-                        <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">Phone Number (Optional)</label>
+                        <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.phone_number') }}</label>
                         <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="+1234567890" value="{{ old('phone', $userData['phone'] ?? '') }}">
                     </div>
 
                     {{-- Adresa --}}
-                    <h2 class="text-2xl font-semibold text-dark-gray mt-8 mb-4">Delivery Address</h2>
+                    <h2 class="text-2xl font-semibold text-dark-gray mt-8 mb-4">{{ __('checkout_translate.delivery_address') }}</h2>
                     <div>
-                        <label for="address" class="block text-gray-700 text-sm font-semibold mb-2">Street Address</label>
+                        <label for="address" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.street_address') }}</label>
                         <input type="text" id="address" name="address" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="123 Main St" value="{{ old('address', $userData['address'] ?? '') }}" required>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                            <label for="city" class="block text-gray-700 text-sm font-semibold mb-2">City</label>
+                            <label for="city" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.city') }}</label>
                             <input type="text" id="city" name="city" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="Webville" value="{{ old('city', $userData['city'] ?? '') }}" required>
                         </div>
                         <div>
-                            <label for="postal_code" class="block text-gray-700 text-sm font-semibold mb-2">Postal Code</label>
+                            <label for="postal_code" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.postal_code') }}</label>
                             <input type="text" id="postal_code" name="postal_code" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="12345" value="{{ old('postal_code', $userData['postal_code'] ?? '') }}" required>
                         </div>
                         <div>
-                            <label for="country" class="block text-gray-700 text-sm font-semibold mb-2">Country</label>
+                            <label for="country" class="block text-gray-700 text-sm font-semibold mb-2">{{ __('checkout_translate.country') }}</label>
                             <input type="text" id="country" name="country" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-200" placeholder="Online Country" value="{{ old('country', $userData['country'] ?? '') }}" required>
                         </div>
                     </div>
 
                     {{-- Način plaćanja --}}
-                    <h2 class="text-2xl font-semibold text-dark-gray mt-8 mb-4">Payment Method</h2>
+                    <h2 class="text-2xl font-semibold text-dark-gray mt-8 mb-4">{{ __('checkout_translate.payment_method') }}</h2>
                     <div class="space-y-4">
                         <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-light-gray transition duration-200">
                             <input type="radio" name="payment_method" value="paypal" class="form-radio text-primary-green focus:ring-primary-green" checked>
@@ -195,7 +195,7 @@
 
                     {{-- Dugme za završetak narudžbine --}}
                     <button type="submit" id="placeOrderBtn" class="w-full bg-primary-green text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-primary-green focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105 mt-8">
-                        Place Order
+                        {{ __('checkout_translate.place_order') }}
                     </button>
                     {{-- Mesto za status porudžbine/greške (popunjava JS) --}}
                     <div id="formStatus" class="mt-4 text-center"></div>
@@ -204,7 +204,7 @@
 
             {{-- Rezime narudžbine (sa desne strane) --}}
             <div class="lg:col-span-1 bg-light-gray p-6 rounded-lg shadow-inner h-fit sticky top-4">
-                <h2 class="text-2xl font-semibold text-dark-gray mb-4">Order Summary</h2>
+                <h2 class="text-2xl font-semibold text-dark-gray mb-4">{{ __('checkout_translate.order_summary') }}</h2>
                 
                 <div class="space-y-3 mb-6">
                     @forelse ($cartItems as $item)
@@ -220,21 +220,21 @@
                             <span class="text-dark-gray font-medium">{{ number_format($displayPrice * $item->quantity, 2) }} USD</span>
                         </div>
                     @empty
-                        <p class="text-gray-600 text-center">No Products in the Cart.</p>
+                        <p class="text-gray-600 text-center">{{ __('checkout_translate.no_products_in_cart') }}</p>
                     @endforelse
                 </div>
 
                 <div class="border-t border-gray-300 pt-4 mt-4 space-y-2">
                     <div class="flex justify-between">
-                        <span class="text-gray-700">Subtotal:</span>
+                        <span class="text-gray-700">{{ __('checkout_translate.subtotal') }}</span>
                         <span class="font-medium text-dark-gray">{{ number_format($subtotal, 2) }} USD</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-gray-700">Shipping:</span>
+                        <span class="text-gray-700">{{ __('checkout_translate.shipping') }}</span>
                         <span class="font-medium text-dark-gray">{{ number_format($shipping, 2) }} USD</span>
                     </div>
                     <div class="flex justify-between text-lg font-bold">
-                        <span class="text-dark-gray">Total:</span>
+                        <span class="text-dark-gray">{{ __('checkout_translate.total') }}</span>
                         <span class="text-primary-green">{{ number_format($total, 2) }} USD</span>
                     </div>
                 </div>
@@ -247,236 +247,247 @@
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <div class="loading-spinner" id="modalSpinner"></div>
-            <h3 id="modalTitle">Potvrda narudžbine</h3>
-            <p id="modalMessage">Vaša narudžbina je uspešno kreirana. Molimo vas izaberite način plaćanja za nastavak.</p>
+            <h3 id="modalTitle">{{ __('checkout_translate.order_confirmation') }}</h3>
+            <p id="modalMessage">{{ __('checkout_translate.order_created_select_payment') }}</p>
             <div class="modal-buttons">
                 {{-- KLJUČNO: Sada je <button> tag --}}
-                <button id="paymentActionButton" class="btn-confirm" style="display: none;">Nastavi na plaćanje</button>
-                <button id="closeModalBtn" class="btn-cancel">Zatvori</button>
+                <button id="paymentActionButton" class="btn-confirm" style="display: none;">{{ __('checkout_translate.continue_to_payment') }}</button>
+                <button id="closeModalBtn" class="btn-cancel">{{ __('checkout_translate.close') }}</button>
             </div>
         </div>
     </div>
 
     {{-- Glavni JavaScript kod --}}
     {{-- Glavni JavaScript kod --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Dohvatanje elemenata DOM-a
-            const checkoutForm = document.getElementById('checkoutForm');
-            const placeOrderBtn = document.getElementById('placeOrderBtn');
-            const formStatus = document.getElementById('formStatus');
-            
-            const paymentModal = document.getElementById('paymentModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalMessage = document.getElementById('modalMessage');
-            const paymentActionButton = document.getElementById('paymentActionButton'); // Ključno: Ovo mora biti ID dugmeta u modalu
-            const closeModalBtn = document.getElementById('closeModalBtn');
-            const modalSpinner = document.getElementById('modalSpinner');
+    {{-- Glavni JavaScript kod sa prevodima --}}
+<script>
+    // Inicijalizacija JavaScript objekta sa prevodima
+    // Ovo se izvršava na serveru i prevodi se ubrizgavaju u HTML pre nego što se pošalje klijentu
+    window.translations = {
+        checkout: {
+            continue_to: '{{ __("checkout_translate.continue_to") }}',
+            close: '{{ __("checkout_translate.close") }}',
+            ok: 'OK', 
+            redirecting_to: '{{ __("checkout_translate.redirecting_to") }}',
+            no_payment_url: '{{ __("checkout_translate.no_payment_url") }}',
+            payment_prep_error: '{{ __("checkout_translate.payment_prep_error") }}',
+            processing: '{{ __("checkout_translate.processing") }}',
+            processing_order: '{{ __("checkout_translate.processing_order") }}',
+            please_wait_processing: '{{ __("checkout_translate.please_wait_processing") }}',
+            processing_error: '{{ __("checkout_translate.processing_error") }}',
+            order_created_success: '{{ __("checkout_translate.order_created_success") }}',
+            your_order: '{{ __("checkout_translate.your_order") }}',
+            order_created_redirect: '{{ __("checkout_translate.order_created_redirect") }}',
+            order_created_success_click: '{{ __("checkout_translate.order_created_success_click") }}',
+            your_order_click: '{{ __("checkout_translate.your_order_click") }}',
+            order_created_continue: '{{ __("checkout_translate.order_created_continue") }}',
+            error: '{{ __("checkout_translate.error") }}',
+            unknown_error: '{{ __("checkout_translate.unknown_error") }}',
+            an_error_occurred: '{{ __("checkout_translate.an_error_occurred") }}',
+            form_submission_error: '{{ __("checkout_translate.form_submission_error") }}',
+            form_submission_error_retry: '{{ __("checkout_translate.form_submission_error_retry") }}',
+            fill_all_fields: '{{ __("checkout_translate.fill_all_fields") }}',
+            place_order_button: '{{ __("checkout_translate.place_order_button") }}',
+        }
+    };
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Dohvatanje elemenata DOM-a
+        const checkoutForm = document.getElementById('checkoutForm');
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+        const formStatus = document.getElementById('formStatus');
+        
+        const paymentModal = document.getElementById('paymentModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const paymentActionButton = document.getElementById('paymentActionButton');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalSpinner = document.getElementById('modalSpinner');
 
-            // Promenljive za čuvanje URL-a i metode plaćanja koje se postavljaju kada stigne odgovor sa servera
-            let currentPaymentUrl = null;
-            let currentPaymentMethod = null;
+        // Promenljive za čuvanje URL-a i metode plaćanja
+        let currentPaymentUrl = null;
+        let currentPaymentMethod = null;
 
-            // Funkcija za prikaz modala
-            function showModal(title, message, paymentUrl, method) {
-                modalTitle.textContent = title;
-                modalMessage.textContent = message;
-                modalSpinner.style.display = 'none'; // Sakrij spinner kada se prikazuje konačna poruka
+        // Funkcija za prikaz modala
+        function showModal(title, message, paymentUrl, method) {
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            modalSpinner.style.display = 'none';
 
-                currentPaymentUrl = paymentUrl;
-                currentPaymentMethod = method;
+            currentPaymentUrl = paymentUrl;
+            currentPaymentMethod = method;
 
-                if (paymentUrl) {
-                    // Ako postoji URL za plaćanje, prikaži dugme "Nastavi na plaćanje"
-                    paymentActionButton.textContent = `Nastavi na ${method === 'paypal' ? 'PayPal' : 'Stripe'}`;
-                    paymentActionButton.style.display = 'inline-flex';
-                    closeModalBtn.textContent = 'Zatvori';
-                } else {
-                    // Ako nema URL-a (npr. greška ili COD), sakrij dugme za akciju i promeni tekst dugmeta "Zatvori"
-                    paymentActionButton.style.display = 'none';
-                    closeModalBtn.textContent = 'OK';
-                }
-                paymentModal.style.display = 'flex'; // Prikaži modal (koristi flex za centriranje)
+            if (paymentUrl) {
+                // Ako postoji URL, prikaži dugme "Nastavi na..."
+                const methodText = method === 'paypal' ? 'PayPal' : 'Stripe';
+                paymentActionButton.textContent = `${window.translations.checkout.continue_to} ${methodText}`;
+                paymentActionButton.style.display = 'inline-flex';
+                closeModalBtn.textContent = window.translations.checkout.close;
+            } else {
+                // Ako nema URL-a, sakrij dugme za akciju i promeni tekst dugmeta "Zatvori"
+                paymentActionButton.style.display = 'none';
+                closeModalBtn.textContent = window.translations.checkout.close;
             }
+            paymentModal.style.display = 'flex';
+        }
 
-            // Funkcija za sakrivanje modala
-            function hideModal() {
-                paymentModal.style.display = 'none';
-                // Resetovanje stanja dugmeta i spinnera kada se modal sakrije
-                paymentActionButton.style.display = 'none'; 
-                modalSpinner.style.display = 'none';
-                currentPaymentUrl = null;
-                currentPaymentMethod = null;
-            }
+        // Funkcija za sakrivanje modala
+        function hideModal() {
+            paymentModal.style.display = 'none';
+            paymentActionButton.style.display = 'none';
+            modalSpinner.style.display = 'none';
+            currentPaymentUrl = null;
+            currentPaymentMethod = null;
+        }
 
-            // Funkcija za preusmeravanje na PayPal/Stripe putem POST forme
-            function initiatePaymentRedirect(url) { // Uklonjen 'method' kao argument, jer je logika ista
-                const form = document.createElement('form');
-                form.method = 'POST';
-                form.action = url;
+        // Funkcija za preusmeravanje na PayPal/Stripe putem POST forme
+        function initiatePaymentRedirect(url) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = url;
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+            const csrfInput = document.createElement('input');
+            csrfInput.type = 'hidden';
+            csrfInput.name = '_token';
+            csrfInput.value = csrfToken;
+            form.appendChild(csrfInput);
+            document.body.appendChild(form);
+            form.submit();
+        }
 
-                // Dodavanje CSRF tokena u formu (neophodno za Laravel POST rute)
-                const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
-                const csrfInput = document.createElement('input');
-                csrfInput.type = 'hidden';
-                csrfInput.name = '_token';
-                csrfInput.value = csrfToken;
-                form.appendChild(csrfInput);
-
-                // Submitovanje forme
-                document.body.appendChild(form); // Forma mora biti u DOM-u pre submitovanja
-                form.submit();
-            }
-
-            // KLJUČNO: Vezivanje event listenera za paymentActionButton SAMO JEDNOM
-            // Ovaj listener će se pozvati kada korisnik klikne "Nastavi na plaćanje" u modalu
-            paymentActionButton.addEventListener('click', function() {
-                if (currentPaymentUrl && currentPaymentMethod) {
-                    // Pre nego što preusmerimo, možemo opciono da sakrijemo dugmad i prikažemo spinner
-                    paymentActionButton.style.display = 'none';
-                    closeModalBtn.style.display = 'none'; // Sakrij i zatvori dugme
-                    modalSpinner.style.display = 'block'; // Pokaži spinner za finalno preusmeravanje
-                    modalMessage.textContent = `Preusmeravam vas na ${currentPaymentMethod === 'paypal' ? 'PayPal' : 'Stripe'}...`;
-                    
-                    // Pozovi funkciju za preusmeravanje sa URL-om
-                    initiatePaymentRedirect(currentPaymentUrl); 
-                } else {
-                    console.error('Nema URL-a za plaćanje za preusmeravanje.');
-                    alert('Došlo je do greške u pripremi plaćanja. Molimo pokušajte ponovo.');
-                    hideModal(); // Zatvori modal u slučaju greške
-                }
-            });
-
-
-            // Listener za zatvaranje modala dugmetom "Zatvori" / "OK"
-            closeModalBtn.addEventListener('click', hideModal);
-
-            // Listener za zatvaranje modala klikom van sadržaja (overlay)
-            paymentModal.addEventListener('click', function(event) {
-                // Ako je korisnik kliknuo direktno na pozadinu modala (ne na modal-content)
-                if (event.target === paymentModal) {
-                    hideModal();
-                }
-            });
-
-            // Glavni Event Listener za submit Checkout forme
-            checkoutForm.addEventListener('submit', function (e) {
-                e.preventDefault(); // Sprečava standardno slanje forme (koje bi osvežilo stranicu)
-
-                // Resetovanje statusa poruka i UI elemenata
-                formStatus.innerHTML = '';
-                placeOrderBtn.disabled = true;
-                placeOrderBtn.textContent = 'Obrađujem...';
+        // Listener za dugme "Nastavi na plaćanje" u modalu
+        paymentActionButton.addEventListener('click', function() {
+            if (currentPaymentUrl && currentPaymentMethod) {
+                paymentActionButton.style.display = 'none';
+                closeModalBtn.style.display = 'none';
+                modalSpinner.style.display = 'block';
+                const methodText = currentPaymentMethod === 'paypal' ? 'PayPal' : 'Stripe';
+                modalMessage.textContent = `${window.translations.checkout.redirecting_to} ${methodText}...`;
                 
-                // Prikaži modal sa inicijalnom porukom i spinnerom dok se čeka odgovor sa servera
-                modalSpinner.style.display = 'block'; 
-                showModal('Obrađujem narudžbinu...', 'Molimo sačekajte dok obrađujemo vašu narudžbinu i pripremamo plaćanje...', null, null);
+                initiatePaymentRedirect(currentPaymentUrl); 
+            } else {
+                console.error(window.translations.checkout.no_payment_url);
+                alert(window.translations.checkout.payment_prep_error);
+                hideModal();
+            }
+        });
 
-                const formData = new FormData(checkoutForm);
+        // Listener za zatvaranje modala
+        closeModalBtn.addEventListener('click', hideModal);
 
-                // Slanje forme putem Fetch API-ja (AJAX)
-                fetch(checkoutForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json', // Očekujemo JSON odgovor od servera
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]') ? document.querySelector('meta[name="csrf-token"]').content : ''
-                    }
-                })
-                .then(response => {
-                    // Provera da li je HTTP odgovor uspešan (status 2xx)
-                    if (!response.ok) {
-                        // Ako nije uspešan, pokušavamo da parsiramo grešku kao JSON
-                        return response.json().then(errorData => {
-                            throw new Error(errorData.message || 'Greška prilikom obrade zahteva.');
-                        }).catch(() => {
-                            // Ako JSON parsiranje ne uspe (npr. server je vratio HTML grešku), dohvatimo tekst
-                            return response.text().then(text => {
-                                throw new Error(`Server Error: ${response.status} - ${text.substring(0, 200)}...`);
-                            });
+        // Listener za zatvaranje modala klikom na pozadinu
+        paymentModal.addEventListener('click', function(event) {
+            if (event.target === paymentModal) {
+                hideModal();
+            }
+        });
+
+        // Glavni Event Listener za submit Checkout forme
+        checkoutForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            formStatus.innerHTML = '';
+            placeOrderBtn.disabled = true;
+            placeOrderBtn.textContent = window.translations.checkout.processing;
+            
+            modalSpinner.style.display = 'block'; 
+            showModal(window.translations.checkout.processing_order, window.translations.checkout.please_wait_processing, null, null);
+
+            const formData = new FormData(checkoutForm);
+
+            fetch(checkoutForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]') ? document.querySelector('meta[name="csrf-token"]').content : ''
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errorData => {
+                        throw new Error(errorData.message || window.translations.checkout.processing_error);
+                    }).catch(() => {
+                        return response.text().then(text => {
+                            throw new Error(`Server Error: ${response.status} - ${text.substring(0, 200)}...`);
                         });
-                    }
-                    return response.json(); // Parsiramo uspešan odgovor kao JSON
-                })
-                .then(data => {
-                    // Obrada uspešnog odgovora sa servera (kada je data.success === true)
-                    if (data.success) {
-                        let paymentUrl;
-                        let paymentMethodName;
-                        
-                        if (data.payment_method === 'paypal') {
-                            paymentUrl = data.paypal_url;
-                            paymentMethodName = 'PayPal';
-                        } else if (data.payment_method === 'stripe') {
-                            paymentUrl = data.stripe_url;
-                            paymentMethodName = 'Stripe';
-                        } else {
-                            // Za Cash on Delivery ili druge offline metode
-                            // Nema eksternog preusmeravanja, odmah prikaži "OK" i preusmeri na npr. /order-confirmed
-                            showModal(
-                                'Narudžbina uspešno kreirana!',
-                                `Vaša narudžbina #${data.order_id} je uspešno kreirana. Bićete uskoro preusmereni.`,
-                                null, // Nema URL-a za plaćanje
-                                data.payment_method
-                            );
-                            // Automatsko preusmeravanje nakon kratkog kašnjenja za COD
-                            setTimeout(() => {
-                                window.location.href = '/order-confirmed?order_id=' + data.order_id; // Prilagodite ovu rutu
-                            }, 2000); // 2 sekunde
-                            formStatus.innerHTML = `<p class="text-green-500">${data.message}</p>`;
-                            return; // Završi izvršavanje funkcije
-                        }
-
-                        // Prikaži modal sa opcijom za nastavak na plaćanje (za PayPal i Stripe)
-                        showModal( 
-                            'Narudžbina uspešno kreirana!',
-                            `Vaša narudžbina #${data.order_id} je uspešno kreirana. Kliknite ispod da nastavite sa plaćanjem putem ${paymentMethodName}.`,
-                            paymentUrl,
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    let paymentUrl;
+                    let paymentMethodName;
+                    
+                    if (data.payment_method === 'paypal') {
+                        paymentUrl = data.paypal_url;
+                        paymentMethodName = 'PayPal';
+                    } else if (data.payment_method === 'stripe') {
+                        paymentUrl = data.stripe_url;
+                        paymentMethodName = 'Stripe';
+                    } else {
+                        // COD i slične metode
+                        showModal(
+                            window.translations.checkout.order_created_success,
+                            `${window.translations.checkout.your_order} #${data.order_id} ${window.translations.checkout.order_created_redirect}`,
+                            null,
                             data.payment_method
                         );
+                        setTimeout(() => {
+                            window.location.href = '/order-confirmed?order_id=' + data.order_id;
+                        }, 2000);
                         formStatus.innerHTML = `<p class="text-green-500">${data.message}</p>`;
+                        return;
+                    }
 
-                    } else {
-                        // Obrada greške prijavljene od strane servera (kada je data.success === false u JSON-u)
-                        showModal('Greška!', data.message || 'Došlo je do nepoznate greške prilikom kreiranja narudžbine.', null, null);
-                        formStatus.innerHTML = `<p class="text-red-500">${data.message || 'Došlo je do greške.'}</p>`;
-                    }
-                })
-                .catch(error => {
-                    // Hvatanje i prikazivanje grešaka koje se javljaju tokom Fetch poziva (mrežne greške, validacija 422)
-                    console.error('Došlo je do greške prilikom slanja forme:', error);
-                    let errorMessage = 'Došlo je do greške prilikom slanja forme. Molimo pokušajte ponovo.';
-                    try {
-                        // Pokušaj parsiranja greške, posebno za validacione greške (status 422)
-                        const errorMatch = error.message.match(/\{.*\}/s); // Regex za hvatanje JSON objekta
-                        if (errorMatch && errorMatch[0]) {
-                             const errorResponse = JSON.parse(errorMatch[0]);
-                             if (errorResponse.errors) {
-                                 errorMessage = 'Molimo popunite sva obavezna polja:<br>';
-                                 for (const key in errorResponse.errors) {
-                                     errorMessage += `- ${errorResponse.errors[key][0]}<br>`;
-                                 }
-                             } else {
-                                 errorMessage = errorResponse.message || error.message;
+                    // Prikaz modala za nastavak na plaćanje
+                    showModal( 
+                        window.translations.checkout.order_created_success_click,
+                        `${window.translations.checkout.your_order_click} #${data.order_id} ${window.translations.checkout.order_created_continue} ${paymentMethodName}.`,
+                        paymentUrl,
+                        data.payment_method
+                    );
+                    formStatus.innerHTML = `<p class="text-green-500">${data.message}</p>`;
+
+                } else {
+                    // Greška sa servera
+                    showModal(window.translations.checkout.error, data.message || window.translations.checkout.unknown_error, null, null);
+                    formStatus.innerHTML = `<p class="text-red-500">${data.message || window.translations.checkout.an_error_occurred}</p>`;
+                }
+            })
+            .catch(error => {
+                // Hvatanje mrežnih i validacionih grešaka
+                console.error(`${window.translations.checkout.form_submission_error}`, error);
+                let errorMessage = window.translations.checkout.form_submission_error_retry;
+                try {
+                    const errorMatch = error.message.match(/\{.*\}/s);
+                    if (errorMatch && errorMatch[0]) {
+                         const errorResponse = JSON.parse(errorMatch[0]);
+                         if (errorResponse.errors) {
+                             errorMessage = `${window.translations.checkout.fill_all_fields}<br>`;
+                             for (const key in errorResponse.errors) {
+                                 errorMessage += `- ${errorResponse.errors[key][0]}<br>`;
                              }
-                        } else {
-                           errorMessage = error.message;
-                        }
-                    } catch (e) {
-                        errorMessage = error.message; // U slučaju problema sa parsiranjem, koristimo originalnu poruku
+                         } else {
+                             errorMessage = errorResponse.message || error.message;
+                         }
+                    } else {
+                       errorMessage = error.message;
                     }
-                    showModal('Greška!', errorMessage, null, null);
-                    formStatus.innerHTML = `<p class="text-red-500">${errorMessage}</p>`;
-                })
-                .finally(() => {
-                    // Vraćanje dugmeta "Place Order" u početno stanje bez obzira na ishod
-                    placeOrderBtn.disabled = false;
-                    placeOrderBtn.textContent = 'Place Order';
-                    // Spinner u modalu se isključuje u `showModal` funkciji, ali ova linija je dodatna sigurnost
-                    // modalSpinner.style.display = 'none'; 
-                });
+                } catch (e) {
+                    errorMessage = error.message;
+                }
+                showModal(window.translations.checkout.error, errorMessage, null, null);
+                formStatus.innerHTML = `<p class="text-red-500">${errorMessage}</p>`;
+            })
+            .finally(() => {
+                // Vraćanje dugmeta u početno stanje
+                placeOrderBtn.disabled = false;
+                placeOrderBtn.textContent = window.translations.checkout.place_order_button;
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
