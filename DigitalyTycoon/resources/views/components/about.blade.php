@@ -10,7 +10,7 @@
             </p>
         </div>
         <div class="text-center" data-aos="fade-left">
-            <img src="https://via.placeholder.com/600x400.png?text=Tim+DigitalyTycoon" alt="Tim DigitalyTycoon" class="rounded-lg shadow-xl mx-auto">
+            <img src="{{ asset('storage/team2.jpg') }}" alt="Tim DigitalyTycoon" class="rounded-lg shadow-xl mx-auto">
         </div>
     </div>
 </section>

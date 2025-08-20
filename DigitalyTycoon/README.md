@@ -1,66 +1,74 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Name: DigitalyTycoon
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+Purpose: DigitalyTycoon is a modern, professional web agency specializing in the creation and optimization of digital solutions. The main goal is to attract new clients by showcasing our portfolio, services, and professionalism. The website serves as a virtual business card and a sales tool.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Target Audience
+The website is intended for small and medium-sized businesses, entrepreneurs, and startups who want to establish or improve their online presence. The target audience includes clients who need the following services:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+New Website Creation: Businesses without an existing website.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Website Redesign: Clients with outdated websites who want a more modern and functional design.
 
-## Learning Laravel
+E-commerce Store Development: Businesses that want to sell products or services online.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Consulting and Support: Clients who need technical support, maintenance, or digital marketing strategy.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Architecture and Technologies
+The website is built on a robust and modern technology stack, ensuring high quality, performance, and ease of maintenance.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Backend:
 
-## Laravel Sponsors
+  Laravel 11: A powerful PHP framework that provides an elegant structure for developing web applications. It was used for managing routes, the Blade templating system, and the overall project structure.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Frontend:
 
-### Premium Partners
+  HTML5 & Blade: Standard markup language with Laravel's Blade syntax for efficient content and component management.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+  CSS & Styling:
 
-## Contributing
+Tailwind CSS: A utility-first CSS framework was used for fast and flexible design without writing custom CSS code. Classes like flex, py-8, and bg-accent enabled rapid responsive design.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+JavaScript:
 
-## Code of Conduct
+AOS (Animate On Scroll): A library used for dynamic animations. Elements are animated when they are scrolled into view, which contributes to a modern and interactive user experience.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Vanilla JS: Pure JavaScript was used for small interactions such as opening the mobile menu or dynamic portfolio filtering.
 
-## Security Vulnerabilities
+Development Environment and Tools:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Vite: A modern bundling and compilation tool used instead of Webpack for faster development and hot reloading.
 
-## License
+NPM (Node Package Manager): Used to install and manage front-end dependencies.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Git & GitHub: A version control system that enables change tracking and team collaboration.
+
+Features and Functionality
+The website consists of several key sections designed to guide the visitor through a sales funnel:
+
+Hero Section: A striking introduction with a key message.
+
+About Us: A brief overview of the agency, its mission, and values.
+
+Services: A detailed presentation of the services offered (websites, e-commerce, SEO, hosting).
+
+Portfolio: A dynamic gallery of projects with filtering capabilities.
+
+Testimonials: A display of feedback from satisfied clients to build trust.
+
+CTA (Call to Action): A clear invitation for visitors to get in touch.
+
+Footer: Contains navigation links, contact information, and a list of partners.
+
+Text for GitHub Readme
+You can use all of the information above to write your README.md file on GitHub. I suggest the following structure:
+
+Introduction: A brief description of the project, its goals, and its purpose.
+
+Features: A list of key functionalities and sections.
+
+Technologies: A list of the technologies used with a brief explanation of each.
+
+Installation and Running: Detailed instructions on how to run the project (e.g., git clone, composer install, npm install, cp .env.example .env, php artisan key:generate, npm run dev).
+
+Contact: boban.webdevelopment92@gmail.com

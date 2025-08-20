@@ -37,7 +37,7 @@
                     </p>
                 </div>
                 <div data-aos="fade-left">
-                    <img src="https://via.placeholder.com/600x450.png?text=Tim+u+akciji" alt="Тим у акцији" class="rounded-lg shadow-xl w-full h-auto">
+                    <img src="{{ asset('storage/team.jpg') }}" alt="Тим у акцији" class="rounded-lg shadow-xl w-full h-auto">
                 </div>
             </div>
         </section>
@@ -67,6 +67,11 @@
                         <img src="https://via.placeholder.com/200x200.png?text=Милена" alt="Милена Павловић" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
                         <h3 class="text-xl font-semibold">Милена Павловић</h3>
                         <p class="text-sm text-text-light/70">SEO и маркетинг</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="https://via.placeholder.com/200x200.png?text=Милена" alt="Boban Mladenovic" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
+                        <h3 class="text-xl font-semibold">Boban Mladenovic</h3>
+                        <p class="text-sm text-text-light/70">Full Stack Web Developer & Osnivac - Slobodni Umetnik</p>
                     </div>
                 </div>
             </div>

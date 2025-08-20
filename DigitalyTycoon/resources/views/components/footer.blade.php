@@ -37,11 +37,11 @@
         <div data-aos="fade-up" data-aos-delay="400">
             <h4 class="text-xl font-bold text-accent mb-4">Naši saradnici</h4>
             <div class="grid grid-cols-2 gap-4">
-                <a href="https://primer-domena.com" target="_blank" rel="noopener noreferrer">
-                    <img src="https://via.placeholder.com/150x50.png?text=Saradnik+1" alt="Logo saradnika 1" class="w-full h-auto rounded-md shadow-md hover:scale-105 transition-transform duration-300">
+                <a href="https://panel.unlimited.rs/aff.php?aff=578" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('storage/logo/unlimited.rs_logo.svg') }}" alt="Logo saradnika 1" class="w-full h-auto rounded-md shadow-md hover:scale-105 transition-transform duration-300">
                 </a>
-                <a href="https://primer-hosting.com" target="_blank" rel="noopener noreferrer">
-                    <img src="https://via.placeholder.com/150x50.png?text=Saradnik+2" alt="Logo saradnika 2" class="w-full h-auto rounded-md shadow-md hover:scale-105 transition-transform duration-300">
+                <a href="https://www.upwork.com/freelancers/~01c11d44fbe644e06b?mp_source=share" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('storage/logo/Upwork-logo.svg') }}" alt="Logo saradnika 2" class="w-full h-auto rounded-md shadow-md hover:scale-105 transition-transform duration-300">
                 </a>
                 </div>
         </div>
