@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... các bản dịch khác
+    'contact_title' => 'Liên hệ với chúng tôi',
+    'contact_hero_text' => 'Sẵn sàng bắt đầu dự án của bạn? Gửi tin nhắn cho chúng tôi và chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất.',
+    'form_title' => 'Mô tả dự án của bạn',
+    'form_name' => 'Họ và tên',
+    'form_company' => 'Tên công ty của bạn (tùy chọn)',
+    'form_email' => 'Email của bạn',
+    'form_phone' => 'Điện thoại (tùy chọn)',
+    'form_project_type_title' => 'Loại dự án',
+    'form_select_option' => 'Chọn một tùy chọn',
+    'form_type_new_website' => 'Trang web mới',
+    'form_type_ecommerce' => 'Cửa hàng thương mại điện tử',
+    'form_type_redesign' => 'Thiết kế lại trang web hiện có',
+    'form_type_maintenance' => 'Bảo trì và hỗ trợ',
+    'form_type_custom_app' => 'Tạo ứng dụng tùy chỉnh',
+    'form_type_other' => 'Khác',
+    'form_budget_title' => 'Ngân sách ước tính (tùy chọn)',
+    'form_budget_less_than' => 'Ít hơn',
+    'form_budget_more_than' => 'Nhiều hơn',
+    'form_budget_not_sure' => 'Tôi không chắc chắn',
+    'form_submit_button' => 'Gửi tin nhắn',
+    'info_title' => 'Thông tin liên hệ',
+    'info_address' => 'Địa chỉ',
+    'info_email' => 'Email',
+    'info_phone' => 'Điện thoại',
+    'info_location' => 'Vị trí của chúng tôi',
+];

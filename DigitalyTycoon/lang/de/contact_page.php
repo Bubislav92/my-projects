@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... andere Übersetzungen
+    'contact_title' => 'Kontaktieren Sie uns',
+    'contact_hero_text' => 'Bereit, Ihr Projekt zu starten? Senden Sie uns eine Nachricht, und wir werden uns so schnell wie möglich bei Ihnen melden.',
+    'form_title' => 'Beschreiben Sie uns Ihr Projekt',
+    'form_name' => 'Vor- und Nachname',
+    'form_company' => 'Name Ihrer Firma (optional)',
+    'form_email' => 'Ihre E-Mail',
+    'form_phone' => 'Telefon (optional)',
+    'form_project_type_title' => 'Projekttyp',
+    'form_select_option' => 'Wählen Sie eine Option',
+    'form_type_new_website' => 'Neue Website',
+    'form_type_ecommerce' => 'E-Commerce-Shop',
+    'form_type_redesign' => 'Neugestaltung einer bestehenden Website',
+    'form_type_maintenance' => 'Wartung und Support',
+    'form_type_custom_app' => 'Erstellung einer benutzerdefinierten Anwendung',
+    'form_type_other' => 'Sonstiges',
+    'form_budget_title' => 'Geschätztes Budget (optional)',
+    'form_budget_less_than' => 'Weniger als',
+    'form_budget_more_than' => 'Mehr als',
+    'form_budget_not_sure' => 'Ich bin mir nicht sicher',
+    'form_submit_button' => 'Nachricht senden',
+    'info_title' => 'Kontaktinformationen',
+    'info_address' => 'Adresse',
+    'info_email' => 'E-Mail',
+    'info_phone' => 'Telefon',
+    'info_location' => 'Unser Standort',
+];

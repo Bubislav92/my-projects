@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... 其他翻译
+    'contact_title' => '联系我们',
+    'contact_hero_text' => '准备好开始您的项目了吗？给我们发送消息，我们会尽快回复您。',
+    'form_title' => '向我们描述您的项目',
+    'form_name' => '姓名',
+    'form_company' => '您的公司名称（可选）',
+    'form_email' => '您的电子邮件',
+    'form_phone' => '电话（可选）',
+    'form_project_type_title' => '项目类型',
+    'form_select_option' => '选择一个选项',
+    'form_type_new_website' => '新网站',
+    'form_type_ecommerce' => '电子商务商店',
+    'form_type_redesign' => '现有网站重新设计',
+    'form_type_maintenance' => '维护与支持',
+    'form_type_custom_app' => '自定义应用程序开发',
+    'form_type_other' => '其他',
+    'form_budget_title' => '预计预算（可选）',
+    'form_budget_less_than' => '少于',
+    'form_budget_more_than' => '多于',
+    'form_budget_not_sure' => '不确定',
+    'form_submit_button' => '发送消息',
+    'info_title' => '联系方式',
+    'info_address' => '地址',
+    'info_email' => '电子邮件',
+    'info_phone' => '电话',
+    'info_location' => '我们的位置',
+];

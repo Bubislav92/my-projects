@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... другие переводы
+    'contact_title' => 'Связаться с нами',
+    'contact_hero_text' => 'Готовы начать свой проект? Отправьте нам сообщение, и мы свяжемся с вами в кратчайшие сроки.',
+    'form_title' => 'Опишите нам свой проект',
+    'form_name' => 'Имя и фамилия',
+    'form_company' => 'Название вашей компании (необязательно)',
+    'form_email' => 'Ваша электронная почта',
+    'form_phone' => 'Телефон (необязательно)',
+    'form_project_type_title' => 'Тип проекта',
+    'form_select_option' => 'Выберите вариант',
+    'form_type_new_website' => 'Новый веб-сайт',
+    'form_type_ecommerce' => 'Интернет-магазин',
+    'form_type_redesign' => 'Ре-дизайн существующего сайта',
+    'form_type_maintenance' => 'Обслуживание и поддержка',
+    'form_type_custom_app' => 'Создание пользовательского приложения',
+    'form_type_other' => 'Другое',
+    'form_budget_title' => 'Предполагаемый бюджет (необязательно)',
+    'form_budget_less_than' => 'Менее чем',
+    'form_budget_more_than' => 'Более чем',
+    'form_budget_not_sure' => 'Не уверен/а',
+    'form_submit_button' => 'Отправить сообщение',
+    'info_title' => 'Контактная информация',
+    'info_address' => 'Адрес',
+    'info_email' => 'Электронная почта',
+    'info_phone' => 'Телефон',
+    'info_location' => 'Наше местоположение',
+];

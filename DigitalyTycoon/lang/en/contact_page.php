@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... other translations
+    'contact_title' => 'Contact Us',
+    'contact_hero_text' => 'Ready to start your project? Send us a message and we\'ll get back to you as soon as possible.',
+    'form_title' => 'Describe your project to us',
+    'form_name' => 'First and Last Name',
+    'form_company' => 'Your Company Name (optional)',
+    'form_email' => 'Your Email',
+    'form_phone' => 'Phone (optional)',
+    'form_project_type_title' => 'Project Type',
+    'form_select_option' => 'Select an option',
+    'form_type_new_website' => 'New Website',
+    'form_type_ecommerce' => 'E-commerce Store',
+    'form_type_redesign' => 'Redesign of an Existing Site',
+    'form_type_maintenance' => 'Maintenance and Support',
+    'form_type_custom_app' => 'Creation of a Custom Application',
+    'form_type_other' => 'Other',
+    'form_budget_title' => 'Estimated Budget (optional)',
+    'form_budget_less_than' => 'Less than',
+    'form_budget_more_than' => 'More than',
+    'form_budget_not_sure' => 'I\'m not sure',
+    'form_submit_button' => 'Send Message',
+    'info_title' => 'Contact Information',
+    'info_address' => 'Address',
+    'info_email' => 'Email',
+    'info_phone' => 'Phone',
+    'info_location' => 'Our Location',
+];

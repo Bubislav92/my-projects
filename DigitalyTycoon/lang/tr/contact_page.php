@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... diğer çeviriler
+    'contact_title' => 'Bize Ulaşın',
+    'contact_hero_text' => 'Projenize başlamaya hazır mısınız? Bize bir mesaj gönderin, en kısa sürede size geri döneceğiz.',
+    'form_title' => 'Projenizi bize anlatın',
+    'form_name' => 'Ad ve Soyadı',
+    'form_company' => 'Şirketinizin Adı (isteğe bağlı)',
+    'form_email' => 'E-posta Adresiniz',
+    'form_phone' => 'Telefon (isteğe bağlı)',
+    'form_project_type_title' => 'Proje Türü',
+    'form_select_option' => 'Bir seçenek belirleyin',
+    'form_type_new_website' => 'Yeni Web Sitesi',
+    'form_type_ecommerce' => 'E-ticaret Mağazası',
+    'form_type_redesign' => 'Mevcut Bir Sitenin Yeniden Tasarımı',
+    'form_type_maintenance' => 'Bakım ve Destek',
+    'form_type_custom_app' => 'Özel Uygulama Geliştirme',
+    'form_type_other' => 'Diğer',
+    'form_budget_title' => 'Tahmini Bütçe (isteğe bağlı)',
+    'form_budget_less_than' => 'Daha az',
+    'form_budget_more_than' => 'Daha fazla',
+    'form_budget_not_sure' => 'Emin değilim',
+    'form_submit_button' => 'Mesajı Gönder',
+    'info_title' => 'İletişim Bilgileri',
+    'info_address' => 'Adres',
+    'info_email' => 'E-posta',
+    'info_phone' => 'Telefon',
+    'info_location' => 'Konumumuz',
+];

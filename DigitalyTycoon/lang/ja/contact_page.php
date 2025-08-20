@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... その他の翻訳
+    'contact_title' => 'お問い合わせ',
+    'contact_hero_text' => 'プロジェクトを開始する準備はできましたか？メッセージをお送りください。できるだけ早くご連絡いたします。',
+    'form_title' => 'プロジェクトについて教えてください',
+    'form_name' => '氏名',
+    'form_company' => '会社名（任意）',
+    'form_email' => 'あなたのメールアドレス',
+    'form_phone' => '電話番号（任意）',
+    'form_project_type_title' => 'プロジェクトの種類',
+    'form_select_option' => 'オプションを選択',
+    'form_type_new_website' => '新しいウェブサイト',
+    'form_type_ecommerce' => 'Eコマースストア',
+    'form_type_redesign' => '既存サイトの再設計',
+    'form_type_maintenance' => '保守とサポート',
+    'form_type_custom_app' => 'カスタムアプリケーションの開発',
+    'form_type_other' => 'その他',
+    'form_budget_title' => '推定予算（任意）',
+    'form_budget_less_than' => '～未満',
+    'form_budget_more_than' => '～以上',
+    'form_budget_not_sure' => '不明',
+    'form_submit_button' => 'メッセージを送信',
+    'info_title' => '連絡先情報',
+    'info_address' => '住所',
+    'info_email' => 'Eメール',
+    'info_phone' => '電話',
+    'info_location' => '私たちの所在地',
+];
