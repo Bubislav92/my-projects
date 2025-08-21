@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... ostali prevodi
+    'contact_title' => 'Kontaktirajte nas',
+    'contact_hero_text' => 'Spremni ste započeti svoj projekt? Pošaljite nam poruku i mi ćemo vam se javiti u najkraćem roku.',
+    'form_title' => 'Opišite nam svoj projekt',
+    'form_name' => 'Ime i prezime',
+    'form_company' => 'Naziv vaše tvrtke (opcionalno)',
+    'form_email' => 'Vaša e-pošta',
+    'form_phone' => 'Telefon (opcionalno)',
+    'form_project_type_title' => 'Vrsta projekta',
+    'form_select_option' => 'Odaberite opciju',
+    'form_type_new_website' => 'Nova web stranica',
+    'form_type_ecommerce' => 'E-trgovina',
+    'form_type_redesign' => 'Redizajn postojeće stranice',
+    'form_type_maintenance' => 'Održavanje i podrška',
+    'form_type_custom_app' => 'Izrada prilagođene aplikacije',
+    'form_type_other' => 'Drugo',
+    'form_budget_title' => 'Procijenjeni budžet (opcionalno)',
+    'form_budget_less_than' => 'Manje od',
+    'form_budget_more_than' => 'Više od',
+    'form_budget_not_sure' => 'Nisam siguran/na',
+    'form_submit_button' => 'Pošalji poruku',
+    'info_title' => 'Informacije za kontakt',
+    'info_address' => 'Adresa',
+    'info_email' => 'E-pošta',
+    'info_phone' => 'Telefon',
+    'info_location' => 'Naša lokacija',
+];

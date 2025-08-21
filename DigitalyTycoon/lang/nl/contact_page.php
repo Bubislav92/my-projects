@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... ostali prevodi
+    'contact_title' => 'Contact',
+    'contact_hero_text' => 'Klaar om jouw project te starten? Stuur ons een bericht en we nemen zo snel mogelijk contact met je op.',
+    'form_title' => 'Beschrijf je project aan ons',
+    'form_name' => 'Voor- en achternaam',
+    'form_company' => 'Naam van je bedrijf (optioneel)',
+    'form_email' => 'Je e-mailadres',
+    'form_phone' => 'Telefoon (optioneel)',
+    'form_project_type_title' => 'Projecttype',
+    'form_select_option' => 'Kies een optie',
+    'form_type_new_website' => 'Nieuwe website',
+    'form_type_ecommerce' => 'E-commerce winkel',
+    'form_type_redesign' => 'Herontwerp van een bestaande site',
+    'form_type_maintenance' => 'Onderhoud en ondersteuning',
+    'form_type_custom_app' => 'Ontwikkeling van een aangepaste applicatie',
+    'form_type_other' => 'Anders',
+    'form_budget_title' => 'Geschat budget (optioneel)',
+    'form_budget_less_than' => 'Minder dan',
+    'form_budget_more_than' => 'Meer dan',
+    'form_budget_not_sure' => 'Ik ben niet zeker',
+    'form_submit_button' => 'Verstuur bericht',
+    'info_title' => 'Contactinformatie',
+    'info_address' => 'Adres',
+    'info_email' => 'E-mail',
+    'info_phone' => 'Telefoon',
+    'info_location' => 'Onze locatie',
+];

@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... ostali prevodi
+    'contact_title' => 'Skontaktuj się z nami',
+    'contact_hero_text' => 'Gotowy, aby rozpocząć swój projekt? Wyślij nam wiadomość, a skontaktujemy się z Tobą tak szybko, jak to możliwe.',
+    'form_title' => 'Opisz nam swój projekt',
+    'form_name' => 'Imię i nazwisko',
+    'form_company' => 'Nazwa Twojej firmy (opcjonalnie)',
+    'form_email' => 'Twój adres e-mail',
+    'form_phone' => 'Telefon (opcjonalnie)',
+    'form_project_type_title' => 'Typ projektu',
+    'form_select_option' => 'Wybierz opcję',
+    'form_type_new_website' => 'Nowa strona internetowa',
+    'form_type_ecommerce' => 'Sklep internetowy',
+    'form_type_redesign' => 'Redesign istniejącej strony',
+    'form_type_maintenance' => 'Konserwacja i wsparcie',
+    'form_type_custom_app' => 'Tworzenie niestandardowej aplikacji',
+    'form_type_other' => 'Inne',
+    'form_budget_title' => 'Szacowany budżet (opcjonalnie)',
+    'form_budget_less_than' => 'Mniej niż',
+    'form_budget_more_than' => 'Więcej niż',
+    'form_budget_not_sure' => 'Nie jestem pewien/pewna',
+    'form_submit_button' => 'Wyślij wiadomość',
+    'info_title' => 'Informacje kontaktowe',
+    'info_address' => 'Adres',
+    'info_email' => 'E-mail',
+    'info_phone' => 'Telefon',
+    'info_location' => 'Nasza lokalizacja',
+];

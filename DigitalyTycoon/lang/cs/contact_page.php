@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... ostali prevodi
+    'contact_title' => 'Kontaktujte nás',
+    'contact_hero_text' => 'Jste připraveni začít svůj projekt? Pošlete nám zprávu a my se vám ozveme co nejdříve.',
+    'form_title' => 'Popište nám svůj projekt',
+    'form_name' => 'Jméno a příjmení',
+    'form_company' => 'Název vaší firmy (volitelné)',
+    'form_email' => 'Váš e-mail',
+    'form_phone' => 'Telefon (volitelné)',
+    'form_project_type_title' => 'Typ projektu',
+    'form_select_option' => 'Vyberte možnost',
+    'form_type_new_website' => 'Nový web',
+    'form_type_ecommerce' => 'E-shop',
+    'form_type_redesign' => 'Redesign existujícího webu',
+    'form_type_maintenance' => 'Údržba a podpora',
+    'form_type_custom_app' => 'Tvorba custom aplikace',
+    'form_type_other' => 'Jiné',
+    'form_budget_title' => 'Odhadovaný rozpočet (volitelné)',
+    'form_budget_less_than' => 'Méně než',
+    'form_budget_more_than' => 'Více než',
+    'form_budget_not_sure' => 'Nejsem si jistý/á',
+    'form_submit_button' => 'Odeslat zprávu',
+    'info_title' => 'Kontaktní informace',
+    'info_address' => 'Adresa',
+    'info_email' => 'E-mail',
+    'info_phone' => 'Telefon',
+    'info_location' => 'Naše umístění',
+];

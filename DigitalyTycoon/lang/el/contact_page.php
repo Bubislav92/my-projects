@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... ostali prevodi
+    'contact_title' => 'Επικοινωνήστε μαζί μας',
+    'contact_hero_text' => 'Είστε έτοιμοι να ξεκινήσετε το έργο σας; Στείλτε μας ένα μήνυμα και θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.',
+    'form_title' => 'Περιγράψτε μας το έργο σας',
+    'form_name' => 'Ονοματεπώνυμο',
+    'form_company' => 'Όνομα της εταιρείας σας (προαιρετικό)',
+    'form_email' => 'Η ηλεκτρονική σας διεύθυνση',
+    'form_phone' => 'Τηλέφωνο (προαιρετικό)',
+    'form_project_type_title' => 'Τύπος έργου',
+    'form_select_option' => 'Επιλέξτε μια επιλογή',
+    'form_type_new_website' => 'Νέα ιστοσελίδα',
+    'form_type_ecommerce' => 'Ηλεκτρονικό κατάστημα',
+    'form_type_redesign' => 'Επανασχεδιασμός υπάρχουσας ιστοσελίδας',
+    'form_type_maintenance' => 'Συντήρηση και υποστήριξη',
+    'form_type_custom_app' => 'Δημιουργία προσαρμοσμένης εφαρμογής',
+    'form_type_other' => 'Άλλο',
+    'form_budget_title' => 'Εκτιμώμενος προϋπολογισμός (προαιρετικό)',
+    'form_budget_less_than' => 'Λιγότερο από',
+    'form_budget_more_than' => 'Περισσότερο από',
+    'form_budget_not_sure' => 'Δεν είμαι σίγουρος/η',
+    'form_submit_button' => 'Αποστολή μηνύματος',
+    'info_title' => 'Στοιχεία επικοινωνίας',
+    'info_address' => 'Διεύθυνση',
+    'info_email' => 'Ηλεκτρονική διεύθυνση',
+    'info_phone' => 'Τηλέφωνο',
+    'info_location' => 'Η τοποθεσία μας',
+];

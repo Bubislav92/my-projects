@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... ostali prevodi
+    'contact_title' => 'Kapcsolatfelvétel',
+    'contact_hero_text' => 'Készen áll a projekt indítására? Küldjön nekünk üzenetet, és a lehető leghamarabb felvesszük Önnel a kapcsolatot.',
+    'form_title' => 'Mutassa be nekünk a projektjét',
+    'form_name' => 'Vezetéknév, keresztnév',
+    'form_company' => 'Cégneve (opcionális)',
+    'form_email' => 'Az Ön e-mail címe',
+    'form_phone' => 'Telefon (opcionális)',
+    'form_project_type_title' => 'Projekt típusa',
+    'form_select_option' => 'Válasszon opciót',
+    'form_type_new_website' => 'Új weboldal',
+    'form_type_ecommerce' => 'E-áruház',
+    'form_type_redesign' => 'Meglévő weboldal újratervezése',
+    'form_type_maintenance' => 'Karbantartás és támogatás',
+    'form_type_custom_app' => 'Egyedi alkalmazás fejlesztése',
+    'form_type_other' => 'Egyéb',
+    'form_budget_title' => 'Becsült költségvetés (opcionális)',
+    'form_budget_less_than' => 'Kevesebb, mint',
+    'form_budget_more_than' => 'Több, mint',
+    'form_budget_not_sure' => 'Nem vagyok benne biztos',
+    'form_submit_button' => 'Üzenet küldése',
+    'info_title' => 'Kapcsolatfelvételi adatok',
+    'info_address' => 'Cím',
+    'info_email' => 'E-mail',
+    'info_phone' => 'Telefon',
+    'info_location' => 'Elhelyezkedésünk',
+];

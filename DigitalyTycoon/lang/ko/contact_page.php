@@ -1,0 +1,30 @@
+<?php
+
+return [
+    // ... ostali prevodi
+    'contact_title' => '문의하기',
+    'contact_hero_text' => '프로젝트를 시작할 준비가 되셨나요? 저희에게 메시지를 보내주시면 최대한 빨리 연락드리겠습니다.',
+    'form_title' => '프로젝트를 설명해 주세요',
+    'form_name' => '성명',
+    'form_company' => '회사 이름 (선택 사항)',
+    'form_email' => '이메일',
+    'form_phone' => '전화번호 (선택 사항)',
+    'form_project_type_title' => '프로젝트 유형',
+    'form_select_option' => '옵션 선택',
+    'form_type_new_website' => '새로운 웹사이트',
+    'form_type_ecommerce' => '전자상거래',
+    'form_type_redesign' => '기존 사이트 재설계',
+    'form_type_maintenance' => '유지보수 및 지원',
+    'form_type_custom_app' => '맞춤형 애플리케이션 개발',
+    'form_type_other' => '기타',
+    'form_budget_title' => '예상 예산 (선택 사항)',
+    'form_budget_less_than' => '미만',
+    'form_budget_more_than' => '이상',
+    'form_budget_not_sure' => '잘 모르겠습니다',
+    'form_submit_button' => '메시지 보내기',
+    'info_title' => '연락처 정보',
+    'info_address' => '주소',
+    'info_email' => '이메일',
+    'info_phone' => '전화',
+    'info_location' => '우리의 위치',
+];
