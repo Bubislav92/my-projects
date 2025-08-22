@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\ContactController;
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
@@ -27,3 +28,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     })->name('services');
 
 });
+
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');

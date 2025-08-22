@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Λιγότερο από',
     'form_budget_more_than' => 'Περισσότερο από',
     'form_budget_not_sure' => 'Δεν είμαι σίγουρος/η',
+    'detailed_project_description' => 'Λεπτομερής περιγραφή του έργου',
     'form_submit_button' => 'Αποστολή μηνύματος',
     'info_title' => 'Στοιχεία επικοινωνίας',
     'info_address' => 'Διεύθυνση',

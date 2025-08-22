@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => '미만',
     'form_budget_more_than' => '이상',
     'form_budget_not_sure' => '잘 모르겠습니다',
+    'detailed_project_description' => '프로젝트 상세 설명',
     'form_submit_button' => '메시지 보내기',
     'info_title' => '연락처 정보',
     'info_address' => '주소',

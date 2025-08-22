@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Ít hơn',
     'form_budget_more_than' => 'Nhiều hơn',
     'form_budget_not_sure' => 'Tôi không chắc chắn',
+    'detailed_project_description' => 'Mô tả chi tiết dự án',
     'form_submit_button' => 'Gửi tin nhắn',
     'info_title' => 'Thông tin liên hệ',
     'info_address' => 'Địa chỉ',

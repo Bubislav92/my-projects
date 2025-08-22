@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Menej ako',
     'form_budget_more_than' => 'Viac ako',
     'form_budget_not_sure' => 'Nie som si istý/á',
+    'detailed_project_description' => 'Podrobný opis projektu',
     'form_submit_button' => 'Odoslať správu',
     'info_title' => 'Kontaktné informácie',
     'info_address' => 'Adresa',

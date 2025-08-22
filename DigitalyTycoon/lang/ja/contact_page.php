@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => '～未満',
     'form_budget_more_than' => '～以上',
     'form_budget_not_sure' => '不明',
+    'detailed_project_description' => 'プロジェクトの詳細な説明',
     'form_submit_button' => 'メッセージを送信',
     'info_title' => '連絡先情報',
     'info_address' => '住所',

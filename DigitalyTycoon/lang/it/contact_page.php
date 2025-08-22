@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Meno di',
     'form_budget_more_than' => 'Più di',
     'form_budget_not_sure' => 'Non sono sicuro/a',
+    'detailed_project_description' => 'Descrizione dettagliata del progetto',
     'form_submit_button' => 'Invia messaggio',
     'info_title' => 'Informazioni di contatto',
     'info_address' => 'Indirizzo',

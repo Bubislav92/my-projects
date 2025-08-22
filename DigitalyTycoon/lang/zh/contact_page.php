@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => '少于',
     'form_budget_more_than' => '多于',
     'form_budget_not_sure' => '不确定',
+    'detailed_project_description' => '项目详细描述',
     'form_submit_button' => '发送消息',
     'info_title' => '联系方式',
     'info_address' => '地址',

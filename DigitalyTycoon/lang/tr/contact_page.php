@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Daha az',
     'form_budget_more_than' => 'Daha fazla',
     'form_budget_not_sure' => 'Emin değilim',
+    'detailed_project_description' => 'Detaylı proje açıklaması',
     'form_submit_button' => 'Mesajı Gönder',
     'info_title' => 'İletişim Bilgileri',
     'info_address' => 'Adres',

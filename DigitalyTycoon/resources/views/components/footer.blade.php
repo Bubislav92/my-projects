@@ -28,7 +28,7 @@
             </p>
             <div class="flex space-x-4 mt-4 text-2xl">
                 <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-accent transition duration-300"><i class="fa-brands fa-tiktok"></i></a>
                 <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-instagram"></i></a>
             </div>

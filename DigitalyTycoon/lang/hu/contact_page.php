@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Kevesebb, mint',
     'form_budget_more_than' => 'Több, mint',
     'form_budget_not_sure' => 'Nem vagyok benne biztos',
+    'detailed_project_description' => 'Részletes projektleírás',
     'form_submit_button' => 'Üzenet küldése',
     'info_title' => 'Kapcsolatfelvételi adatok',
     'info_address' => 'Cím',

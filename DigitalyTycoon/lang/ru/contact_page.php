@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Менее чем',
     'form_budget_more_than' => 'Более чем',
     'form_budget_not_sure' => 'Не уверен/а',
+    'detailed_project_description' => 'Детальное описание проекта',
     'form_submit_button' => 'Отправить сообщение',
     'info_title' => 'Контактная информация',
     'info_address' => 'Адрес',

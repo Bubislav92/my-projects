@@ -23,4 +23,4 @@ return [
     'why_choose_us_2_text' => 'We treat you not just as a client, but as a partner. We work together to achieve the best results.',
     'why_choose_us_3_title' => 'Quality Without Compromise',
     'why_choose_us_3_text' => 'We are committed to providing the highest quality solutions, from design to implementation.',
-];
+]; 

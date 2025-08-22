@@ -21,6 +21,7 @@ return [
     'form_budget_less_than' => 'Manje od',
     'form_budget_more_than' => 'Više od',
     'form_budget_not_sure' => 'Nisam siguran/na',
+    'detailed_project_description' => 'Detaljan opis projekta',
     'form_submit_button' => 'Pošalji poruku',
     'info_title' => 'Informacije za kontakt',
     'info_address' => 'Adresa',

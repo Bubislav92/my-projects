@@ -27,7 +27,8 @@
             <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">
                 <div data-aos="fade-right">
                     <h2 class="text-3xl font-bold text-accent mb-6">{{ __('contact_page.form_title') }}</h2>
-                    <form action="#" method="POST" class="space-y-6">
+                    <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
+                        @csrf
                         <div>
                             <label for="full_name" class="block text-sm font-semibold mb-2">{{ __('contact_page.form_name') }}</label>
                             <input type="text" id="full_name" name="full_name" class="w-full p-3 rounded-md bg-primary-dark border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-accent" required>
@@ -68,7 +69,7 @@
                             </select>
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-semibold mb-2">Детаљан опис пројекта</label>
+                            <label for="message" class="block text-sm font-semibold mb-2">{{ __('contact_page.detailed_project_description') }}</label>
                             <textarea id="message" name="message" rows="6" class="w-full p-3 rounded-md bg-primary-dark border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-accent" required></textarea>
                         </div>
 
