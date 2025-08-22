@@ -1,6 +1,6 @@
 <section class="bg-primary-dark text-text-light py-20">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-accent" data-aos="fade-up">Шта кажу наши клијенти</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-accent" data-aos="fade-up">{{ __('home_page.testimonials_title') }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-secondary-dark p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
                 <p class="italic mb-4">"DigitalyTycoon је превазишао сва наша очекивања. Брзо, професионално и савршено решење."</p>

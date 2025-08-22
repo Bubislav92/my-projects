@@ -1,6 +1,6 @@
 <section id="portfolio" class="bg-secondary-dark text-text-light py-20">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-accent" data-aos="fade-up">Наш портфолио</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-accent" data-aos="fade-up">{{ __('home_page.portfolio_title') }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-primary-dark rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
                 <img src="{{ asset('storage/computer1.jpg') }}" alt="Projekat 1" class="w-full h-auto">
