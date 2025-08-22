@@ -34,10 +34,10 @@
         <section class="bg-secondary-dark text-text-light text-center py-20">
             <div class="container mx-auto px-4" data-aos="fade-up">
                 <h1 class="text-5xl md:text-6xl font-bold text-accent mb-4">
-                    Наш Портфолио
+                    {{ __('portfolio_page.portfolio_title_page') }}
                 </h1>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto">
-                    Прегледајте неке од пројеката на које смо поносни. Сваки пројекат је прича за себе, са циљем да надмаши очекивања.
+                    {{ __('portfolio_page.portfolio_intro') }}
                 </p>
             </div>
         </section>
@@ -46,16 +46,16 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
                     <button class="filter-btn px-6 py-2 rounded-full font-semibold transition-colors duration-300 bg-accent text-primary-dark hover:bg-opacity-80" data-filter="all">
-                        Сви пројекти
+                        {{ __('portfolio_page.portfolio_all') }}
                     </button>
                     <button class="filter-btn px-6 py-2 rounded-full font-semibold transition-colors duration-300 bg-secondary-dark text-text-light hover:bg-gray-700" data-filter="website">
-                        Веб сајтови
+                        {{ __('portfolio_page.portfolio_websites') }}
                     </button>
                     <button class="filter-btn px-6 py-2 rounded-full font-semibold transition-colors duration-300 bg-secondary-dark text-text-light hover:bg-gray-700" data-filter="ecommerce">
-                        Е-продавнице
+                        {{ __('portfolio_page.portfolio_ecommerce') }}
                     </button>
                     <button class="filter-btn px-6 py-2 rounded-full font-semibold transition-colors duration-300 bg-secondary-dark text-text-light hover:bg-gray-700" data-filter="agency">
-                        Веб агенције
+                        {{ __('portfolio_page.portfolio_web_agencies') }}
                     </button>
                 </div>
 
@@ -67,8 +67,8 @@
                         </a>
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-accent mb-2">Наслов пројекта 1</h3>
-                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">Категорија:</span> Веб сајт</p>
-                            <a href="#" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">Погледај пројекат</a>
+                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">{{ __('portfolio_page.portfolio_category') }}</span> Веб сајт</p>
+                            <a href="#" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">{{ __('portfolio_page.portfolio_view_project') }}</a>
                         </div>
                     </div>
 

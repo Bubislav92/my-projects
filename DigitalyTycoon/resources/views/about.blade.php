@@ -15,10 +15,10 @@
         <section class="bg-secondary-dark text-text-light text-center py-20">
             <div class="container mx-auto px-4" data-aos="fade-up">
                 <h1 class="text-5xl md:text-6xl font-bold text-accent mb-4">
-                    Упознајте DigitalyTycoon
+                    {{ __('about_page.about_meet_us') }}
                 </h1>
                 <p class="text-xl md:text-2xl max-w-3xl mx-auto">
-                    Ми смо тим страствених стручњака посвећених стварању изузетних дигиталних искустава.
+                    {{ __('about_page.about_text_intro') }}
                 </p>
             </div>
         </section>
@@ -27,13 +27,13 @@
             <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
                     <h2 class="text-4xl font-bold text-accent mb-6">
-                        Наша прича и мисија
+                        {{ __('about_page.our_story_mission_title') }}
                     </h2>
                     <p class="mb-4 text-lg leading-relaxed">
-                        **DigitalyTycoon** је основан са једноставном, али снажном идејом: да се технологија и креативност споје у јединствена веб решења. Почели смо као мали тим са великим сновима, верујући да сваки бизнис заслужује да има снажно дигитално присуство. Наша мисија је да нашим клијентима омогућимо раст и успех кроз иновативна и квалитетна решења.
+                        {{ __('about_page.our_story_mission_text_1') }}
                     </p>
                     <p class="text-lg leading-relaxed">
-                        Кроз сваки пројекат, настојимо да превазиђемо очекивања, не само кроз техничку изврсност, већ и кроз разумевање ваших пословних циљева. Верујемо у партнерство, транспарентност и посвећеност, и то је темељ нашег пословања.
+                        {{ __('about_page.our_story_mission_text_2') }}
                     </p>
                 </div>
                 <div data-aos="fade-left">
@@ -45,7 +45,7 @@
         <section class="bg-secondary-dark py-20">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center text-accent mb-12" data-aos="fade-up">
-                    Упознајте наш тим
+                    {{ __('about_page.meet_our_team') }}
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
