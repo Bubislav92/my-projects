@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'İletişim Formundan Yeni Mesaj',
+    'new_message' => 'Yeni Mesaj',
+    'full_name' => 'Ad Soyad:',
+    'company_name' => 'Şirket Adı:',
+    'email' => 'E-posta:',
+    'phone' => 'Telefon:',
+    'project_type' => 'Proje Tipi:',
+    'budget' => 'Bütçe:',
+    'detailed_project_description' => 'Detaylı Proje Açıklaması:',
+    'sincerely' => 'Saygılarımızla,',
+    'reply_to_your_message' => 'Mesajınıza Cevap',
+    'your_reply' => 'Cevabınız',
+    'dear' => 'Sayın,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Bizimle iletişime geçtiğiniz için teşekkür ederiz. Mesajınıza cevabımız aşağıdadır:',
+    'kind_regards' => 'İçten dileklerimizle,',
+    'message_received_confirmation' => 'Mesaj Alındı Onayı',
+    'thank_you_for_contacting_us_comma' => 'Bizimle iletişime geçtiğiniz için teşekkür ederiz,',
+    'your_message_successfully_received' => 'Mesajınız başarıyla alınmıştır ve ekibimiz tarafından işleme alınacaktır.',
+    'project' => 'Proje:',
+    'budget_confirmation' => 'Bütçe:',
+    'visit_our_site' => 'Sitemizi ziyaret edin',
+    'copy_of_your_message' => 'Mesajınızın kopyası:',
+];

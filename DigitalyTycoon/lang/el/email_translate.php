@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Νέο μήνυμα από τη φόρμα επικοινωνίας',
+    'new_message' => 'Νέο μήνυμα',
+    'full_name' => 'Ονοματεπώνυμο:',
+    'company_name' => 'Επωνυμία εταιρείας:',
+    'email' => 'Email:',
+    'phone' => 'Τηλέφωνο:',
+    'project_type' => 'Τύπος έργου:',
+    'budget' => 'Προϋπολογισμός:',
+    'detailed_project_description' => 'Λεπτομερής περιγραφή του έργου:',
+    'sincerely' => 'Με εκτίμηση,',
+    'reply_to_your_message' => 'Απάντηση στο μήνυμά σας',
+    'your_reply' => 'Η απάντησή σας',
+    'dear' => 'Αγαπητέ/ή,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Σας ευχαριστούμε που επικοινωνήσατε μαζί μας. Η απάντηση στο μήνυμά σας είναι η εξής:',
+    'kind_regards' => 'Με φιλικούς χαιρετισμούς,',
+    'message_received_confirmation' => 'Επιβεβαίωση λήψης μηνύματος',
+    'thank_you_for_contacting_us_comma' => 'Σας ευχαριστούμε που επικοινωνήσατε μαζί μας,',
+    'your_message_successfully_received' => 'Το μήνυμά σας παραλήφθηκε με επιτυχία και θα επεξεργαστεί από την ομάδα μας.',
+    'project' => 'Έργο:',
+    'budget_confirmation' => 'Προϋπολογισμός:',
+    'visit_our_site' => 'Επισκεφθείτε την ιστοσελίδα μας',
+    'copy_of_your_message' => 'Αντίγραφο του μηνύματός σας:',
+];

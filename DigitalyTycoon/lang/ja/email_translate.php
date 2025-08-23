@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'お問い合わせフォームからの新しいメッセージ',
+    'new_message' => '新しいメッセージ',
+    'full_name' => '氏名:',
+    'company_name' => '会社名:',
+    'email' => 'メールアドレス:',
+    'phone' => '電話番号:',
+    'project_type' => 'プロジェクトの種類:',
+    'budget' => '予算:',
+    'detailed_project_description' => 'プロジェクトの詳細な説明:',
+    'sincerely' => '敬具',
+    'reply_to_your_message' => 'メッセージへの返信',
+    'your_reply' => 'あなたの返信',
+    'dear' => '拝啓,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'お問い合わせいただきありがとうございます。あなたのメッセージへの返信は以下の通りです:',
+    'kind_regards' => 'よろしくお願いいたします,',
+    'message_received_confirmation' => 'メッセージ受信確認',
+    'thank_you_for_contacting_us_comma' => 'お問い合わせいただきありがとうございます,',
+    'your_message_successfully_received' => 'あなたのメッセージは正常に受信され、私たちのチームによって処理されます。',
+    'project' => 'プロジェクト:',
+    'budget_confirmation' => '予算:',
+    'visit_our_site' => '当社のウェブサイトをご覧ください',
+    'copy_of_your_message' => 'あなたのメッセージのコピー:',
+];

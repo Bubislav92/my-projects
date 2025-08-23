@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => '来自联系表的新消息',
+    'new_message' => '新消息',
+    'full_name' => '姓名:',
+    'company_name' => '公司名称:',
+    'email' => '电子邮件:',
+    'phone' => '电话:',
+    'project_type' => '项目类型:',
+    'budget' => '预算:',
+    'detailed_project_description' => '项目详细描述:',
+    'sincerely' => '此致,',
+    'reply_to_your_message' => '回复您的消息',
+    'your_reply' => '您的回复',
+    'dear' => '尊敬的,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => '感谢您联系我们。我们对您的消息回复如下:',
+    'kind_regards' => '此致敬礼,',
+    'message_received_confirmation' => '消息接收确认',
+    'thank_you_for_contacting_us_comma' => '感谢您联系我们,',
+    'your_message_successfully_received' => '您的消息已成功接收，我们的团队将进行处理。',
+    'project' => '项目:',
+    'budget_confirmation' => '预算:',
+    'visit_our_site' => '访问我们的网站',
+    'copy_of_your_message' => '您的消息副本:',
+];

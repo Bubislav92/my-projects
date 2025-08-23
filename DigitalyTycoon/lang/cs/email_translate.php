@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Nová zpráva z kontaktního formuláře',
+    'new_message' => 'Nová zpráva',
+    'full_name' => 'Jméno a příjmení:',
+    'company_name' => 'Název firmy:',
+    'email' => 'E-mail:',
+    'phone' => 'Telefon:',
+    'project_type' => 'Typ projektu:',
+    'budget' => 'Rozpočet:',
+    'detailed_project_description' => 'Podrobný popis projektu:',
+    'sincerely' => 'S pozdravem,',
+    'reply_to_your_message' => 'Odpověď na vaši zprávu',
+    'your_reply' => 'Vaše odpověď',
+    'dear' => 'Vážený/á,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Děkujeme, že jste nás kontaktovali. Odpověď na vaši zprávu je následující:',
+    'kind_regards' => 'S úctou,',
+    'message_received_confirmation' => 'Potvrzení o přijetí zprávy',
+    'thank_you_for_contacting_us_comma' => 'Děkujeme, že jste nás kontaktovali,',
+    'your_message_successfully_received' => 'Vaše zpráva byla úspěšně přijata a bude zpracována naším týmem.',
+    'project' => 'Projekt:',
+    'budget_confirmation' => 'Rozpočet:',
+    'visit_our_site' => 'Navštivte naše stránky',
+    'copy_of_your_message' => 'Kopie vaší zprávy:',
+];

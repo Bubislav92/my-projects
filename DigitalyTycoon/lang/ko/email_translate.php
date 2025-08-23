@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => '문의 양식에서 온 새 메시지',
+    'new_message' => '새 메시지',
+    'full_name' => '성명:',
+    'company_name' => '회사명:',
+    'email' => '이메일:',
+    'phone' => '전화번호:',
+    'project_type' => '프로젝트 유형:',
+    'budget' => '예산:',
+    'detailed_project_description' => '프로젝트 상세 설명:',
+    'sincerely' => '진심을 담아,',
+    'reply_to_your_message' => '메시지 회신',
+    'your_reply' => '귀하의 회신',
+    'dear' => '님께,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => '문의해 주셔서 감사합니다. 보내주신 메시지에 대한 답변은 다음과 같습니다:',
+    'kind_regards' => '안부를 전하며,',
+    'message_received_confirmation' => '메시지 수신 확인',
+    'thank_you_for_contacting_us_comma' => '문의해 주셔서 감사합니다,',
+    'your_message_successfully_received' => '귀하의 메시지가 성공적으로 수신되었으며 저희 팀에서 처리할 예정입니다.',
+    'project' => '프로젝트:',
+    'budget_confirmation' => '예산:',
+    'visit_our_site' => '저희 사이트를 방문해 주세요',
+    'copy_of_your_message' => '귀하의 메시지 사본:',
+];

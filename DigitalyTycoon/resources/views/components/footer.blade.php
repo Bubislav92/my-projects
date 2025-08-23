@@ -22,7 +22,7 @@
         <div data-aos="fade-up" data-aos-delay="300">
             <h4 class="text-xl font-bold text-accent mb-4">{{ __('home_page.footer_contact') }}</h4>
             <p class="text-sm">
-                {{ __('home_page.footer_address') }} Digitalnog Tigra 10, Novi Beograd<br>
+                {{ __('home_page.footer_address') }} 18224 Делиград, Србија<br>
                 {{ __('home_page.footer_email') }} info@digitalytycoon.com<br>
                 {{ __('home_page.footer_phone') }} +381 11 123 4567
             </p>

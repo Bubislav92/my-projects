@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactForm;
-use Illuminate\Support\Facades\Mail; // Ово недостаје
-use App\Mail\ContactFormMail;      // Ово недостаје
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 use App\Mail\UserConfirmationMail;
+use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
     public function submit(Request $request)
     {
-        // 1. Валидација свих поља
+        // 1. Validacija svih polja
         $validatedData = $request->validate([
             'full_name' => 'required|string|max:255',
             'company_name' => 'nullable|string|max:255',
@@ -21,16 +22,33 @@ class ContactController extends Controller
             'project_type' => 'required|string|max:255',
             'budget' => 'nullable|string|max:255',
             'message' => 'required|string',
+            // Promenjeno iz 'captcha' u 'recaptcha'
+            'g-recaptcha-response' => 'recaptcha', 
         ]);
 
-        // 2. Чување података у бази
-        ContactForm::create($validatedData);
+        // 2. Ukloni g-recaptcha-response pre čuvanja u bazi
+        $dataToSave = $validatedData;
+        unset($dataToSave['g-recaptcha-response']);
 
-        // 3. Слање имејла
-        // Замените 'vas.email@primer.com' са вашом стварном адресом
-        Mail::to('vas.email@primer.com')->send(new ContactFormMail($validatedData));
+        ContactForm::create($dataToSave);
 
-        // 4. Преусмеравање са поруком о успеху
-        return back()->with('success', 'Vaša poruka je uspešno poslata!');
+        // 3. Slanje email-a adminu
+        try {
+            Mail::to('info@digitalytycoon.com') 
+                ->send(new ContactFormMail($dataToSave));
+        } catch (\Exception $e) {
+            Log::error('Error sending message to admin: ' . $e->getMessage());
+        }
+
+        // 4. Slanje automatske potvrde korisniku
+        try {
+            Mail::to($validatedData['email'])
+                ->send(new UserConfirmationMail($dataToSave));
+        } catch (\Exception $e) {
+            Log::error('Error sending confirmation to user: ' . $e->getMessage());
+        }
+
+        // 5. Redirect sa porukom o uspehu
+        return back()->with('success', 'Your message has been sent successfully!');
     }
 }

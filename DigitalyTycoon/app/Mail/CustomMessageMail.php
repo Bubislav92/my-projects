@@ -43,9 +43,10 @@ class CustomMessageMail extends Mailable
         return new Content(
             markdown: 'emails.custom-message',
             with: [
-                'content' => $this->bodyText,
+                'subject' => $this->subjectText, // Sada Blade šablon dobija $subject
+                'body' => $this->bodyText,       // Sada Blade šablon dobija $body
             ],
-        );
+        ); 
     }
 
     /**

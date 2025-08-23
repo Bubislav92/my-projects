@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Új üzenet a kapcsolatfelvételi űrlapról',
+    'new_message' => 'Új üzenet',
+    'full_name' => 'Teljes név:',
+    'company_name' => 'Cégnév:',
+    'email' => 'E-mail:',
+    'phone' => 'Telefon:',
+    'project_type' => 'Projekt típusa:',
+    'budget' => 'Költségvetés:',
+    'detailed_project_description' => 'Részletes projektleírás:',
+    'sincerely' => 'Tisztelettel,',
+    'reply_to_your_message' => 'Válasz az üzenetére',
+    'your_reply' => 'Az Ön válasza',
+    'dear' => 'Tisztelt,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Köszönjük, hogy felvette velünk a kapcsolatot. Az üzenetére adott válaszunk a következő:',
+    'kind_regards' => 'Üdvözlettel,',
+    'message_received_confirmation' => 'Üzenet fogadásának megerősítése',
+    'thank_you_for_contacting_us_comma' => 'Köszönjük, hogy felvette velünk a kapcsolatot,',
+    'your_message_successfully_received' => 'Üzenetét sikeresen megkaptuk, és csapatunk feldolgozza.',
+    'project' => 'Projekt:',
+    'budget_confirmation' => 'Költségvetés:',
+    'visit_our_site' => 'Látogasson el weboldalunkra',
+    'copy_of_your_message' => 'Az üzenete másolata:',
+];

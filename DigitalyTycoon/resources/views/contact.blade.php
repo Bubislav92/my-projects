@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакт - DigitalyTycoon</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body class="bg-primary-dark text-text-light antialiased">
 
     <x-header />
+
+    @if(session('success'))
+        <div id="success-notification" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 p-4 rounded-lg shadow-lg text-white"
+             style="background-color: #4CAF50;">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <main>
         <section class="bg-secondary-dark text-text-light text-center py-20">
@@ -72,6 +80,13 @@
                             <label for="message" class="block text-sm font-semibold mb-2">{{ __('contact_page.detailed_project_description') }}</label>
                             <textarea id="message" name="message" rows="6" class="w-full p-3 rounded-md bg-primary-dark border border-gray-600 text-text-light focus:outline-none focus:ring-2 focus:ring-accent" required></textarea>
                         </div>
+                            <div>
+                                {!! htmlFormSnippet() !!}
+                                @error('g-recaptcha-response')
+                                    <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        
 
                         <div>
                             <button type="submit" class="w-full bg-accent text-primary-dark font-bold py-3 px-6 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">
@@ -88,7 +103,7 @@
                             <i class="fas fa-map-marker-alt text-accent text-2xl mr-4 mt-1"></i>
                             <div>
                                 <h3 class="font-semibold">{{ __('contact_page.info_address') }}</h3>
-                                <p>Улица Дигиталног Тигра 10, Нови Београд, Србија</p>
+                                <p>18224 Делиград, Србија</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -111,7 +126,7 @@
                         <h3 class="text-2xl font-bold text-accent mb-4">{{ __('contact_page.info_location') }}</h3>
                         <div class="w-full h-80 rounded-lg overflow-hidden shadow-xl">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.400262635999!2d20.446864076394595!3d44.81423877107386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a709b4d89e4ad%3A0xc3f34f3d2f9d519d!2z0J3QvtCy0L3QsNC60YPQvdCw0Y8g0JHQtdC70LDRgNC-0LIsINCd0L7Rj9C00LAsINCb0L7QstC-0YAg0JHQtdC70LDRgNC-0LAsINC_0YDQvtCz0YDQsNGB0LDQu9C10L3QuNC1INGA0YPRgdGD!5e0!3m2!1ssr!2srs!4v1724009786481!5m2!1ssr!2srs"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23107.319776154905!2d21.565818529748036!3d43.61872129445111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475429b9bfe6ef01%3A0xdc7fe16d6c6cd482!2sDeligrad%2C%20Serbia!5e0!3m2!1sen!2sde!4v1755989498561!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                                 width="100%"
                                 height="100%"
                                 style="border:0;"
@@ -127,6 +142,17 @@
     </main>
 
     <x-footer />
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const notification = document.getElementById('success-notification');
+            if (notification) {
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    // Уклоните елемент након што транзиција заврши
+                    setTimeout(() => notification.remove(), 500);
+                }, 3000); // Обавештење ће бити видљиво 3 секунде
+            }
+        });
+    </script>
 </body>
 </html>

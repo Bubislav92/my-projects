@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Nieuw bericht van het contactformulier',
+    'new_message' => 'Nieuw bericht',
+    'full_name' => 'Volledige naam:',
+    'company_name' => 'Bedrijfsnaam:',
+    'email' => 'E-mail:',
+    'phone' => 'Telefoon:',
+    'project_type' => 'Projecttype:',
+    'budget' => 'Budget:',
+    'detailed_project_description' => 'Gedetailleerde projectbeschrijving:',
+    'sincerely' => 'Hoogachtend,',
+    'reply_to_your_message' => 'Antwoord op uw bericht',
+    'your_reply' => 'Uw antwoord',
+    'dear' => 'Geachte,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Bedankt voor uw contact. Ons antwoord op uw bericht is als volgt:',
+    'kind_regards' => 'Met vriendelijke groet,',
+    'message_received_confirmation' => 'Bevestiging van ontvangst van het bericht',
+    'thank_you_for_contacting_us_comma' => 'Bedankt voor uw contact,',
+    'your_message_successfully_received' => 'Uw bericht is succesvol ontvangen en zal door ons team worden verwerkt.',
+    'project' => 'Project:',
+    'budget_confirmation' => 'Budget:',
+    'visit_our_site' => 'Bezoek onze website',
+    'copy_of_your_message' => 'Kopie van uw bericht:',
+];

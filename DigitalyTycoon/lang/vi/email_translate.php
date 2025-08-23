@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Tin nhắn mới từ biểu mẫu liên hệ',
+    'new_message' => 'Tin nhắn mới',
+    'full_name' => 'Họ và tên:',
+    'company_name' => 'Tên công ty:',
+    'email' => 'Email:',
+    'phone' => 'Điện thoại:',
+    'project_type' => 'Loại dự án:',
+    'budget' => 'Ngân sách:',
+    'detailed_project_description' => 'Mô tả chi tiết dự án:',
+    'sincerely' => 'Trân trọng,',
+    'reply_to_your_message' => 'Trả lời tin nhắn của bạn',
+    'your_reply' => 'Phản hồi của bạn',
+    'dear' => 'Kính gửi,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Cảm ơn bạn đã liên hệ với chúng tôi. Phản hồi cho tin nhắn của bạn như sau:',
+    'kind_regards' => 'Trân trọng,',
+    'message_received_confirmation' => 'Xác nhận đã nhận tin nhắn',
+    'thank_you_for_contacting_us_comma' => 'Cảm ơn bạn đã liên hệ với chúng tôi,',
+    'your_message_successfully_received' => 'Tin nhắn của bạn đã được nhận thành công và sẽ được đội ngũ của chúng tôi xử lý.',
+    'project' => 'Dự án:',
+    'budget_confirmation' => 'Ngân sách:',
+    'visit_our_site' => 'Ghé thăm trang web của chúng tôi',
+    'copy_of_your_message' => 'Bản sao tin nhắn của bạn:',
+];

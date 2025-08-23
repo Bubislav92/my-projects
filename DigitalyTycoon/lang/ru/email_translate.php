@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Новое сообщение с формы обратной связи',
+    'new_message' => 'Новое сообщение',
+    'full_name' => 'Имя и фамилия:',
+    'company_name' => 'Название компании:',
+    'email' => 'Электронная почта:',
+    'phone' => 'Телефон:',
+    'project_type' => 'Тип проекта:',
+    'budget' => 'Бюджет:',
+    'detailed_project_description' => 'Детальное описание проекта:',
+    'sincerely' => 'С уважением,',
+    'reply_to_your_message' => 'Ответ на ваше сообщение',
+    'your_reply' => 'Ваш ответ',
+    'dear' => 'Уважаемый/ая,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Благодарим вас за обращение к нам. Ответ на ваше сообщение ниже:',
+    'kind_regards' => 'С наилучшими пожеланиями,',
+    'message_received_confirmation' => 'Подтверждение получения сообщения',
+    'thank_you_for_contacting_us_comma' => 'Благодарим вас за обращение к нам,',
+    'your_message_successfully_received' => 'Ваше сообщение было успешно получено и будет обработано нашей командой.',
+    'project' => 'Проект:',
+    'budget_confirmation' => 'Бюджет:',
+    'visit_our_site' => 'Посетите наш сайт',
+    'copy_of_your_message' => 'Копия вашего сообщения:',
+];

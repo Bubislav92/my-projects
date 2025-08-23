@@ -27,6 +27,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         return view('services');
     })->name('services');
 
+    Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
 });
 
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');

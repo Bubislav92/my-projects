@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Nuevo mensaje del formulario de contacto',
+    'new_message' => 'Nuevo mensaje',
+    'full_name' => 'Nombre completo:',
+    'company_name' => 'Nombre de la empresa:',
+    'email' => 'Correo electrónico:',
+    'phone' => 'Teléfono:',
+    'project_type' => 'Tipo de proyecto:',
+    'budget' => 'Presupuesto:',
+    'detailed_project_description' => 'Descripción detallada del proyecto:',
+    'sincerely' => 'Atentamente,',
+    'reply_to_your_message' => 'Respuesta a su mensaje',
+    'your_reply' => 'Su respuesta',
+    'dear' => 'Estimado/a,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Gracias por contactarnos. Nuestra respuesta a su mensaje es la siguiente:',
+    'kind_regards' => 'Saludos cordiales,',
+    'message_received_confirmation' => 'Confirmación de recepción del mensaje',
+    'thank_you_for_contacting_us_comma' => 'Gracias por contactarnos,',
+    'your_message_successfully_received' => 'Su mensaje ha sido recibido con éxito y será procesado por nuestro equipo.',
+    'project' => 'Proyecto:',
+    'budget_confirmation' => 'Presupuesto:',
+    'visit_our_site' => 'Visite nuestro sitio web',
+    'copy_of_your_message' => 'Copia de su mensaje:',
+];

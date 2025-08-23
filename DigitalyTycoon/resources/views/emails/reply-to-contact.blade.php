@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
-    <title>Одговор на вашу поруку</title>
+    <title>{{ __('email_translate.reply_to_your_message') }}</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
         .container { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; }
@@ -13,18 +13,18 @@
 <body>
 
     <div class="container">
-        <h1>Ваш одговор</h1>
+        <h1>{{ __('email_translate.your_reply') }}</h1>
         
-        <p>Поштовани/а,</p>
+        <p>{{ __('email_translate.dear') }}</p>
 
-        <p>Хвала вам што сте нас контактирали. Одговор на вашу поруку је следећи:</p>
+        <p>{{ __('email_translate.thank_you_for_contacting_us_reply_is_as_follows') }}</p>
 
         <div class="message-box">
             <p>{{ $body }}</p>
         </div>
 
         <p style="margin-top: 20px;">
-            Срдачан поздрав,<br>
+            {{ __('email_translate.kind_regards') }}<br>
             {{ config('app.name') }}
         </p>
 

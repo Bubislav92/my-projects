@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'new_message_from_contact_form' => 'Нова порука са контакт форме',
+    'new_message' => 'Нова порука',
+    'full_name' => 'Име и презиме:',
+    'company_name' => 'Назив фирме:',
+    'email' => 'Е-пошта:',
+    'phone' => 'Телефон:',
+    'project_type' => 'Тип пројекта:',
+    'budget' => 'Буџет:',
+    'detailed_project_description' => 'Детаљан опис пројекта:',
+    'sincerely' => 'С поштовањем,',
+    'reply_to_your_message' => 'Одговор на вашу поруку',
+    'your_reply' => 'Ваш одговор',
+    'dear' => 'Поштовани/а,',
+    'thank_you_for_contacting_us_reply_is_as_follows' => 'Хвала вам што сте нас контактирали. Одговор на вашу поруку је следећи:',
+    'kind_regards' => 'Срдачан поздрав,',
+    'message_received_confirmation' => 'Потврда о пријему поруке',
+    'thank_you_for_contacting_us_comma' => 'Хвала Вам што сте нас контактирали,',
+    'your_message_successfully_received' => 'Ваша порука је успешно примљена и биће обрађена од стране нашег тима.',
+    'project' => 'Пројекат:',
+    'budget_confirmation' => 'Буџет:',
+    'visit_our_site' => 'Посетите наш сајт',
+    'copy_of_your_message' => 'Копија ваше поруке:',
+];

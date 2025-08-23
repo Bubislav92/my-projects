@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <title>{{ $subject }}</title>
@@ -20,7 +20,7 @@
         </div>
 
         <p style="margin-top: 20px;">
-            Поштовање,<br>
+            {{ __('email_translate.sincerely') }}<br>
             {{ config('app.name') }}
         </p>
 
