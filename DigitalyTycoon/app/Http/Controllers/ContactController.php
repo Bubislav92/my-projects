@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ContactForm;
 use Illuminate\Support\Facades\Mail; // Ово недостаје
 use App\Mail\ContactFormMail;      // Ово недостаје
+use App\Mail\UserConfirmationMail;
 
 class ContactController extends Controller
 {

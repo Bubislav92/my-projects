@@ -54,7 +54,7 @@ class ContactFormResource extends Resource
                         'other' => 'Drugo',
                     ])
                     ->label('Tip projekta')
-                    ->readOnly(),
+                    ->disabled(),
                 Select::make('budget')
                     ->options([
                         '<5000' => 'Manje od 5.000 €',
@@ -64,7 +64,7 @@ class ContactFormResource extends Resource
                         'unknown' => 'Nisam siguran/na',
                     ])
                     ->label('Budžet')
-                    ->readOnly(),
+                    ->disabled(),
                 Textarea::make('message')->label('Poruka')
                     ->rows(5)
                     ->readOnly(),
@@ -140,7 +140,7 @@ class ContactFormResource extends Resource
     {
         return [
             'index' => Pages\ListContactForms::route('/'),
-            'create' => Pages\CreateContactForm::route('/create'),
+            'view' => Pages\ViewContactForm::route('/{record}'),
             'edit' => Pages\EditContactForm::route('/{record}/edit'),
         ];
     }
