@@ -10,6 +10,11 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\User;
 use Illuminate\Support\Facades\Log; // Potrebno za logovanje grešaka
+use App\Mail\OrderConfirmationMail;
+use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
+use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\StripeController;
 
 class CheckOutController extends Controller
 {
@@ -110,6 +115,7 @@ class CheckOutController extends Controller
             // 2. Kreiranje porudžbine
             $order = Order::create([
                 'user_id' => $user->id,
+                'email' => $validatedData['email'],
                 'total_amount' => $totalAmount,
                 'status' => 'pending',
                 'shipping_address_line1' => $validatedData['address'],
@@ -121,6 +127,7 @@ class CheckOutController extends Controller
                 'payment_status' => 'pending',
                 'payment_method' => $validatedData['payment_method'],
                 'transaction_id' => null,
+                'expires_at' => now()->addHours(72), // Rok važenja porudžbine 72h
             ]);
 
             // 3. Kreiranje stavki porudžbine
@@ -136,7 +143,16 @@ class CheckOutController extends Controller
             // 4. Potvrda transakcije
             DB::commit();
 
-            // 5. Vraćanje JSON odgovora klijentu
+            // 5. Pošalji email (preko queue-a)
+            //Mail::to($user->email)->queue(new OrderConfirmationMail($order));
+            if (!empty($order->email)) {
+                Mail::to($order->email)->queue(new OrderConfirmationMail($order));
+                Log::info("Queued confirmation email to: " . $order->email);
+            } else {
+                Log::warning("Order ID {$order->id} has no email set, skipping confirmation email.");
+            }
+
+            // 6. Vraćanje JSON odgovora klijentu
             return response()->json([
                 'success' => true,
                 'message' => 'Order successfully created.',
@@ -154,4 +170,42 @@ class CheckOutController extends Controller
             return response()->json(['success' => false, 'message' => 'Greška pri kreiranju porudžbine: ' . $e->getMessage()], 500);
         }
     }
+
+     /**
+     * Obrađuje plaćanje neplaćene porudžbine.
+     * Korisnik dolazi sa linka iz email-a (signed URL).
+     */
+    public function payPending(Request $request, Order $order)
+    {
+        // 1. Validacija linka (da nije istekao ili falsifikovan)
+        if (!$request->hasValidSignature()) {
+            abort(401, 'Link za plaćanje je neispravan ili je istekao.');
+        }
+
+        // 2. Provera statusa porudžbine
+        if (!in_array($order->status, ['pending', 'na cekanju'])) {
+            return redirect()->route('orders.show', $order)
+                ->with('error', 'Porudžbina je već plaćena ili otkazana.');
+        }
+
+        // 3. Provera da li rok za plaćanje nije istekao
+        if ($order->expires_at && $order->expires_at->isPast()) {
+            return redirect()->route('orders.show', $order)
+                ->with('error', 'Rok za plaćanje porudžbine je istekao.');
+        }
+
+        // 4. Preusmeravanje na odgovarajući payment kontroler
+        $paymentMethod = $request->query('method');
+
+        if ($paymentMethod === 'stripe') {
+            return redirect()->route('stripe.process', ['order' => $order->id]);
+        } elseif ($paymentMethod === 'paypal') {
+            return redirect()->route('paypal.process', ['order' => $order->id]);
+        }
+
+        return redirect()->route('orders.show', $order)
+            ->with('error', 'Nepoznat način plaćanja.');
+    }
+
+
 }

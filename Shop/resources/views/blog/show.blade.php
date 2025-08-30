@@ -33,8 +33,7 @@
                 <span><i class="fa-regular fa-calendar mr-1"></i> {{ $post->published_at->format('F d, Y') }}</span>
             </div>
 
-            {{-- Ispravljena putanja za sliku koristeći Spatie --}}
-            <img src="{{ $post->getFirstMediaUrl('post_thumbnail') }}" 
+            <img src="{{ asset('images/blog/' . $post->image) }}" 
                  alt="{{ $post->title }}"
                  class="w-full rounded-xl object-cover object-center mb-8">
             

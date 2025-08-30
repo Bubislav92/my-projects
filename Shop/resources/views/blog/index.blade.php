@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- Naslov stranice --}}
+    {{-- Наслов странице --}}
     <title>Our Nature Blog - Vesna's Web Store</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,17 +18,18 @@
     <x-header />
 
     <main class="container mx-auto px-4 py-8 md:py-12">
-        {{-- Glavni naslov stranice --}}
+        {{-- Главни наслов странице --}}
         <h1 class="text-4xl font-bold text-dark-gray mb-8 text-center">{{ __('blog_store.blog_title') }}</h1>
 
         {{-- Sekcija sa istaknutim člancima (Featured Posts) --}}
         <section class="mb-12">
             <h2 class="text-3xl font-bold text-dark-gray mb-6 text-center">{{ __('blog_store.featured_articles') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {{-- Уклоњена су фиксна @php polja i zamenjena su pravim podacima --}}
                 @foreach ($featuredPosts as $post)
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out flex flex-col">
                         <a href="{{ url('/blog/' . $post->slug) }}" class="block relative overflow-hidden" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ $post->getFirstMediaUrl('post_thumbnail') }}"
+                            <img src="{{ asset('images/blog/' . $post->image) }}"
                                  alt="{{ $post->title }}"
                                  class="w-full h-56 object-cover object-center transform group-hover:scale-110 transition duration-500 ease-in-out">
                         </a>
@@ -41,7 +42,7 @@
                             </div>
                             <div class="flex justify-between items-center text-sm text-gray-500 mt-4">
                                 <span><i class="fa-regular fa-calendar mr-1"></i> {{ $post->published_at->format('F d, Y') }}</span>
-                                <a href="{{ url('/blog/' . $post->slug) }}" class="text-primary-green hover:underline font-semibold" target="_blank" rel="noopener noreferrer">Read More <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                                <a href="{{ url('/blog/' . $post->slug) }}" class="text-primary-green hover:underline font-semibold" target="_blank" rel="noopener noreferrer">{{ __('blog_store.read_more') }} <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
                             </div>
                         </div>
                     </div>
@@ -53,10 +54,11 @@
         <section>
             <h2 class="text-3xl font-bold text-dark-gray mb-6 text-center">{{ __('blog_store.all_articles') }}</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {{-- Уклоњена су фиксна @php polja i zamenjena su pravim podacima --}}
                 @foreach ($allPosts as $post)
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out flex flex-col">
                         <a href="{{ url('/blog/' . $post->slug) }}" class="block relative overflow-hidden" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ $post->getFirstMediaUrl('post_thumbnail') }}"
+                            <img src="{{ asset('images/blog/' . $post->image) }}"
                                  alt="{{ $post->title }}"
                                  class="w-full h-48 object-cover object-center transform group-hover:scale-110 transition duration-500 ease-in-out">
                         </a>

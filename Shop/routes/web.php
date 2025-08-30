@@ -83,6 +83,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
         Route::post('/checkout/process', [CheckOutController::class, 'processOrder'])->name('checkout.process_order');
         Route::get('/checkout/success', function() { return view('checkout.success'); })->name('checkout.success');
         Route::get('/checkout/cancel', function() { return view('checkout.cancel'); })->name('checkout.cancel');
+        Route::get('/checkout/pay-pending/{order}', [CheckOutController::class, 'payPending'])
+                ->name('checkout.pay_pending')
+                ->middleware('signed');
         // <-------------------- End Routes of Checkout -------------------->
 
         // <-------------------- Start Routes of PayPal -------------------->

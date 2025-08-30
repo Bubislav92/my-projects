@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cart; // Dodato za direktan pristup Cart modelu
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use App\Models\Order;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PayPalPaidMail;
 
 class PayPalController extends Controller
 {
@@ -168,6 +171,17 @@ class PayPalController extends Controller
                     if ($order->user && $order->user->cart) {
                         $order->user->cart->cartItems()->delete();
                         $order->user->cart->delete();
+                    }
+
+                    try {
+                        if (!empty($order->email)) {
+                            Mail::to($order->email)->queue(new PayPalPaidMail($order));
+                            Log::info('Queued PayPal confirmation email to: ' . $order->email);
+                        } else {
+                            Log::warning("Order ID {$order->id} has no email set, skipping confirmation email.");
+                        }
+                    } catch (\Exception $mailException) {
+                        Log::error('Error sending PayPal confirmation email: ' . $mailException->getMessage(), ['order_id' => $order->id]);
                     }
 
                     return view('paypal.success', [

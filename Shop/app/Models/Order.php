@@ -18,6 +18,7 @@ class Order extends Model
      */
     protected $fillable = [
         'user_id',
+        'email',
         'total_amount',
         'status',
         'shipping_address_line1',
@@ -27,6 +28,7 @@ class Order extends Model
         'shipping_zip_code',
         'shipping_country',
         'payment_status',
+        'expires_at',
         'payment_method',
         'transaction_id',
     ];

@@ -9,6 +9,8 @@ use Stripe\Stripe;
 use Stripe\Checkout\Session;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\StripePaidMail;
 
 class StripeController extends Controller
 {
@@ -139,6 +141,14 @@ class StripeController extends Controller
                     DB::commit();
 
                     Log::info('Stripe payment confirmed and order updated successfully.', ['order_id' => $order->id, 'session_id' => $sessionId]);
+
+                    // Slanje mejla nakon uspešne uplate
+                    if (!empty($order->email)) {
+                        Mail::to($order->email)->queue(new StripePaidMail($order));
+                        Log::info('Queued Stripe confirmation email to: ' . $order->email);
+                    } else {
+                        Log::warning("Order ID {$order->id} has no email set, skipping confirmation email.");
+                    }
 
                     // <-------------------- IZMENA JE OVDE: PRIKAZUJEMO VIEW DIREKTNO -------------------->
                     // Umesto redirecta na drugu rutu, sada direktno prikazujemo success view

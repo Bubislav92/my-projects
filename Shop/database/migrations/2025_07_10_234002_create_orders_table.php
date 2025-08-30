@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete(); // Porudžbina uvek pripada korisniku
+            $table->string('email')->nullable();
             $table->decimal('total_amount', 10, 2); // Ukupan iznos porudžbine
             $table->string('status')->default('pending'); // npr. pending, processing, completed, cancelled
             $table->string('shipping_address_line1');
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('shipping_zip_code');
             $table->string('shipping_country');
             $table->string('payment_status')->default('pending'); // npr. pending, paid, refunded
+            $table->timestamp('expires_at')->nullable();
             $table->string('payment_method')->nullable(); // npr. credit_card, paypal
             $table->string('transaction_id')->nullable(); // ID transakcije sa platnog procesora
             $table->timestamps();
