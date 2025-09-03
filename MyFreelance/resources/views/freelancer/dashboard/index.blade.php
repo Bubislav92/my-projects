@@ -25,9 +25,9 @@
             </div>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="{{ route('freelancer.home') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">Home</a>
-                <a href="#" class="text-dark-gray hover:text-primary-orange transition duration-300">Browse Projects</a>
-                <a href="#" class="text-dark-gray hover:text-primary-orange transition duration-300">My Proposals</a>
-                <a href="#" class="text-dark-gray hover:text-primary-orange transition duration-300">Messages</a>
+                <a href="{{ route('freelancer.browse-projects') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">Browse Projects</a>
+                <a href="{{ route('freelancer.my-proposals') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">My Proposals</a>
+                <a href="{{ route('freelancer.messages') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">Messages</a>
 
                 {{-- Обавештења --}}
                 <div class="relative">
@@ -48,8 +48,8 @@
                     {{-- Падајући мени за корисника --}}
                     <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
                         <a href="{{ route('freelancer.dashboard') }}" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">Dashboard</a>
-                        <a href="#" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">My Profile</a>
-                        <a href="#" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">Settings</a>
+                        <a href="{{ route('freelancer.profile') }}" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">My Profile</a>
+                        <a href="{{ route('freelancer.settings') }}" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">Settings</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 transition duration-200">
@@ -76,7 +76,7 @@
             <a href="#" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">My Proposals</a>
             <a href="#" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">Messages</a>
             <a href="{{ route('freelancer.dashboard') }}" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">Dashboard</a>
-            <a href="#" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">My Profile</a>
+            <a href="{{ route('freelancer.profile') }}" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">My Profile</a>
             <a href="#" class="block px-4 py-2 text-dark-gray hover:bg-gray-100 transition duration-200">Settings</a>
             <form method="POST" action="{{ route('logout') }}" class="block px-4 py-2">
                 @csrf
@@ -220,43 +220,7 @@
     </main>
 
     {{-- Футер (Footer) --}}
-    <footer class="bg-dark-gray text-white py-12 mt-10">
-        <div class="container mx-auto px-4 text-center">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h4 class="text-2xl font-bold text-primary-orange mb-4">My Freelance</h4>
-                    <p class="text-gray-400">Your platform for freelancing.</p>
-                </div>
-                <div>
-                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
-                    <ul>
-                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300">Browse Projects</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300">My Proposals</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300">Messages</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl font-semibold mb-4">Support</h4>
-                    <ul>
-                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300">Contact</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary-orange transition duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 pt-8 text-gray-400 text-sm">
-                &copy; {{ date('Y') }} My Freelance. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    <x-footer />
 
     <script>
         // JavaScript за мобилни мени и кориснички мени

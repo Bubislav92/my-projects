@@ -1,4 +1,5 @@
 import './bootstrap';
+import './user-menu.js';
 
 import Alpine from 'alpinejs';
 

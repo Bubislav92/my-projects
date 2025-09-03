@@ -3,10 +3,24 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserRole;
+use Illuminate\Support\Facades\Auth;
 
 //<--------------- Start of Navigation --------------->
+/*
 Route::get('/', function () {
     return view('welcome');
+});
+*/
+
+Route::get('/', function () {
+    if (Auth::check()) {
+        if (Auth::user()->role === \App\Models\User::ROLE_FREELANCER) {
+            return redirect()->route('freelancer.home');
+        } elseif (Auth::user()->role === \App\Models\User::ROLE_CLIENT) {
+            return redirect()->route('client.home');
+        }
+    }
+    return view('welcome'); // gosti vide samo welcome
 });
 
 Route::get('/about-us', function () {
@@ -26,29 +40,69 @@ Route::get('/privacy', function () {
 })->name('privacy');
 //<--------------- End of Navigation --------------->
 
-//<--------------- Start Dashboard of Freelancer --------------->
-Route::middleware(['auth', CheckUserRole::class . ':freelancer'])->group(function () {
-    Route::get('/freelancer/home', function () {
+//<--------------- Start Account of Freelancer --------------->
+Route::middleware(['auth', CheckUserRole::class . ':freelancer'])->prefix('freelancer')->group(function () {
+    Route::get('/home', function () {
         return view('freelancer.home');
     })->name('freelancer.home');
 
-    Route::get('/freelancer/dashboard', function () {
+    Route::get('/projects', function () {
+        return view('freelancer.browse-projects');
+    })->name('freelancer.browse-projects');
+
+    Route::get('/my-proposals', function () {
+        return view('freelancer.my-proposals');
+    })->name('freelancer.my-proposals');
+
+    Route::get('/messages', function () {
+        return view('freelancer.messages');
+    })->name('freelancer.messages');
+
+    Route::get('/dashboard', function () {
         return view('freelancer.dashboard.index');
     })->name('freelancer.dashboard');
-});
-//<--------------- End Dashboard of Freelancer --------------->
 
-//<--------------- Start Dashboard of Client --------------->
-Route::middleware(['auth', CheckUserRole::class . ':client'])->group(function () {
-    Route::get('/client/home', function () {
+    Route::get('/my-profile', function () {
+        return view('freelancer.profile.index');
+    })->name('freelancer.profile');
+
+    Route::get('/settings', function () {
+        return view('freelancer.settings.index');
+    })->name('freelancer.settings');
+});
+//<--------------- End Account of Freelancer --------------->
+
+//<--------------- Start Account of Client --------------->
+Route::middleware(['auth', CheckUserRole::class . ':client'])->prefix('client')->group(function () {
+    Route::get('/home', function () {
         return view('client.home');
     })->name('client.home');
 
-    Route::get('/client/dashboard', function () {
+    Route::get('/browse-freelancers', function () {
+        return view('client.browse-freelancers');
+    })->name('client.browse-freelancers');
+
+    Route::get('/my-projects', function () {
+        return view('client.my-projects');
+    })->name('client.my-projects');
+
+    Route::get('/messages', function () {
+        return view('client.messages');
+    })->name('client.messages');
+
+    Route::get('/dashboard', function () {
         return view('client.dashboard.index');
     })->name('client.dashboard');
+
+    Route::get('/my-profile', function () {
+        return view('client.profile.index');
+    })->name('client.profile');
+
+    Route::get('/settings', function () {
+        return view('client.settings.index');
+    })->name('client.settings');
 });
-//<--------------- End Dashboard of Client --------------->
+//<--------------- End Account of Client --------------->
 
 /*
 Route::get('/dashboard', function () {
