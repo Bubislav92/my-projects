@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckUserRole;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 //<--------------- Start of Navigation --------------->
 /*
@@ -14,13 +15,17 @@ Route::get('/', function () {
 
 Route::get('/', function () {
     if (Auth::check()) {
-        if (Auth::user()->role === \App\Models\User::ROLE_FREELANCER) {
+        if (Auth::user()->role === User::ROLE_ADMIN) {
+            return redirect('/admin');
+        } elseif (Auth::user()->role === User::ROLE_FREELANCER) {
             return redirect()->route('freelancer.home');
-        } elseif (Auth::user()->role === \App\Models\User::ROLE_CLIENT) {
+        } elseif (Auth::user()->role === User::ROLE_CLIENT) {
             return redirect()->route('client.home');
         }
     }
-    return view('welcome'); // gosti vide samo welcome
+
+    // Guests see only the welcome page
+    return view('welcome');
 });
 
 Route::get('/about-us', function () {
@@ -40,6 +45,11 @@ Route::get('/privacy', function () {
 })->name('privacy');
 //<--------------- End of Navigation --------------->
 
+/*
+Route::middleware(['auth', CheckUserRole::class . ':administrator'])->group(function () {
+    return redirect('/admin');
+});
+*/
 //<--------------- Start Account of Freelancer --------------->
 Route::middleware(['auth', CheckUserRole::class . ':freelancer'])->prefix('freelancer')->group(function () {
     Route::get('/home', function () {
@@ -101,6 +111,26 @@ Route::middleware(['auth', CheckUserRole::class . ':client'])->prefix('client')-
     Route::get('/settings', function () {
         return view('client.settings.index');
     })->name('client.settings');
+
+    Route::get('/about-freelancer', function () {
+        return view('client.about-freelancer');
+    })->name('client.about-freelancer');
+
+    Route::get('/menage-freelancer', function () {
+        return view('client.menage-freelancer');
+    })->name('client.menage-freelancer');
+
+    Route::get('/view-project', function () {
+        return view('client.view-project');
+    })->name('client.view-project');
+
+    Route::get('/review-bid', function () {
+        return view('client.review-bid');
+    })->name('client.review-bid');
+
+    Route::get('/edit-project', function () {
+        return view('client.edit-project');
+    })->name('client.edit-project');
 });
 //<--------------- End Account of Client --------------->
 

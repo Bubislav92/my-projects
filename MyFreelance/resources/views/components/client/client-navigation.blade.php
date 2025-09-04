@@ -1,4 +1,3 @@
-{{-- Главна навигација (Navbar) --}}
 <nav class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <div class="text-3xl font-bold text-primary-orange">
@@ -6,9 +5,7 @@
         </div>
         <div class="hidden md:flex space-x-6 items-center">
             <a href="{{ route('client.home') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">Home</a>
-            <a href="#" class="bg-primary-orange text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                Post a Project <i class="fas fa-plus ml-1"></i>
-            </a>
+            
             <a href="{{ route('client.browse-freelancers') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">Browse Freelancers</a> {{-- Линк ка страници за преглед фриленсера --}}
             <a href="{{ route('client.my-projects') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">My Projects</a> {{-- Линк ка клијентовом dashboard-у (active projects) --}}
             <a href="{{ route('client.messages') }}" class="text-dark-gray hover:text-primary-orange transition duration-300">Messages</a>
@@ -70,4 +67,6 @@
             </button>
         </form>
     </div>
+
+    
 </nav>
