@@ -16,7 +16,7 @@
 <body class="antialiased text-gray-800">
 
     <!-- Navigation (using the component) -->
-    <x-client.navigation/>
+    <x-client.client-navigation />
 
     <!-- Main content -->
     <main class="bg-gray-100 min-h-screen py-10">

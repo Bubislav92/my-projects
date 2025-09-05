@@ -18,7 +18,7 @@
 <body class="font-sans antialiased bg-light-gray">
 
     <!-- Navigation (using the component) -->
-    <x-client.navigation/>
+    <x-client.client-navigation />
 
     <main class="py-10">
         <div class="container mx-auto px-4">

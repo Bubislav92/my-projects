@@ -18,12 +18,14 @@
     'resources/js/find-freelancer.js', 
     'resources/js/post-project-modal.js',
     'resources/js/read-article-modal.js',
-    'resources/js/second-read-article-modal.js'])
+    'resources/js/second-read-article-modal.js',
+    'resources/js/message-modal.js'])
 
 </head>
 <body class="font-sans antialiased bg-light-gray">
 
     <x-client.client-navigation/>
+
 
     <main class="py-10">
         <div class="container mx-auto px-4">
@@ -132,7 +134,9 @@
                     <p class="text-gray-600 text-sm mb-4">Rating: <span class="text-yellow-500"><i class="fas fa-star"></i> 5.0 (10 reviews)</span></p>
                     <div class="flex flex-col gap-2">
                         <a href="{{ route('client.about-freelancer') }}" class="bg-secondary-green text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300">View Profile</a>
-                        <a href="#" class="border border-primary-orange text-primary-orange px-4 py-2 rounded-md hover:bg-primary-orange hover:text-white transition duration-300">Message</a>
+                        <a href="#" class="open-message-modal-btn border border-primary-orange text-primary-orange px-4 py-2 rounded-md hover:bg-primary-orange hover:text-white transition duration-300">
+                            Message
+                        </a>
                     </div>
                 </div>
                 {{-- Додај још фриленсера... --}}
@@ -151,7 +155,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 border-l-4 border-secondary-green">
                     <h3 class="text-xl font-semibold text-dark-gray mb-2">How to Choose the Right Freelancer</h3>
                     <p class="text-gray-700 mb-4">Discover key factors and strategies for selecting the perfect freelancer for your project.</p>
-                    <a href="#" id="openSecondModalLink" class="text-secondary-green hover:underline transition duration-300">
+                    <a href="#" id="openSecondModalLink" class="text-primary-orange hover:underline transition duration-300">
                         Read Article <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
@@ -260,6 +264,26 @@
             </div>
         </div>
 
+        <!-- Message Modal -->
+        <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 transition-opacity duration-300 opacity-0 hidden">
+            <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full mx-auto transform transition-transform duration-300 scale-95">
+                <div class="flex justify-between items-center mb-4 border-b pb-4">
+                    <h2 id="modalTitle" class="text-2xl font-bold text-dark-gray">Message Freelancer</h2>
+                    <button id="messageCloseBtn" class="text-gray-500 hover:text-dark-gray transition-colors duration-300">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-4">
+                    <textarea id="messageTextarea" rows="6" class="w-full rounded-md border-gray-300 shadow-sm focus:border-secondary-green focus:ring-secondary-green placeholder-gray-500 transition duration-300" placeholder="Type your message here..."></textarea>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                    <button id="messageSendBtn" class="bg-secondary-green text-white px-6 py-3 rounded-md font-semibold hover:bg-green-700 transition duration-300 shadow-md">Send</button>
+                </div>
+            </div>
+        </div>        
+
         <!-- The Modal -->
         <div id="tipsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 transition-opacity duration-300 opacity-0 hidden">
             <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-auto transform transition-transform duration-300 scale-95">
@@ -313,6 +337,7 @@
 
     {{-- Футер (Footer) --}}
     <x-footer />
+
 
 </body>
 </html>

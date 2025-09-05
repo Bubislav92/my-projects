@@ -1,43 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const userMenuButton = document.getElementById('user-menu-button');
     const userMenu = document.getElementById('user-menu');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
 
-    function closeAllMenus() {
-        if (userMenu) {
-            userMenu.classList.add('hidden');
-        }
-        if (mobileMenu) {
-            mobileMenu.classList.add('hidden');
-        }
+    // Inicijalno sakrijemo meni
+    userMenu.style.maxHeight = '0px';
+
+    function closeMenu() {
+        userMenu.style.maxHeight = '0px';
     }
 
-    if (userMenuButton && userMenu) {
-        userMenuButton.addEventListener('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            closeAllMenus();
-            userMenu.classList.toggle('hidden');
-        });
-    }
-
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            closeAllMenus();
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-
-    // Close menus when clicking outside
-    document.addEventListener('click', function(event) {
-        if (userMenu && !userMenu.contains(event.target) && !userMenuButton.contains(event.target)) {
-            userMenu.classList.add('hidden');
+    userMenuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (userMenu.style.maxHeight === '0px') {
+            userMenu.style.maxHeight = userMenu.scrollHeight + 'px';
+        } else {
+            closeMenu();
         }
-        if (mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-            mobileMenu.classList.add('hidden');
+    });
+
+    // Klik van menija zatvara ga
+    document.addEventListener('click', (e) => {
+        if (!userMenu.contains(e.target) && !userMenuButton.contains(e.target)) {
+            closeMenu();
         }
     });
 });

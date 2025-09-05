@@ -131,6 +131,22 @@ Route::middleware(['auth', CheckUserRole::class . ':client'])->prefix('client')-
     Route::get('/edit-project', function () {
         return view('client.edit-project');
     })->name('client.edit-project');
+
+    Route::get('/post-project-details', function () {
+        return view('client.post-project-details');
+    })->name('client.post-project-details');
+
+    Route::get('/invoices-payments', function () {
+        return view('client.invoices-payments.index');
+    })->name('client.invoices-payments');
+
+    Route::get('/security-and-privacy', function () {
+        return view('client.security_and_privacy.security_and_privacy');
+    })->name('client.security_and_privacy');
+
+    Route::get('/notification', function () {
+        return view('client.notification');
+    })->name('client.notification');
 });
 //<--------------- End Account of Client --------------->
 
