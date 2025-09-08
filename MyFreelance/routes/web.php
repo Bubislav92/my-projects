@@ -6,6 +6,9 @@ use App\Http\Middleware\CheckUserRole;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
+use App\Http\Controllers\Client\DashboardController as ClientDashboard;
+use App\Http\Controllers\Freelancer\DashboardController as FreelancerDashboard;
+
 //<--------------- Start of Navigation --------------->
 /*
 Route::get('/', function () {

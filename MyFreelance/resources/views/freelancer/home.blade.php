@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     {{-- Скрипте (Tailwind CSS) --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 
+        'resources/js/app.js', 
+        'resources/js/freelancer/notification.js',
+        'resources/js/freelancer/user-menu.js',
+        'resources/js/freelancer/message-modal.js'])
 </head>
 <body class="font-sans antialiased bg-light-gray">
 
