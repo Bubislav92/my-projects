@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop Template - All Products</title>
+    <meta name="description" content="Browse our full collection of modern and stylish products.">
+    <meta name="keywords" content="e-commerce, shop, template, Tailwind CSS, products, list, filter">
+    <meta name="author" content="Your Name">
+
+    <meta property="og:title" content="My Shop Template - Products">
+    <meta property="og:description" content="Browse our full collection of modern and stylish products.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/products.html">
+    <meta property="og:image" content="https://yourwebsite.com/images/products-share.jpg">
+
+    <link href="./dist/css/style.css" rel="stylesheet">
+    <link rel="preload" href="./dist/js/main.js" as="script">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-background">
+
+    <header class="bg-background-card shadow-md">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex-shrink-0">
+                <h1 class="text-3xl font-bold text-primary">ShopLogo</h1>
+            </a>
+            <nav class="hidden lg:flex flex-grow justify-center space-x-8">
+                <a href="index.html" class="text-text hover:text-primary transition-colors duration-300">Home</a>
+                <a href="products.html" class="text-primary hover:text-primary transition-colors duration-300">Products</a>
+                <a href="contact.html" class="text-text hover:text-primary transition-colors duration-300">Contact</a>
+                <a href="about.html" class="text-text hover:text-primary transition-colors duration-300">About</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="text-text hover:text-primary hidden lg:block" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <a href="shopping-cart-page.html" class="relative text-text hover:text-primary" aria-label="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.182 1.953.468 1.953H17.75a2 2 0 002-2.25l-1.4-14.5a2 2 0 00-2-1.75H5.4M7 13H5.4M7 13h10l4-8H5.4M7 13l-2.293 2.293c-.63.63-.182 1.953.468 1.953H17.75a2 2 0 002-2.25l-1.4-14.5a2 2 0 00-2-1.75H5.4z" />
+                    </svg>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-secondary rounded-full">0</span>
+                </a>
+                <a href="#" class="text-text hover:text-primary" aria-label="User Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </a>
+                <button class="text-text hover:text-primary lg:hidden" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav class="lg:hidden p-4 bg-background-card border-t border-gray-200" id="mobile-menu">
+            <ul class="flex flex-col space-y-2 text-center">
+                <li><a href="index.html" class="text-text hover:text-primary py-2 block">Home</a></li>
+                <li><a href="products.html" class="text-primary hover:text-primary py-2 block">Products</a></li>
+                <li><a href="#" class="text-text hover:text-primary py-2 block">Categories</a></li>
+                <li><a href="#" class="text-text hover:text-primary py-2 block">About</a></li>
+                <li class="border-t border-gray-200 mt-2 pt-2"><button class="text-text hover:text-primary py-2 block w-full">Search</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+        
+        <h2 class="text-3xl font-bold text-center text-text mb-8">All Products</h2>
+
+        <!-- Sorting Filters -->
+    <div class="flex justify-end mb-6">
+        <select class="p-2 rounded-lg border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+            <option value="" disabled selected>Sort by...</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="date_desc">Date: Newest first</option>
+            <option value="date_asc">Date: Oldest first</option>
+        </select>
+    </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            
+            <aside class="md:w-1/4 bg-background-card p-6 rounded-xl shadow-lg h-fit hidden md:block">
+                <h3 class="text-xl font-bold text-text-dark mb-4 border-b border-gray-200 pb-2">
+                    Filters
+                </h3>
+            
+                <!-- Clear Filters Button -->
+                <div class="mb-6">
+                    <button class="w-full bg-secondary text-white font-semibold py-2 px-4 rounded-full hover:bg-opacity-90 transition-all duration-300">
+                        Clear all filters
+                    </button>
+                </div>
+            
+                <!-- Category Filter (Accordion) -->
+                <details class="group mb-4">
+                    <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-text-dark pb-2 border-b border-gray-200">
+                        <span>Category</span>
+                        <svg class="h-5 w-5 transform transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="pt-4 space-y-2 text-text-light">
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="checkbox" class="h-4 w-4 accent-primary text-primary rounded" />
+                            <span>Footwear (21)</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="checkbox" class="h-4 w-4 accent-primary text-primary rounded" />
+                            <span>Accessories (15)</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="checkbox" class="h-4 w-4 accent-primary text-primary rounded" />
+                            <span>Bags (8)</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="checkbox" class="h-4 w-4 accent-primary text-primary rounded" />
+                            <span>Apparel (30)</span>
+                        </label>
+                    </div>
+                </details>
+            
+                <!-- Price Range Filter (Accordion) -->
+                <details class="group mb-4">
+                    <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-text-dark pb-2 border-b border-gray-200">
+                        <span>Price</span>
+                        <svg class="h-5 w-5 transform transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="pt-4 space-y-2 text-text-light">
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="price-range" class="h-4 w-4 accent-primary text-primary" />
+                            <span>0€ - 50€</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="price-range" class="h-4 w-4 accent-primary text-primary" />
+                            <span>50€ - 100€</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="price-range" class="h-4 w-4 accent-primary text-primary" />
+                            <span>100€ - 200€</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="price-range" class="h-4 w-4 accent-primary text-primary" />
+                            <span>200€+</span>
+                        </label>
+                    </div>
+                </details>
+            
+                <!-- Color Filter (Accordion) -->
+                <details class="group mb-4">
+                    <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-text-dark pb-2 border-b border-gray-200">
+                        <span>Color</span>
+                        <svg class="h-5 w-5 transform transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="pt-4 flex flex-wrap gap-6">
+                        <button class="relative w-8 h-8 rounded-full bg-red-600 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600 transition-colors duration-300" aria-label="Red color"></button>
+                        <button class="relative w-8 h-8 rounded-full bg-blue-600 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300" aria-label="Blue color"></button>
+                        <button class="relative w-8 h-8 rounded-full bg-green-600 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 transition-colors duration-300" aria-label="Green color"></button>
+                        <button class="relative w-8 h-8 rounded-full bg-gray-800 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 transition-colors duration-300" aria-label="Black color"></button>
+                        <button class="relative w-8 h-8 rounded-full bg-yellow-400 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 transition-colors duration-300" aria-label="Yellow color"></button>
+                    </div>
+                </details>
+            
+                <!-- Ratings Filter (Accordion) -->
+                <details class="group mb-4">
+                    <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-text-dark pb-2 border-b border-gray-200">
+                        <span>Ratings</span>
+                        <svg class="h-5 w-5 transform transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="pt-4 space-y-2 text-text-light">
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="rating-filter" class="h-4 w-4 accent-primary text-primary" />
+                            <span class="text-yellow-400">★★★★★</span> <span class="text-text-light">& up</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="rating-filter" class="h-4 w-4 accent-primary text-primary" />
+                            <span class="text-yellow-400">★★★★☆</span> <span class="text-text-light">& up</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="rating-filter" class="h-4 w-4 accent-primary text-primary" />
+                            <span class="text-yellow-400">★★★☆☆</span> <span class="text-text-light">& up</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="rating-filter" class="h-4 w-4 accent-primary text-primary" />
+                            <span class="text-yellow-400">★★☆☆☆</span> <span class="text-text-light">& up</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer hover:text-primary transition-colors duration-300">
+                            <input type="radio" name="rating-filter" class="h-4 w-4 accent-primary text-primary" />
+                            <span class="text-yellow-400">★☆☆☆☆</span> <span class="text-text-light">& up</span>
+                        </label>
+                    </div>
+                </details>
+            
+            </aside>
+            
+            
+            
+            
+            
+            <div class="w-full md:w-3/4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-background-card rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 group">
+                        <div class="relative w-full h-64 overflow-hidden">
+                            <a href="#" class="block">
+                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1920&auto=format&fit=crop" alt="Stylish Sneakers" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </a>
+                            <button class="absolute top-4 right-4 text-text-light hover:text-red-500 transition-colors duration-300" aria-label="Add to wishlist">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5A5.4 5.4 0 017.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 21.4 3 22 8.5 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4 text-center">
+                            <a href="#">
+                                <h3 class="text-lg font-semibold text-text-dark mb-1">Stylish Sneakers</h3>
+                            </a>
+                            <p class="text-text-light text-sm mb-2">Cool and comfortable for everyday.</p>
+                            <div class="flex items-center justify-center space-x-1 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="ml-1 text-sm text-text-light">(120)</span>
+                            </div>
+                            <span class="text-xl font-bold text-primary">$89.99</span>
+                            <button class="mt-4 w-full bg-secondary hover:bg-opacity-90 transition-all duration-300
+                                           text-white font-bold py-2 px-4 rounded-full shadow-md">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-background-card rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 group">
+                        <div class="relative w-full h-64 overflow-hidden">
+                            <a href="#" class="block">
+                                <img src="https://images.unsplash.com/photo-1594917639556-9d3e51206197?q=80&w=1920&auto=format&fit=crop" alt="Classic Watch" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </a>
+                            <button class="absolute top-4 right-4 text-text-light hover:text-red-500 transition-colors duration-300" aria-label="Add to wishlist">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5A5.4 5.4 0 017.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 21.4 3 22 8.5 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4 text-center">
+                            <a href="#">
+                                <h3 class="text-lg font-semibold text-text-dark mb-1">Classic Watch</h3>
+                            </a>
+                            <p class="text-text-light text-sm mb-2">Timeless design for a modern man.</p>
+                            <div class="flex items-center justify-center space-x-1 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="ml-1 text-sm text-text-light">(150)</span>
+                            </div>
+                            <span class="text-xl font-bold text-primary">$120.00</span>
+                            <button class="mt-4 w-full bg-secondary hover:bg-opacity-90 transition-all duration-300
+                                           text-white font-bold py-2 px-4 rounded-full shadow-md">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-background-card rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 group">
+                        <div class="relative w-full h-64 overflow-hidden">
+                            <a href="#" class="block">
+                                <img src="https://images.unsplash.com/photo-1525203772183-509a738c642e?q=80&w=1920&auto=format&fit=crop" alt="Leather Backpack" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </a>
+                            <button class="absolute top-4 right-4 text-text-light hover:text-red-500 transition-colors duration-300" aria-label="Add to wishlist">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5A5.4 5.4 0 017.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 21.4 3 22 8.5 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4 text-center">
+                            <a href="#">
+                                <h3 class="text-lg font-semibold text-text-dark mb-1">Leather Backpack</h3>
+                            </a>
+                            <p class="text-text-light text-sm mb-2">Durable and stylish for your daily commute.</p>
+                            <div class="flex items-center justify-center space-x-1 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="ml-1 text-sm text-text-light">(85)</span>
+                            </div>
+                            <span class="text-xl font-bold text-primary">$150.00</span>
+                            <button class="mt-4 w-full bg-secondary hover:bg-opacity-90 transition-all duration-300
+                                           text-white font-bold py-2 px-4 rounded-full shadow-md">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-background-card rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 group">
+                        <div class="relative w-full h-64 overflow-hidden">
+                            <a href="#" class="block">
+                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1920&auto=format&fit=crop" alt="Stylish Sneakers" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                            </a>
+                            <button class="absolute top-4 right-4 text-text-light hover:text-red-500 transition-colors duration-300" aria-label="Add to wishlist">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5A5.4 5.4 0 017.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 21.4 3 22 8.5 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4 text-center">
+                            <a href="#">
+                                <h3 class="text-lg font-semibold text-text-dark mb-1">Stylish Sneakers</h3>
+                            </a>
+                            <p class="text-text-light text-sm mb-2">Cool and comfortable for everyday.</p>
+                            <div class="flex items-center justify-center space-x-1 mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="ml-1 text-sm text-text-light">(210)</span>
+                            </div>
+                            <span class="text-xl font-bold text-primary">$89.99</span>
+                            <button class="mt-4 w-full bg-secondary hover:bg-opacity-90 transition-all duration-300
+                                           text-white font-bold py-2 px-4 rounded-full shadow-md">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <footer class="bg-background-card py-12 border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <a href="#" class="flex-shrink-0">
+                        <h3 class="text-2xl font-bold text-primary mb-4">ShopLogo</h3>
+                    </a>
+                    <p class="text-text-light text-sm mb-4">
+                        Your premier destination for modern and stylish apparel. We offer a curated collection of high-quality products to help you express your unique style.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-text-light hover:text-primary transition-colors duration-300" aria-label="Facebook">
+                            </a>
+                        <a href="#" class="text-text-light hover:text-primary transition-colors duration-300" aria-label="Instagram">
+                            </a>
+                        <a href="#" class="text-text-light hover:text-primary transition-colors duration-300" aria-label="Twitter">
+                            </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-text mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">Home</a></li>
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">Shop</a></li>
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-text mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">FAQs</a></li>
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-text-light hover:text-primary transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-text mb-4">Newsletter</h4>
+                    <p class="text-text-light text-sm mb-4">
+                        Stay updated with our latest news and offers.
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Enter your email" class="flex-grow p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button type="submit" class="bg-primary text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-200 text-center text-text-light text-sm">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> ShopLogo. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./dist/js/main.js"></script>
+</body>
+</html>

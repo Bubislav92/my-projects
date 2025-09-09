@@ -1,0 +1,67 @@
+<div class="flex items-center justify-center min-h-screen bg-background p-4">
+    <div class="bg-background-card p-8 rounded-xl shadow-lg w-full max-w-md">
+        
+        <h2 class="text-3xl font-bold text-center text-primary mb-6">Create an Account</h2>
+        <p class="text-center text-text-light mb-8">Sign up to get started.</p>
+
+        <form action="#" method="POST" class="space-y-6">
+            
+            <div>
+                <label for="name" class="block text-sm font-medium text-text-dark mb-1">Full Name</label>
+                <input type="text" id="name" name="name" required 
+                       class="w-full p-3 rounded-md border border-gray-300 
+                              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
+                              bg-background-dark text-text-dark">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-text-dark mb-1">Email address</label>
+                <input type="email" id="email" name="email" required 
+                       class="w-full p-3 rounded-md border border-gray-300 
+                              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
+                              bg-background-dark text-text-dark">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-text-dark mb-1">Password</label>
+                <input type="password" id="password" name="password" required 
+                       class="w-full p-3 rounded-md border border-gray-300 
+                              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
+                              bg-background-dark text-text-dark">
+            </div>
+            
+            <div>
+                <label for="confirm-password" class="block text-sm font-medium text-text-dark mb-1">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required 
+                       class="w-full p-3 rounded-md border border-gray-300 
+                              focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent 
+                              bg-background-dark text-text-dark">
+            </div>
+
+            <div class="flex items-center">
+                <input id="terms" name="terms" type="checkbox" required
+                       class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                <label for="terms" class="ml-2 block text-sm text-text-light">
+                    I agree to the 
+                    <a href="#" class="text-primary hover:underline">Terms of Service</a>
+                </label>
+            </div>
+
+            <button type="submit" 
+                    class="w-full py-3 px-4 rounded-md font-bold text-white bg-primary 
+                           hover:bg-opacity-90 transition-all duration-300 shadow-md">
+                Create Account
+            </button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <p class="text-sm text-text-light">
+                Already have an account? 
+                <a href="#" class="font-medium text-primary hover:underline transition-colors duration-300">
+                    Log in
+                </a>
+            </p>
+        </div>
+
+    </div>
+</div>
