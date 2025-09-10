@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Agency - Modern Solutions for Your Business</title>
+
+    <link href="./dist/css/style.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-bg-main">
+
+    <header class="bg-bg-main text-text-light fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2 transform transition-transform duration-300 hover:scale-105">
+                <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                <span class="text-2xl font-bold tracking-tight text-accent">Digital Agency</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Home</a>
+                <a href="services.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Services</a>
+                <a href="portfolio.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Portfolio</a>
+                <a href="about.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">About</a>
+                <a href="blog.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Blog</a>
+                <a href="contact.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+
+            <a href="#contact" class="hidden md:block bg-accent text-primary-dark font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">Contact</a>
+
+            <div class="md:hidden">
+                <input type="checkbox" id="menu-toggle" class="hidden peer" />
+                <label for="menu-toggle" class="block cursor-pointer transition-transform duration-300 hover:scale-110">
+                    <svg class="h-8 w-8 text-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </label>
+
+                <div class="absolute top-[68px] left-0 w-full bg-primary-light transform -translate-y-full peer-checked:translate-y-0 transition-transform duration-500 ease-in-out shadow-lg">
+                    <a href="#services" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Services</a>
+                    <a href="#portfolio" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Portfolio</a>
+                    <a href="#about" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">About</a>
+                    <a href="#blog" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Blog</a>
+                    <a href="#contact" class="block py-4 px-6 text-lg text-primary-dark bg-accent text-center font-semibold transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bg-primary-light text-text-light py-32 px-4 text-center">
+            <div class="container mx-auto">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-accent leading-tight mb-4" data-aos="fade-down">
+                    Our Work That Speaks
+                </h1>
+                <p class="text-lg md:text-2xl text-text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Explore a collection of our finest projects, showcasing our commitment to creativity, functionality, and outstanding results.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-bg-main text-text-light py-20 px-4">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-10 space-y-4 md:space-y-0" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold">Featured Projects</h2>
+                    <div class="flex space-x-4 flex-wrap justify-center">
+                        <button class="px-4 py-2 text-accent font-medium border-2 border-accent rounded-full transition-colors duration-300 hover:bg-accent hover:text-primary-dark">All</button>
+                        <button class="px-4 py-2 text-text-light font-medium rounded-full transition-colors duration-300 hover:text-accent">Websites</button>
+                        <button class="px-4 py-2 text-text-light font-medium rounded-full transition-colors duration-300 hover:text-accent">Branding</button>
+                        <button class="px-4 py-2 text-text-light font-medium rounded-full transition-colors duration-300 hover:text-accent">Marketing</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de1168b?q=80&w=2800&auto=format&fit=crop" alt="E-commerce Website" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">Web Development</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">Modern E-commerce Platform</h3>
+                            <p class="text-text-dark mb-4">
+                                A custom-built e-commerce site focused on user experience and seamless scalability.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">View Project &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2752&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Branding & Design" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">Branding</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">Corporate Identity Redesign</h3>
+                            <p class="text-text-dark mb-4">
+                                Complete brand overhaul including logo, style guides, and collateral design.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">View Project &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1629904869389-943e86c12365?q=80&w=2940&auto=format&fit=crop" alt="Mobile App UI" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">UI/UX Design</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">Intuitive Mobile App Interface</h3>
+                            <p class="text-text-dark mb-4">
+                                A sleek and user-friendly interface design for a new mobile application.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">View Project &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1588722744826-cfb29a243d70?q=80&w=2940&auto=format&fit=crop" alt="Digital Marketing" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">Digital Marketing</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">Targeted SEO Campaign</h3>
+                            <p class="text-text-dark mb-4">
+                                A comprehensive SEO strategy that increased organic traffic by 150% in six months.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">View Project &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2940&auto=format&fit=crop" alt="Custom Software" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">Software Development</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">Custom CRM Solution</h3>
+                            <p class="text-text-dark mb-4">
+                                Development of a tailored Customer Relationship Management system for a client.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">View Project &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="500">
+                        <img src="https://images.unsplash.com/photo-1621217697444-2f2db1691238?q=80&w=2940&auto=format&fit=crop" alt="Product Design" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">UI/UX Design</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">Digital Product Redesign</h3>
+                            <p class="text-text-dark mb-4">
+                                Redesigning a legacy software product for a modern and intuitive user experience.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">View Project &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary-light text-text-light py-20 px-4">
+            <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 order-2 md:order-1" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e1797c6d6?q=80&w=2940&auto=format&fit=crop" alt="Case Study Image" class="rounded-lg shadow-xl w-full">
+                </div>
+
+                <div class="md:w-1/2 order-1 md:order-2" data-aos="fade-left">
+                    <span class="text-accent text-lg font-bold uppercase tracking-wide">Case Study</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-text-light mb-6 mt-2">
+                        Revitalizing a Global Brand with a New Digital Presence
+                    </h2>
+                    <p class="text-lg text-text-dark mb-4">
+                        We partnered with "Global Innovations Inc." to rebuild their entire digital ecosystem. The challenge was to create a unified online experience that reflected their global reach while improving user engagement and conversion rates. Our team conducted extensive research, redesigned their website from the ground up, and implemented a targeted content strategy.
+                    </p>
+                    <ul class="list-none space-y-4 text-text-light">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L12 19.25L14.25 17m-4.5 0V6.75A2.25 2.25 0 0112 4.5h0a2.25 2.25 0 012.25 2.25v10.25"></path>
+                            </svg>
+                            <div>
+                                <span class="block text-xl font-bold mb-1">200% Increase in Traffic</span>
+                                <span class="text-text-dark">Achieved through strategic SEO and content marketing.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <div>
+                                <span class="block text-xl font-bold mb-1">35% Rise in Conversions</span>
+                                <span class="text-text-dark">Optimized user flows and improved call-to-action placement.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-accent mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                            </svg>
+                            <div>
+                                <span class="block text-xl font-bold mb-1">Award-Winning Design</span>
+                                <span class="text-text-dark">Recognized for intuitive UI/UX and visual excellence.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-bg-main text-text-dark py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="md:col-span-1">
+                <a href="#" class="flex items-center space-x-2 mb-4">
+                    <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span class="text-2xl font-bold tracking-tight text-accent">Digital Agency</span>
+                </a>
+                <p class="text-sm">
+                    We empower businesses with cutting-edge digital solutions that drive growth and deliver exceptional results.
+                </p>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-semibold text-text-light mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="hover:text-accent transition-colors duration-300">Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-accent transition-colors duration-300">Portfolio</a></li>
+                    <li><a href="#about" class="hover:text-accent transition-colors duration-300">About Us</a></li>
+                    <li><a href="#blog" class="hover:text-accent transition-colors duration-300">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-semibold text-text-light mb-4">Connect With Us</h4>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 8.165 8.948 8.165v-7.22H7.327V12h2.621V9.58c0-2.585 1.579-4.004 3.885-4.004 1.115 0 2.072.197 2.352.285v2.446h-1.465c-1.157 0-1.385.55-1.385 1.355V12h2.77l-.36 2.77h-2.41V20.165C18.343 20.165 22 16.991 22 12z" /></svg>
+                    </a>
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4.07a9.96 9.96 0 01-2.828.775 5.06 5.06 0 002.21-2.88 10.035 10.035 0 01-3.13.91 5.035 5.035 0 00-8.583 4.63 14.288 14.288 0 01-10.37-5.235 5.04 5.04 0 001.556 6.703 5.035 5.035 0 01-2.28-.63v.065c0 2.45 1.745 4.49 4.062 4.95a5.036 5.036 0 01-2.28.086 5.043 5.043 0 004.706 3.49 10.088 10.088 0 01-6.262 2.155 14.364 14.364 0 002.592.152c11.233 0 17.36-9.317 17.36-17.36 0-.265-.008-.53-.02-.795a12.515 12.515 0 003.06-3.178z" /></svg>
+                    </a>
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 0 0" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 8.165 8.948 8.165v-7.22H7.327V12h2.621V9.58c0-2.585 1.579-4.004 3.885-4.004 1.115 0 2.072.197 2.352.285v2.446h-1.465c-1.157 0-1.385.55-1.385 1.355V12h2.77l-.36 2.77h-2.41V20.165C18.343 20.165 22 16.991 22 12z" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-8 pt-8 border-t border-gray-700 text-center">
+            <p class="text-sm">© 2025 Digital Agency. All rights reserved.</p>
+            <p class="text-sm mt-1">Designed and developed by <a href="https://www.digitalytycoon.com" class="text-accent hover:underline" target="_blank">Digitaly Tycoon</a></p>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1000,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>

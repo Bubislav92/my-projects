@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Agency - Modern Solutions for Your Business</title>
+
+    <link href="./dist/css/style.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-bg-main">
+
+    <header class="bg-bg-main text-text-light fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2 transform transition-transform duration-300 hover:scale-105">
+                <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                <span class="text-2xl font-bold tracking-tight text-accent">Digital Agency</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Home</a>
+                <a href="services.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Services</a>
+                <a href="portfolio.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Portfolio</a>
+                <a href="about.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">About</a>
+                <a href="blog.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Blog</a>
+                <a href="contact.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+
+            <a href="#contact" class="hidden md:block bg-accent text-primary-dark font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">Contact</a>
+
+            <div class="md:hidden">
+                <input type="checkbox" id="menu-toggle" class="hidden peer" />
+                <label for="menu-toggle" class="block cursor-pointer transition-transform duration-300 hover:scale-110">
+                    <svg class="h-8 w-8 text-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </label>
+
+                <div class="absolute top-[68px] left-0 w-full bg-primary-light transform -translate-y-full peer-checked:translate-y-0 transition-transform duration-500 ease-in-out shadow-lg">
+                    <a href="#services" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Services</a>
+                    <a href="#portfolio" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Portfolio</a>
+                    <a href="#about" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">About</a>
+                    <a href="#blog" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Blog</a>
+                    <a href="#contact" class="block py-4 px-6 text-lg text-primary-dark bg-accent text-center font-semibold transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bg-primary-light text-text-light py-32 px-4 text-center">
+            <div class="container mx-auto">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-accent leading-tight mb-4" data-aos="fade-down">
+                    Digital Insights & Inspiration
+                </h1>
+                <p class="text-lg md:text-2xl text-text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Dive into our blog for the latest trends, expert tips, and in-depth articles on web development, design, and digital marketing.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-bg-main text-text-light py-20 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-text-light" data-aos="fade-right">Featured Article</h2>
+                <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden flex flex-col md:flex-row gap-8 items-center" data-aos="fade-up">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0c09d023?q=80&w=2940&auto=format&fit=crop" alt="Featured Blog Post" class="w-full h-80 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <span class="text-sm uppercase font-semibold text-accent tracking-wide">Web Development</span>
+                        <h3 class="text-3xl font-bold mt-2 mb-4 text-text-light">
+                            The Future of Web Design: AI-Powered Personalization
+                        </h3>
+                        <p class="text-text-dark mb-4">
+                            Artificial intelligence is no longer a sci-fi concept. Learn how AI is revolutionizing web design by creating personalized user experiences that boost engagement and conversions. We'll explore the tools and techniques you can use today to stay ahead of the curve.
+                        </p>
+                        <div class="flex items-center text-sm text-text-dark space-x-4 mb-6">
+                            <span><strong class="text-text-light">By:</strong> Jane Doe</span>
+                            <span><strong class="text-text-light">Published:</strong> Aug 25, 2025</span>
+                        </div>
+                        <a href="#" class="bg-accent text-primary-dark font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-opacity-90">Read Full Article</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary-light text-text-light py-20 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-10 text-text-light" data-aos="fade-right">Latest Articles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e1797c6d6?q=80&w=2940&auto=format&fit=crop" alt="The Power of SEO" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">Marketing</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">Mastering SEO: A Guide for Beginners</h3>
+                            <p class="text-text-dark mb-4">
+                                Unlock the secrets of search engine optimization and drive organic traffic to your website.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e993e?q=80&w=2940&auto=format&fit=crop" alt="UI/UX Principles" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">UI/UX Design</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">5 Essential UI/UX Principles for 2025</h3>
+                            <p class="text-text-dark mb-4">
+                                Stay on top of the design game with these crucial principles for creating engaging user interfaces.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-bg-secondary rounded-lg shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-105 group" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b973751167?q=80&w=2940&auto=format&fit=crop" alt="Client Communication" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="p-6">
+                            <span class="text-xs uppercase font-semibold tracking-wide text-text-dark">Business</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-2 text-accent">The Art of Client Communication</h3>
+                            <p class="text-text-dark mb-4">
+                                Building strong relationships starts with clear and effective communication. Here's how to do it.
+                            </p>
+                            <a href="#" class="inline-block text-accent font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-bg-secondary text-text-light py-20 px-4 text-center">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-accent" data-aos="fade-down">Join Our Community</h2>
+                <p class="text-lg md:text-xl text-text-dark max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+                    Get the latest insights, case studies, and industry news delivered directly to your inbox.
+                </p>
+                <form class="flex flex-col sm:flex-row justify-center items-center gap-4" data-aos="zoom-in" data-aos-delay="400">
+                    <input type="email" placeholder="Enter your email address" class="w-full sm:w-80 px-6 py-4 rounded-full bg-primary-light text-text-light border border-gray-700 focus:outline-none focus:ring-2 focus:ring-accent placeholder-text-dark">
+                    <button type="submit" class="bg-accent text-primary-dark font-bold py-4 px-10 rounded-full shadow-xl transition-all duration-300 hover:scale-105 hover:bg-opacity-90 w-full sm:w-auto">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-bg-main text-text-dark py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="md:col-span-1">
+                <a href="#" class="flex items-center space-x-2 mb-4">
+                    <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span class="text-2xl font-bold tracking-tight text-accent">Digital Agency</span>
+                </a>
+                <p class="text-sm">
+                    We empower businesses with cutting-edge digital solutions that drive growth and deliver exceptional results.
+                </p>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-semibold text-text-light mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="hover:text-accent transition-colors duration-300">Services</a></li>
+                    <li><a href="#portfolio" class="hover:text-accent transition-colors duration-300">Portfolio</a></li>
+                    <li><a href="#about" class="hover:text-accent transition-colors duration-300">About Us</a></li>
+                    <li><a href="#blog" class="hover:text-accent transition-colors duration-300">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-semibold text-text-light mb-4">Connect With Us</h4>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 8.165 8.948 8.165v-7.22H7.327V12h2.621V9.58c0-2.585 1.579-4.004 3.885-4.004 1.115 0 2.072.197 2.352.285v2.446h-1.465c-1.157 0-1.385.55-1.385 1.355V12h2.77l-.36 2.77h-2.41V20.165C18.343 20.165 22 16.991 22 12z" /></svg>
+                    </a>
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4.07a9.96 9.96 0 01-2.828.775 5.06 5.06 0 002.21-2.88 10.035 10.035 0 01-3.13.91 5.035 5.035 0 00-8.583 4.63 14.288 14.288 0 01-10.37-5.235 5.04 5.04 0 001.556 6.703 5.035 5.035 0 01-2.28-.63v.065c0 2.45 1.745 4.49 4.062 4.95a5.036 5.036 0 01-2.28.086 5.043 5.043 0 004.706 3.49 10.088 10.088 0 01-6.262 2.155 14.364 14.364 0 002.592.152c11.233 0 17.36-9.317 17.36-17.36 0-.265-.008-.53-.02-.795a12.515 12.515 0 003.06-3.178z" /></svg>
+                    </a>
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 0 0" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 8.165 8.948 8.165v-7.22H7.327V12h2.621V9.58c0-2.585 1.579-4.004 3.885-4.004 1.115 0 2.072.197 2.352.285v2.446h-1.465c-1.157 0-1.385.55-1.385 1.355V12h2.77l-.36 2.77h-2.41V20.165C18.343 20.165 22 16.991 22 12z" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-8 pt-8 border-t border-gray-700 text-center">
+            <p class="text-sm">© 2025 Digital Agency. All rights reserved.</p>
+            <p class="text-sm mt-1">Designed and developed by <a href="https://www.digitalytycoon.com" class="text-accent hover:underline" target="_blank">Digitaly Tycoon</a></p>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1000,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>
