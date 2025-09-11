@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alex Reed Photography</title>
+
+    <link href="./dist/css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-bg-main">
+
+    <header class="bg-bg-main text-text-light fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 transform transition-transform duration-300 hover:scale-105">
+                <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.218A2 2 0 0110.19 4h3.62a2 2 0 011.664.89l.812 1.218A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span class="text-2xl font-bold tracking-tight text-accent">Alex Reed</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Home</a>
+                <a href="portfolio.html" class="text-lg font-medium border-b-2 border-accent text-accent">Portfolio</a>
+                <a href="services.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Services</a>
+                <a href="about.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">About</a>
+                <a href="blog.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Blog</a>
+                <a href="contact.html" class="text-lg font-medium hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+
+            <a href="contact.html" class="hidden md:block bg-accent text-primary-dark font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">Book a Session</a>
+
+            <div class="md:hidden">
+                <input type="checkbox" id="menu-toggle" class="hidden peer" />
+                <label for="menu-toggle" class="block cursor-pointer transition-transform duration-300 hover:scale-110">
+                    <svg class="h-8 w-8 text-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </label>
+                <div class="absolute top-[68px] left-0 w-full bg-primary-light transform -translate-y-full peer-checked:translate-y-0 transition-transform duration-500 ease-in-out shadow-lg">
+                    <a href="index.html" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Home</a>
+                    <a href="portfolio.html" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary text-accent">Portfolio</a>
+                    <a href="services.html" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Services</a>
+                    <a href="about.html" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">About</a>
+                    <a href="contact.html" class="block py-4 px-6 text-lg text-text-light hover:bg-bg-secondary hover:text-accent transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative h-screen flex items-center justify-center text-center text-text-light overflow-hidden">
+            <img src="assets/images/photo1.jpg" alt="A powerful image from your best portfolio work" class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="absolute inset-0 bg-primary-dark bg-opacity-40 z-10"></div>
+            <div class="relative z-20 container mx-auto px-4" data-aos="fade-up">
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-4 text-text-light">My Portfolio</h1>
+                <p class="text-lg md:text-2xl font-light text-text-light max-w-4xl mx-auto">
+                    A collection of my work, showcasing the moments I've had the honor to capture.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-bg-main text-text-light py-20 px-4">
+            <div class="container mx-auto">
+                <div class="flex flex-wrap justify-center space-x-4 mb-12" data-aos="fade-up">
+                    <button class="filter-btn text-lg md:text-xl font-medium px-6 py-2 rounded-full border-2 border-accent text-accent bg-bg-main transition-colors duration-300 hover:bg-accent hover:text-primary-dark active-filter" data-category="all">All</button>
+                    <button class="filter-btn text-lg md:text-xl font-medium px-6 py-2 rounded-full border-2 border-accent text-accent bg-bg-main transition-colors duration-300 hover:bg-accent hover:text-primary-dark" data-category="weddings">Weddings</button>
+                    <button class="filter-btn text-lg md:text-xl font-medium px-6 py-2 rounded-full border-2 border-accent text-accent bg-bg-main transition-colors duration-300 hover:bg-accent hover:text-primary-dark" data-category="portraits">Portraits</button>
+                    <button class="filter-btn text-lg md:text-xl font-medium px-6 py-2 rounded-full border-2 border-accent text-accent bg-bg-main transition-colors duration-300 hover:bg-accent hover:text-primary-dark" data-category="events">Events</button>
+                    <button class="filter-btn text-lg md:text-xl font-medium px-6 py-2 rounded-full border-2 border-accent text-accent bg-bg-main transition-colors duration-300 hover:bg-accent hover:text-primary-dark" data-category="commercial">Commercial</button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 photo-gallery">
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item weddings" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1594191307779-d269894e7751?q=80&w=2787&auto=format&fit=crop" alt="Wedding couple" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Wedding</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item weddings" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1518029587422-921d4d0e9140?q=80&w=2787&auto=format&fit=crop" alt="Wedding ceremony" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Wedding</h3>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item portraits" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2940&auto=format&fit=crop" alt="Stylish portrait" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Portrait</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item portraits" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1600880292203-889d13a9604b?q=80&w=2787&auto=format&fit=crop" alt="Portrait of a woman" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Portrait</h3>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item events" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e0691d1e4e5e?q=80&w=2787&auto=format&fit=crop" alt="Event photo" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Event</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item events" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1589886498308-4122d2572565?q=80&w=2787&auto=format&fit=crop" alt="Event photo" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Event</h3>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item commercial" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1556740758-90f77b7f1e77?q=80&w=2787&auto=format&fit=crop" alt="Commercial product photo" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Commercial</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-w-16 aspect-h-9 photo-item commercial" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1517865910385-d729837c385b?q=80&w=2787&auto=format&fit=crop" alt="Commercial photo" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-dark bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-semibold text-text-light">Commercial</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary-light text-text-light py-20 px-4 text-center">
+            <div class="container mx-auto max-w-3xl" data-aos="zoom-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-accent mb-4">Loved What You Saw?</h2>
+                <p class="text-lg md:text-xl text-text-dark mb-8">
+                    Let's discuss how I can capture your unique story.
+                </p>
+                <a href="contact.html" class="inline-block bg-accent text-primary-dark font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-opacity-90">Book a Free Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-bg-main text-text-dark py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="md:col-span-1">
+                <a href="#" class="flex items-center space-x-2 mb-4">
+                    <svg class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.218A2 2 0 0110.19 4h3.62a2 2 0 011.664.89l.812 1.218A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="text-2xl font-bold tracking-tight text-accent">Alex Reed</span> </a>
+                <p class="text-sm">
+                    Capturing life's most beautiful moments, one frame at a time.
+                </p>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-semibold text-text-light mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="portfolio.html" class="hover:text-accent transition-colors duration-300">Portfolio</a></li>
+                    <li><a href="services.html" class="hover:text-accent transition-colors duration-300">Services</a></li>
+                    <li><a href="about.html" class="hover:text-accent transition-colors duration-300">About</a></li>
+                    <li><a href="contact.html" class="hover:text-accent transition-colors duration-300">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-semibold text-text-light mb-4">Connect With Me</h4>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 8.165 8.948 8.165v-7.22H7.327V12h2.621V9.58c0-2.585 1.579-4.004 3.885-4.004 1.115 0 2.072.197 2.352.285v2.446h-1.465c-1.157 0-1.385.55-1.385 1.355V12h2.77l-.36 2.77h-2.41V20.165C18.343 20.165 22 16.991 22 12z" /></svg>
+                    </a>
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4.07a9.96 9.96 0 01-2.828.775 5.06 5.06 0 002.21-2.88 10.035 10.035 0 01-3.13.91 5.035 5.035 0 00-8.583 4.63 14.288 14.288 0 01-10.37-5.235 5.04 5.04 0 001.556 6.703 5.035 5.035 0 01-2.28-.63v.065c0 2.45 1.745 4.49 4.062 4.95a5.036 5.036 0 01-2.28.086 5.043 5.043 0 004.706 3.49 10.088 10.088 0 01-6.262 2.155 14.364 14.364 0 002.592.152c11.233 0 17.36-9.317 17.36-17.36 0-.265-.008-.53-.02-.795a12.515 12.515 0 003.06-3.178z" /></svg>
+                    </a>
+                    <a href="#" class="text-text-dark hover:text-accent transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 0 0" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 8.165 8.948 8.165v-7.22H7.327V12h2.621V9.58c0-2.585 1.579-4.004 3.885-4.004 1.115 0 2.072.197 2.352.285v2.446h-1.465c-1.157 0-1.385.55-1.385 1.355V12h2.77l-.36 2.77h-2.41V20.165C18.343 20.165 22 16.991 22 12z" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-8 pt-8 border-t border-gray-700 text-center">
+            <p class="text-sm">© 2025 Alex Reed Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1000,
+            easing: 'ease-in-out'
+        });
+
+        // JavaScript za filtriranje galerije
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const photoItems = document.querySelectorAll('.photo-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+
+                // Ukloni "active" klasu sa svih dugmadi
+                filterButtons.forEach(btn => btn.classList.remove('active-filter'));
+                // Dodaj "active" klasu na kliknuto dugme
+                button.classList.add('active-filter');
+
+                photoItems.forEach(item => {
+                    const itemCategory = item.dataset.category;
+                    if (category === 'all' || itemCategory === category) {
+                        item.classList.remove('hidden');
+                        item.classList.add('fade-in'); // Dodaj klasu za animaciju
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('fade-in');
+                    }
+                });
+            });
+        });
+
+        // Dodatni CSS za filtriranje i animaciju (ovo ide u style.css)
+        /*
+        .photo-item {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .photo-item.hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            display: none;
+        }
+
+        .active-filter {
+            background-color: #2e8b57;
+            color: #121212;
+        }
+        */
+    </script>
+</body>
+</html>
