@@ -15,7 +15,7 @@
             <div class="bg-stone-50 p-6 rounded-lg shadow-md"
                  data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
                 <div class="flex items-center mb-4">
-                    <img src="/images/testimonials/client-1.jpg" alt="Client 1" class="w-16 h-16 rounded-full mr-4 object-cover">
+                    <img src="{{ asset('storage/images/photo31.jpg') }}" alt="Client 1" class="w-16 h-16 rounded-full mr-4 object-cover">
                     <div>
                         <p class="font-semibold text-stone-950">Jane Doe</p>
                         <div class="flex items-center mt-1">
@@ -35,7 +35,7 @@
             <div class="bg-stone-50 p-6 rounded-lg shadow-md"
                  data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
                 <div class="flex items-center mb-4">
-                    <img src="/images/testimonials/client-2.jpg" alt="Client 2" class="w-16 h-16 rounded-full mr-4 object-cover">
+                    <img src="{{ asset('storage/images/photo32.jpg') }}" alt="Client 2" class="w-16 h-16 rounded-full mr-4 object-cover">
                     <div>
                         <p class="font-semibold text-stone-950">John Smith</p>
                         <div class="flex items-center mt-1">
@@ -55,7 +55,7 @@
             <div class="bg-stone-50 p-6 rounded-lg shadow-md"
                  data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
                 <div class="flex items-center mb-4">
-                    <img src="/images/testimonials/client-3.jpg" alt="Client 3" class="w-16 h-16 rounded-full mr-4 object-cover">
+                    <img src="{{ asset('storage/images/photo33.jpg') }}" alt="Client 3" class="w-16 h-16 rounded-full mr-4 object-cover">
                     <div>
                         <p class="font-semibold text-stone-950">Emily White</p>
                         <div class="flex items-center mt-1">

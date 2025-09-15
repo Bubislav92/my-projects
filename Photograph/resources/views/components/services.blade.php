@@ -14,7 +14,7 @@
 
             {{-- Service Card 1: Portrait Sessions --}}
             <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1534063853123-516d299440ea?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                <img src="{{ asset('storage/images/photo22.jpg') }}"
                      alt="Portrait Session"
                      class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-neutral-950 bg-opacity-60 flex flex-col justify-end p-6 text-neutral-50 transition-all duration-500 group-hover:bg-opacity-80">
@@ -29,7 +29,7 @@
 
             {{-- Service Card 2: Wedding Photography --}}
             <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1546416194-e092bb59473b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                <img src="{{ asset('storage/images/photo9.jpg') }}"
                      alt="Wedding Photography"
                      class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-neutral-950 bg-opacity-60 flex flex-col justify-end p-6 text-neutral-50 transition-all duration-500 group-hover:bg-opacity-80">
@@ -44,7 +44,7 @@
 
             {{-- Service Card 3: Event Photography --}}
             <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
-                <img src="https://images.unsplash.com/photo-1511578330541-0f7f2b98e727?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                <img src="{{ asset('storage/images/photo12.jpg') }}"
                      alt="Event Photography"
                      class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-neutral-950 bg-opacity-60 flex flex-col justify-end p-6 text-neutral-50 transition-all duration-500 group-hover:bg-opacity-80">
@@ -59,7 +59,7 @@
 
             {{-- Service Card 4: Product Photography (New example) --}}
             <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
-                <img src="https://images.unsplash.com/photo-1558229863-71a251786576?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                <img src="{{ asset('storage/images/photo13.jpg') }}"
                      alt="Product Photography"
                      class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-neutral-950 bg-opacity-60 flex flex-col justify-end p-6 text-neutral-50 transition-all duration-500 group-hover:bg-opacity-80">
@@ -74,7 +74,7 @@
 
             {{-- Service Card 5: Landscape Photography (New example) --}}
             <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">
-                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                <img src="{{ asset('storage/images/photo11.jpg') }}"
                      alt="Landscape Photography"
                      class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-neutral-950 bg-opacity-60 flex flex-col justify-end p-6 text-neutral-50 transition-all duration-500 group-hover:bg-opacity-80">
@@ -89,7 +89,7 @@
 
             {{-- Service Card 6: Architecture Photography (New example) --}}
             <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1200">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                <img src="{{ asset('storage/images/photo29.jpg') }}"
                      alt="Architecture Photography"
                      class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-neutral-950 bg-opacity-60 flex flex-col justify-end p-6 text-neutral-50 transition-all duration-500 group-hover:bg-opacity-80">

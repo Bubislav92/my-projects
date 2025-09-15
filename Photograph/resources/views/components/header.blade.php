@@ -53,10 +53,11 @@
 
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md py-4 transition-all duration-300">
         <nav class="flex flex-col items-center space-y-4">
-            <a href="#" class="block text-lg text-gray-700 hover:text-amber-500 font-medium">Portfolio</a>
-            <a href="#" class="block text-lg text-gray-700 hover:text-amber-500 font-medium">About</a>
-            <a href="#" class="block text-lg text-gray-700 hover:text-amber-500 font-medium">Services</a>
-            <a href="#" class="block bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-full">
+            <a href="{{ route('home') }}" class="block text-lg text-gray-700 hover:text-amber-500 font-medium">Home</a>
+            <a href="{{ route('about') }}" class="block text-lg text-gray-700 hover:text-amber-500 font-medium">About</a>
+            <a href="{{ route('services') }}" class="block text-lg text-gray-700 hover:text-amber-500 font-medium">Services</a>
+            <a href="{{ route('portfolio') }}" class="block text-lg text-gray-700 hover:text-amber-500 font-medium">Portfolio</a>
+            <a href="{{ route('contact') }}" class="block bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-full">
                 Contact Me
             </a>
         </nav>

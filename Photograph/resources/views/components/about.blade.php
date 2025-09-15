@@ -4,7 +4,7 @@
         <div class="flex flex-col md:flex-row items-center md:space-x-12">
             <div class="w-full md:w-1/2 mb-8 md:mb-0"
                  data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200">
-                <img src="/images/about-me.jpg" alt="A photo of the photographer" class="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
+                <img src="{{ asset('storage/images/photo1.jpg') }}" alt="A photo of the photographer" class="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
             </div>
 
             <div class="w-full md:w-1/2 text-center md:text-left"

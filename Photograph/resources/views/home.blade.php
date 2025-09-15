@@ -23,6 +23,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/mobile-nav.js'])
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ94aYI+Q2sXlI42kG+s9LzP6e5n+S+2E4+z6J5P7yXq4rK7t3rG5A5I9qV5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
 

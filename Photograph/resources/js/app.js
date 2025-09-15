@@ -1,6 +1,6 @@
 import './bootstrap';
 import './mobile-nav';
-
+import '@fortawesome/fontawesome-free/js/all.min.js';
 
 import 'aos/dist/aos.css';
 import AOS from 'aos';

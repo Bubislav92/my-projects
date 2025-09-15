@@ -33,6 +33,8 @@
         
         <x-services-grid />
 
+        <x-services-detailed-list />
+
         <x-cta />
     </main>
 

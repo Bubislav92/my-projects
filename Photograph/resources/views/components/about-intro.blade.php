@@ -4,7 +4,7 @@
             
             {{-- Image Section --}}
             <div class="md:w-1/2 mb-8 md:mb-0">
-                <img src="https://images.unsplash.com/photo-1517596009848-18e950882e7b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                <img src="{{ asset('storage/images/photo2.jpg') }}" 
                      alt="Alex Reed - Portrait" 
                      class="rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105"
                      data-aos="zoom-in" data-aos-delay="200">

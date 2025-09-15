@@ -1,5 +1,5 @@
 <section class="relative h-[600px] md:h-screen flex items-center justify-center text-center text-white overflow-hidden">
-    <img src="/images/hero-background.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
+    <img src="{{ asset('storage/images/photo3.jpg') }}" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
     <div class="absolute inset-0 bg-stone-950 opacity-60 z-10"></div>
 
     <div class="relative z-20 p-4 md:p-8">
