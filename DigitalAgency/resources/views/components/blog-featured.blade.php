@@ -17,7 +17,7 @@
                     <span><strong class="text-text-light">By:</strong> Jane Doe</span>
                     <span><strong class="text-text-light">Published:</strong> Aug 25, 2025</span>
                 </div>
-                <a href="#" class="bg-accent text-primary-dark font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-opacity-90">Read Full Article</a>
+                <a href="{{ route('blog-single') }}" class="bg-accent text-primary-dark font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-opacity-90">Read Full Article</a>
             </div>
         </div>
     </div>
