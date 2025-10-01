@@ -1,29 +1,47 @@
-<header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="/" class="text-2xl font-serif font-bold text-dark-gray tracking-wide transition-colors duration-300 hover:text-gold">
-            My Jewellery
-        </a>
+<header class="bg-dark-slate shadow-xl sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex-shrink-0">
+                <a href="#" class="text-3xl font-heading text-gold-accent tracking-widest uppercase transition duration-300 transform hover:scale-[1.03] focus:scale-[1.03]">
+                    <span class="font-bold">LUXURY</span> JEWELS
+                </a>
+            </div>
 
-        <nav class="hidden md:flex space-x-6">
-            <a href="{{ url('/rings') }}" class="text-subtle-gray hover:text-dark-gray transition-colors duration-300 font-sans">Прстење</a>
-            <a href="#" class="text-subtle-gray hover:text-dark-gray transition-colors duration-300 font-sans">Огрлице</a>
-            <a href="#" class="text-subtle-gray hover:text-dark-gray transition-colors duration-300 font-sans">Наруквице</a>
-            <a href="#" class="text-subtle-gray hover:text-dark-gray transition-colors duration-300 font-sans">Минђуше</a>
-        </nav>
+            <nav class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="#" class="text-cream-base font-body text-lg relative group transition duration-300 hover:text-gold-light focus:text-gold-light">
+                        Collections
+                        <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gold-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                    <a href="#" class="text-cream-base font-body text-lg relative group transition duration-300 hover:text-gold-light focus:text-gold-light">
+                        About Us
+                        <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gold-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                    <a href="#" class="text-cream-base font-body text-lg relative group transition duration-300 hover:text-gold-light focus:text-gold-light">
+                        Bespoke
+                        <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gold-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                    <a href="#" class="text-cream-base font-body text-lg relative group transition duration-300 hover:text-gold-light focus:text-gold-light">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-full h-[2px] bg-gold-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                </div>
+            </nav>
 
-        <div class="flex items-center space-x-4">
-            <a href="#" class="text-subtle-gray hover:text-gold transition-colors duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 114 0 2 2 0 01-4 0z" />
-                </svg>
-            </a>
-            @if (Route::has('login'))
-                @auth
-                    <a href="{{ url('/dashboard') }}" class="text-subtle-gray hover:text-gold transition-colors duration-300">Профил</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-subtle-gray hover:text-gold transition-colors duration-300">Пријава</a>
-                @endauth
-            @endif
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-cream-base transition duration-200 transform hover:scale-110 hover:text-gold-accent focus:scale-110 focus:text-gold-accent relative">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span class="absolute -top-1 -right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-ruby-red text-cream-base rounded-full border border-dark-slate">3</span>
+                </a>
+                
+                <a href="#" class="text-cream-base transition duration-200 transform hover:scale-110 hover:text-gold-accent focus:scale-110 focus:text-gold-accent">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </a>
+                
+                <button type="button" class="md:hidden text-cream-base hover:text-gold-accent focus:outline-none transition duration-200" aria-expanded="false">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
         </div>
     </div>
 </header>

@@ -2,15 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RingController;
-use App\Http\Controllers\NecklaceController;
 
 Route::get('/', function () {
     return view('home');
-});
-
-Route::get('/rings', [RingController::class, 'index'])->name('rings');
-Route::get('/rings', [NecklaceController::class, 'index'])->name('necklaces');
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
