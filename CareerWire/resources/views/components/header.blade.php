@@ -73,9 +73,6 @@
                                 {{ __('Профил') }}
                             </x-dropdown-link>
                             
-                            <x-dropdown-link :href="route('profile.edit')">
-                                {{ __('Подешавања (Dashboard)') }}
-                            </x-dropdown-link>
                             
                             
                             {{-- Одјава --}}
