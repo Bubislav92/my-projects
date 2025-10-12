@@ -8,6 +8,8 @@ return [
     'portfolio_websites' => 'Websites',
     'portfolio_ecommerce' => 'E-commerce Stores',
     'portfolio_web_agencies' => 'Web Agencies',
+    'portfolio_administrator_dashboard' => 'Administrator Dashboard',
+    'portfolio_custom_web_site' => 'Custom Web Site',
     'portfolio_category' => 'Category:',
     'portfolio_view_project' => 'View Project',
 ];

@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{-- Standardni SEO Meta Tagovi --}}
+    <meta name="description" content="**DigitalyTycoon nudi vrhunske usluge web razvoja, izrade sajtova, e-commerce rešenja i digitalnog marketinga. Pretvorite svoju ideju u moćno online prisustvo.**">
+    <meta name="keywords" content="web razvoj, izrada sajtova, e-commerce, digitalni marketing, frontend, backend, prilagođena rešenja, DigitalyTycoon">
+    <link rel="canonical" href="**https://www.digitalytycoon.com/**"> {{-- Zameniti sa stvarnim URL-om vaše glavne stranice --}}
+    <meta name="author" content="DigitalyTycoon">
+
+    {{-- Open Graph (OG) Meta Tagovi - Za Facebook, LinkedIn, i većinu drugih mreža --}}
+    <meta property="og:title" content="DigitalyTycoon - Vrhunski web razvoj i digitalna rešenja">
+    <meta property="og:description" content="**DigitalyTycoon nudi vrhunske usluge web razvoja, izrade sajtova, e-commerce rešenja i digitalnog marketinga. Pretvorite svoju ideju u moćno online prisustvo.**">
+    <meta property="og:url" content="**https://www.digitalytycoon.com/**"> {{-- Zameniti sa stvarnim URL-om --}}
+    <meta property="og:site_name" content="DigitalyTycoon">
+    <meta property="og:type" content="website"> {{-- Ako je ovo blog post, koristite "article" --}}
+    <meta property="og:image" content="**https://www.digitalytycoon.com/images/share-slika.jpg**"> {{-- Zameniti sa URL-om slike (preporučeno 1200x630 piksela) --}}
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="sr_RS"> {{-- Ili sr_SR, en_US, itd. --}}
+
+    {{-- Twitter Card Meta Tagovi - Specijalno za X (Twitter) --}}
+    <meta name="twitter:card" content="summary_large_image"> {{-- Preporučuje se 'summary_large_image' --}}
+    <meta name="twitter:site" content="@**DigitalyTycoon**"> {{-- Zameniti sa vašim Twitter handle-om (sa @) --}}
+    <meta name="twitter:creator" content="@**DigitalyTycoon**"> {{-- Ako je isti kao site --}}
+    <meta name="twitter:title" content="DigitalyTycoon - Vrhunski web razvoj">
+    <meta name="twitter:description" content="**Pretvorite svoju ideju u moćno online prisustvo uz DigitalyTycoon. Web razvoj, e-commerce i digitalni marketing.**">
+    <meta name="twitter:image" content="**https://www.digitalytycoon.com/images/share-slika.jpg**"> {{-- URL iste OG slike --}}
+
     <title>Портфолио - DigitalyTycoon</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -62,50 +88,50 @@
                 <div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
                     <div class="project-card visible bg-secondary-dark rounded-lg overflow-hidden shadow-xl" data-category="website">
-                        <a href="#">
-                            <img src="https://via.placeholder.com/600x400.png?text=Веб+сајт+1" alt="Веб сајт 1" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
+                        <a href="{{ asset('storage/project2.png') }}">
+                            <img src="{{ asset('storage/project2.png') }}" alt="Веб сајт 1" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
                         </a>
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-accent mb-2">Наслов пројекта 1</h3>
-                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">{{ __('portfolio_page.portfolio_category') }}</span> Веб сајт</p>
-                            <a href="#" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">{{ __('portfolio_page.portfolio_view_project') }}</a>
+                            <h3 class="text-2xl font-semibold text-accent mb-2">{{ __('portfolio_page.portfolio_administrator_dashboard') }}</h3>
+                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">{{ __('portfolio_page.portfolio_category') }}</span> {{ __('portfolio_page.portfolio_websites') }}</p>
+                            <a href="{{ asset('storage/project2.png') }}" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">{{ __('portfolio_page.portfolio_view_project') }}</a>
                         </div>
                     </div>
 
                     <div class="project-card visible bg-secondary-dark rounded-lg overflow-hidden shadow-xl" data-category="ecommerce">
-                        <a href="#">
-                            <img src="https://via.placeholder.com/600x400.png?text=Е-продавница+1" alt="Е-продавница 1" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
+                        <a href="{{ asset('storage/project1.png') }}">
+                            <img src="{{ asset('storage/project1.png') }}" alt="Е-продавница 1" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
                         </a>
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-accent mb-2">Наслов пројекта 2</h3>
-                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">Категорија:</span> Е-продавница</p>
-                            <a href="#" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">Погледај пројекат</a>
+                            <h3 class="text-2xl font-semibold text-accent mb-2">Web Shop</h3>
+                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold"> {{ __('portfolio_page.portfolio_category') }}</span> {{ __('portfolio_page.portfolio_ecommerce') }}</p>
+                            <a href="{{ asset('storage/project1.png') }}" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">{{ __('portfolio_page.portfolio_view_project') }}</a>
                         </div>
                     </div>
 
                     <div class="project-card visible bg-secondary-dark rounded-lg overflow-hidden shadow-xl" data-category="agency">
-                        <a href="#">
-                            <img src="https://via.placeholder.com/600x400.png?text=Веб+агенција+1" alt="Веб агенција 1" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
+                        <a href="{{ asset('storage/project5.png') }}">
+                            <img src="{{ asset('storage/project5.png') }}" alt="Веб агенција 1" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
                         </a>
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-accent mb-2">Наслов пројекта 3</h3>
-                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">Категорија:</span> Веб агенције</p>
-                            <a href="#" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">Погледај пројекат</a>
+                            <h3 class="text-2xl font-semibold text-accent mb-2">Web Agency</h3>
+                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">{{ __('portfolio_page.portfolio_category') }}</span> {{ __('portfolio_page.portfolio_web_agencies') }}</p>
+                            <a href="{{ asset('storage/project5.png') }}" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">{{ __('portfolio_page.portfolio_view_project') }}</a>
                         </div>
                     </div>
 
                     <div class="project-card visible bg-secondary-dark rounded-lg overflow-hidden shadow-xl" data-category="website">
-                        <a href="#">
-                            <img src="https://via.placeholder.com/600x400.png?text=Веб+сајт+2" alt="Веб сајт 2" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
+                        <a href="{{ asset('storage/project3.png') }}">
+                            <img src="{{ asset('storage/project3.png') }}" alt="Веб сајт 2" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
                         </a>
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-accent mb-2">Наслов пројекта 4</h3>
-                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">Категорија:</span> Веб сајт</p>
-                            <a href="#" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">Погледај пројекат</a>
+                            <h3 class="text-2xl font-semibold text-accent mb-2">{{ __('portfolio_page.portfolio_custom_web_site') }}</h3>
+                            <p class="text-text-light/80 text-sm mb-4"><span class="font-bold">{{ __('portfolio_page.portfolio_category') }}</span> {{ __('portfolio_page.portfolio_websites') }}</p>
+                            <a href="{{ asset('storage/project3.png') }}" class="inline-block bg-accent text-primary-dark font-bold py-2 px-4 rounded-md shadow-lg hover:bg-opacity-80 transition-colors duration-300">{{ __('portfolio_page.portfolio_view_project') }}</a>
                         </div>
                     </div>
-                    </div>
-            </div>
+                 </div>
+            
         </section>
 
         <x-cta />

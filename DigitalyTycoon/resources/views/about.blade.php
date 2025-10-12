@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{-- Standardni SEO Meta Tagovi --}}
+    <meta name="description" content="**DigitalyTycoon nudi vrhunske usluge web razvoja, izrade sajtova, e-commerce rešenja i digitalnog marketinga. Pretvorite svoju ideju u moćno online prisustvo.**">
+    <meta name="keywords" content="web razvoj, izrada sajtova, e-commerce, digitalni marketing, frontend, backend, prilagođena rešenja, DigitalyTycoon">
+    <link rel="canonical" href="**https://www.digitalytycoon.com/**"> {{-- Zameniti sa stvarnim URL-om vaše glavne stranice --}}
+    <meta name="author" content="DigitalyTycoon">
+
+    {{-- Open Graph (OG) Meta Tagovi - Za Facebook, LinkedIn, i većinu drugih mreža --}}
+    <meta property="og:title" content="DigitalyTycoon - Vrhunski web razvoj i digitalna rešenja">
+    <meta property="og:description" content="**DigitalyTycoon nudi vrhunske usluge web razvoja, izrade sajtova, e-commerce rešenja i digitalnog marketinga. Pretvorite svoju ideju u moćno online prisustvo.**">
+    <meta property="og:url" content="**https://www.digitalytycoon.com/**"> {{-- Zameniti sa stvarnim URL-om --}}
+    <meta property="og:site_name" content="DigitalyTycoon">
+    <meta property="og:type" content="website"> {{-- Ako je ovo blog post, koristite "article" --}}
+    <meta property="og:image" content="**https://www.digitalytycoon.com/images/share-slika.jpg**"> {{-- Zameniti sa URL-om slike (preporučeno 1200x630 piksela) --}}
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="sr_RS"> {{-- Ili sr_SR, en_US, itd. --}}
+
+    {{-- Twitter Card Meta Tagovi - Specijalno za X (Twitter) --}}
+    <meta name="twitter:card" content="summary_large_image"> {{-- Preporučuje se 'summary_large_image' --}}
+    <meta name="twitter:site" content="@**DigitalyTycoon**"> {{-- Zameniti sa vašim Twitter handle-om (sa @) --}}
+    <meta name="twitter:creator" content="@**DigitalyTycoon**"> {{-- Ako je isti kao site --}}
+    <meta name="twitter:title" content="DigitalyTycoon - Vrhunski web razvoj">
+    <meta name="twitter:description" content="**Pretvorite svoju ideju u moćno online prisustvo uz DigitalyTycoon. Web razvoj, e-commerce i digitalni marketing.**">
+    <meta name="twitter:image" content="**https://www.digitalytycoon.com/images/share-slika.jpg**"> {{-- URL iste OG slike --}}
+
     <title>О нама - DigitalyTycoon</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -48,30 +74,11 @@
                     {{ __('about_page.meet_our_team') }}
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://via.placeholder.com/200x200.png?text=Иван" alt="Иван Петровић" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
-                        <h3 class="text-xl font-semibold">Иван Петровић</h3>
-                        <p class="text-sm text-text-light/70">Оснивач и главни архитекта</p>
-                    </div>
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://via.placeholder.com/200x200.png?text=Ана" alt="Ана Јовановић" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
-                        <h3 class="text-xl font-semibold">Ана Јовановић</h3>
-                        <p class="text-sm text-text-light/70">Вођа пројеката</p>
-                    </div>
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="https://via.placeholder.com/200x200.png?text=Марко" alt="Марко Костић" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
-                        <h3 class="text-xl font-semibold">Марко Костић</h3>
-                        <p class="text-sm text-text-light/70">Веб дизајнер</p>
-                    </div>
+                    
                     <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="https://via.placeholder.com/200x200.png?text=Милена" alt="Милена Павловић" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
-                        <h3 class="text-xl font-semibold">Милена Павловић</h3>
-                        <p class="text-sm text-text-light/70">SEO и маркетинг</p>
-                    </div>
-                    <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="https://via.placeholder.com/200x200.png?text=Милена" alt="Boban Mladenovic" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
+                        <img src="{{ asset('storage/Boban.jpg') }}" alt="Boban Mladenovic" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-lg">
                         <h3 class="text-xl font-semibold">Boban Mladenovic</h3>
-                        <p class="text-sm text-text-light/70">Full Stack Web Developer & Osnivac - Slobodni Umetnik</p>
+                        <p class="text-sm text-text-light/70">Full Stack Web Developer - Freelancer</p>
                     </div>
                 </div>
             </div>

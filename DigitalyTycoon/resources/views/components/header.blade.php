@@ -14,6 +14,7 @@
             <a href="{{ route('about') }}" class="hover:text-accent transition duration-300">{{ __('home_page.about') }}</a>
             <a href="{{ route('services') }}" class="hover:text-accent transition duration-300">{{ __('home_page.services') }}</a>
             <a href="{{ route('portfolio') }}" class="hover:text-accent transition duration-300">{{ __('home_page.portfolio') }}</a>
+            <a href="{{ route('shop') }}" class="hover:text-accent transition duration-300">Shop</a>
             <a href="{{ route('contact') }}" class="hover:text-accent transition duration-300">{{ __('home_page.contact') }}</a>
         </div>
 
@@ -45,4 +46,28 @@
             </button>
         </div>
     </nav>
+
+    {{-- Mobilni meni (skriven po defaultu) --}}
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="{{ route('home') }}" class="block text-text-light hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">{{ __('home_page.home') }}</a>
+            <a href="{{ route('about') }}" class="block text-text-light hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">{{ __('home_page.about') }}</a>
+            <a href="{{ route('services') }}" class="block text-text-light hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">{{ __('home_page.services') }}</a>
+            <a href="{{ route('portfolio') }}" class="block text-text-light hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">{{ __('home_page.portfolio') }}</a>
+            <a href="{{ route('contact') }}" class="block text-text-light hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">{{ __('home_page.contact') }}</a>
+        </div>
+    </div>
+
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            // Prebacuje 'hidden' klasu na meniju, čime ga prikazuje ili skriva
+            mobileMenu.classList.toggle('hidden');
+        });
+    });
+</script>

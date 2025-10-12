@@ -24,13 +24,13 @@
             <p class="text-sm">
                 {{ __('home_page.footer_address') }} 18224 Делиград, Србија<br>
                 {{ __('home_page.footer_email') }} info@digitalytycoon.com<br>
-                {{ __('home_page.footer_phone') }} +381 11 123 4567
+                <!-- {{ __('home_page.footer_phone') }} +381 11 123 4567 -->
             </p>
             <div class="flex space-x-4 mt-4 text-2xl">
-                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-accent transition duration-300"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/19VjESCxUA/" class="hover:text-accent transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@bm_development?_t=ZN-8z9LmGhmFTa&_r=1" class="hover:text-accent transition duration-300"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/boban-mladenovic-1aa2978b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hover:text-accent transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/boban.mladenovic92?igsh=Nzd5azl0c3hkOTZ3" class="hover:text-accent transition duration-300"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 

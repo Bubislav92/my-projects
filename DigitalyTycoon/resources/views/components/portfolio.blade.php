@@ -5,22 +5,22 @@
             <div class="bg-primary-dark rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
                 <img src="{{ asset('storage/computer1.jpg') }}" alt="Projekat 1" class="w-full h-auto">
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-2">Назив пројекта 1</h3>
-                    <p class="text-sm">Опис пројекта. Веб сајт за агенцију за дигитални маркетинг.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Web digital Agency</h3>
+                    <p class="text-sm"><!--Опис пројекта. Веб сајт за агенцију за дигитални маркетинг.</p>-->
                 </div>
             </div>
             <div class="bg-primary-dark rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
                 <img src="{{ asset('storage/computer2.jpg') }}" alt="Projekat 2" class="w-full h-auto">
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-2">Назив пројекта 2</h3>
-                    <p class="text-sm">Опис пројекта. Е-трговина за продају ручно израђеног накита.</p>
+                    <h3 class="text-2xl font-semibold mb-2">E-commerce</h3>
+                    <p class="text-sm"><!--Опис пројекта. Е-трговина за продају ручно израђеног накита.</p>-->
                 </div>
             </div>
             <div class="bg-primary-dark rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
-                <img src="{{ asset('storage/computer3.jpg') }}" alt="Projekat 3" class="w-full h-auto">
+                <img src="{{ asset('storage/computer5.jpg') }}" alt="Projekat 3" class="w-full h-auto">
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-2">Назив пројекта 3</h3>
-                    <p class="text-sm">Опис пројекта. Пословни сајт за старт-ап компанију.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Start-Up Web Site</h3>
+                    <p class="text-sm"><!--Опис пројекта. Пословни сајт за старт-ап компанију.</p>-->
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@ class ContactController extends Controller
             'budget' => 'nullable|string|max:255',
             'message' => 'required|string',
             // Promenjeno iz 'captcha' u 'recaptcha'
-            'g-recaptcha-response' => 'recaptcha', 
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
         // 2. Ukloni g-recaptcha-response pre čuvanja u bazi
@@ -34,7 +34,7 @@ class ContactController extends Controller
 
         // 3. Slanje email-a adminu
         try {
-            Mail::to('info@digitalytycoon.com') 
+            Mail::to('youremail@example.com') 
                 ->send(new ContactFormMail($dataToSave));
         } catch (\Exception $e) {
             Log::error('Error sending message to admin: ' . $e->getMessage());

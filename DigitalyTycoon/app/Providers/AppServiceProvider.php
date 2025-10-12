@@ -28,5 +28,10 @@ class AppServiceProvider extends ServiceProvider
                 'currentLocale' => LaravelLocalization::getCurrentLocale(),
             ]);
         });
+
+         // Dodaj ovo da Laravel koristi public_html kao public path
+         $this->app->bind('path.public', function() {
+            return base_path('../public_html');
+        });
     }
 }
